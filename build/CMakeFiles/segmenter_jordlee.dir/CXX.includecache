@@ -1408,9 +1408,9 @@ Gestalt.hh
 Vector.hh
 ../v4r/vs3/Vector.hh
 
-/home/fetch/Documents/segmenter_jordlee/src/segmenter_jordlee.cpp
+/home/fetch/Documents/segmenter/src/segmenter_jordlee.cpp
 Segmenter1.h
-/home/fetch/Documents/segmenter_jordlee/src/Segmenter1.h
+/home/fetch/Documents/segmenter/src/Segmenter1.h
 pcl/segmentation/region_growing.h
 -
 

@@ -105,7 +105,7 @@ CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.o
  ../v4r/vs3/Vector3.ic
  ../v4r/vs3/VisionCore.hh
  ../v4r/vs3/VoteImage.hh
- /home/fetch/Documents/segmenter_jordlee/src/segmenter_jordlee.cpp
+ /home/fetch/Documents/segmenter/src/segmenter_jordlee.cpp
  /usr/include/eigen3/Eigen/Cholesky
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/Dense

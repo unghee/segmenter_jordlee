@@ -4,7 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/fetch/Documents/segmenter_jordlee/src/segmenter_jordlee.cpp" "/home/fetch/Documents/segmenter_jordlee/build/CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.o"
+  "/home/fetch/Documents/segmenter/src/segmenter_jordlee.cpp" "/home/fetch/Documents/segmenter/build/CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -1,1 +1,1 @@
-/home/fetch/Documents/segmenter_jordlee/cmake-build-debug/CMakeFiles/segmenter_jordlee.dir
+/home/fetch/Documents/segmenter/cmake-build-debug/CMakeFiles/segmenter_jordlee.dir

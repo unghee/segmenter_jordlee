@@ -50,10 +50,10 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/fetch/Documents/segmenter_jordlee
+CMAKE_SOURCE_DIR = /home/fetch/Documents/segmenter
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/fetch/Documents/segmenter_jordlee/cmake-build-debug
+CMAKE_BINARY_DIR = /home/fetch/Documents/segmenter/cmake-build-debug
 
 #=============================================================================
 # Target rules for target CMakeFiles/segmenter_jordlee.dir
@@ -62,7 +62,7 @@ CMAKE_BINARY_DIR = /home/fetch/Documents/segmenter_jordlee/cmake-build-debug
 CMakeFiles/segmenter_jordlee.dir/all:
 	$(MAKE) -f CMakeFiles/segmenter_jordlee.dir/build.make CMakeFiles/segmenter_jordlee.dir/depend
 	$(MAKE) -f CMakeFiles/segmenter_jordlee.dir/build.make CMakeFiles/segmenter_jordlee.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fetch/Documents/segmenter_jordlee/cmake-build-debug/CMakeFiles  1
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fetch/Documents/segmenter/cmake-build-debug/CMakeFiles  1
 	@echo "Built target segmenter_jordlee"
 .PHONY : CMakeFiles/segmenter_jordlee.dir/all
 
@@ -72,9 +72,9 @@ all: CMakeFiles/segmenter_jordlee.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/segmenter_jordlee.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fetch/Documents/segmenter_jordlee/cmake-build-debug/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fetch/Documents/segmenter/cmake-build-debug/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/segmenter_jordlee.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fetch/Documents/segmenter_jordlee/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fetch/Documents/segmenter/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/segmenter_jordlee.dir/rule
 
 # Convenience name for target.

@@ -128,7 +128,8 @@ public:
       int _startIdx, int _endIdx);
 
 //    boost::shared_ptr<pcl::visualization::PCLVisualizer> rgbVis(pcl::PointCloud<pcl::PointXYZRGB>::ConstPtr cloud);
-    boost::shared_ptr<pcl::visualization::PCLVisualizer> rgbVis(pcl::PointCloud<pcl::PointXYZRGB>::ConstPtr cloud);
+    boost::shared_ptr<pcl::visualization::PCLVisualizer>
+    rgbVis(std::vector<pcl::PointCloud<pcl::PointXYZRGB>::ConstPtr> cloud,  std::vector<pcl::PointIndices> label);
 };
 
 }

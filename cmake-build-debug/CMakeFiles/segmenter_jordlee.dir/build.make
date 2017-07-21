@@ -38,10 +38,10 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/fetch/Documents/segmenter_jordlee
+CMAKE_SOURCE_DIR = /home/fetch/Documents/segmenter
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/fetch/Documents/segmenter_jordlee/cmake-build-debug
+CMAKE_BINARY_DIR = /home/fetch/Documents/segmenter/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/segmenter_jordlee.dir/depend.make
@@ -54,17 +54,17 @@ include CMakeFiles/segmenter_jordlee.dir/flags.make
 
 CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.o: CMakeFiles/segmenter_jordlee.dir/flags.make
 CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.o: ../src/segmenter_jordlee.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fetch/Documents/segmenter_jordlee/cmake-build-debug/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fetch/Documents/segmenter/cmake-build-debug/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.o -c /home/fetch/Documents/segmenter_jordlee/src/segmenter_jordlee.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.o -c /home/fetch/Documents/segmenter/src/segmenter_jordlee.cpp
 
 CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fetch/Documents/segmenter_jordlee/src/segmenter_jordlee.cpp > CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fetch/Documents/segmenter/src/segmenter_jordlee.cpp > CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.i
 
 CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fetch/Documents/segmenter_jordlee/src/segmenter_jordlee.cpp -o CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fetch/Documents/segmenter/src/segmenter_jordlee.cpp -o CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.s
 
 CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.o.requires:
 .PHONY : CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.o.requires
@@ -201,6 +201,6 @@ CMakeFiles/segmenter_jordlee.dir/clean:
 .PHONY : CMakeFiles/segmenter_jordlee.dir/clean
 
 CMakeFiles/segmenter_jordlee.dir/depend:
-	cd /home/fetch/Documents/segmenter_jordlee/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fetch/Documents/segmenter_jordlee /home/fetch/Documents/segmenter_jordlee /home/fetch/Documents/segmenter_jordlee/cmake-build-debug /home/fetch/Documents/segmenter_jordlee/cmake-build-debug /home/fetch/Documents/segmenter_jordlee/cmake-build-debug/CMakeFiles/segmenter_jordlee.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/fetch/Documents/segmenter/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fetch/Documents/segmenter /home/fetch/Documents/segmenter /home/fetch/Documents/segmenter/cmake-build-debug /home/fetch/Documents/segmenter/cmake-build-debug /home/fetch/Documents/segmenter/cmake-build-debug/CMakeFiles/segmenter_jordlee.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/segmenter_jordlee.dir/depend
 

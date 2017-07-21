@@ -187,95 +187,90 @@ Segmenter::processPointCloudV(pcl::PointCloud<pcl::PointXYZRGB>::Ptr &pcl_cloud)
     label_indices = processPointCloudV(cloud_input);
 
 //    std::vector<pcl::PointCloud<pcl::PointXYZRGB>::Ptr> cloud_output(label_indices.size())  ;
-    std::vector<pcl::PointCloud<pcl::PointXYZRGB>::Ptr> cloud_output;
+    std::vector<pcl::PointCloud<pcl::PointXYZRGB>::ConstPtr> cloud_output;
     std::cout<<"before"<<std::endl;
-  //  for(int i =0;label_indices.size();i++)
-  //  {
-   //   pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_output(new pcl::PointCloud<pcl::PointXYZRGB>);
+    for(int i =0;i<label_indices.size();i++)
+    {
+
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_temp(new pcl::PointCloud<pcl::PointXYZRGB>);
-    pcl::copyPointCloud(*cloud_input, label_indices[1], *(cloud_temp));
+    pcl::copyPointCloud(*cloud_input, label_indices[i], *(cloud_temp));
     cloud_output.push_back(cloud_temp);
  //   pcl::copyPointCloud(*cloud_input, label_indices[1], *(cloud_output[1]));
- //   }
-    std::cout<<"after"<<std::endl;
- //   pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_output2 (new pcl::PointCloud<pcl::PointXYZRGB>);
- //   pcl::copyPointCloud(*cloud_input,label_indices[2], *cloud_output2);
-
-    /*
-    char varname;
-    char cloud_name;
-    char str[80];
-    char numbering[10];
-    for(int i = 0;i<label_indices.size(); i++)
-    {
-      char numbering = i;
-
-     varname = std::strcat(str,numbering);
-      char str[50] = "Hello ";
-      char str2[50] = "World!";
-      std::strcat(str, str2);
-
     }
-*/
+    std::cout<<"after"<<std::endl;
 
- //   pcl::copyPointCloud(*cloud_input, *cloud_output);
-    //std::cout<<label_ind
+
   boost::shared_ptr<pcl::visualization::PCLVisualizer> viewer (new pcl::visualization::PCLVisualizer ("3D Viewer"));
 
- //   pcl::visualization::PointCloudColorHandlerRandom <pcl::PointXYZRGB> rgb(cloud_output1);
- //   viewer->addPointCloud<pcl::PointXYZRGB> (cloud_output1, rgb, "sample cloud");
+    rgbVis(cloud_output,label_indices);
 
- //   pcl::visualization::PointCloudColorHandlerRandom <pcl::PointXYZRGB> rgb2(cloud_output2);
- //   viewer->addPointCloud<pcl::PointXYZRGB> (cloud_output2, rgb2, "sample cloud2");
-
-    /*
-    pcl::RegionGrowing<pcl::PointXYZRGB, pcl::Normal> reg;
-    reg.setInputCloud (cloud_output);
-    pcl::PointCloud <pcl::PointXYZRGB>::Ptr colored_cloud = reg.getColoredCloud ();
-    viewer = rgbVis(colored_cloud);
-   */
-    viewer->initCameraParameters ();
-    while (!viewer->wasStopped ())
-    {
-      viewer->spinOnce (100);
-
-   //   for(int i =0;label_indices.size();i++)
- //     {
-  //      pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_output1(new pcl::PointCloud<pcl::PointXYZRGB>);
-  //      pcl::copyPointCloud(*cloud_input, label_indices[i], *cloud_output1);
-
-        pcl::visualization::PointCloudColorHandlerRandom <pcl::PointXYZRGB> rgb(cloud_output[0]);
-
-        viewer->addPointCloud<pcl::PointXYZRGB> (cloud_output[0],rgb);
-      //  viewer->updatePointCloud<pcl::PointXYZRGB> (cloud_output1);
-    //  }
-      //    viewer->updatePointCloud<pcl::PointXYZ>  ( cloud, "sample cloud");
-      boost::this_thread::sleep (boost::posix_time::microseconds (100000));
-    }
 
     printf("[Segmenter::run] Done.\n");
   }
 
   boost::shared_ptr<pcl::visualization::PCLVisualizer>
 
-  Segmenter::rgbVis (pcl::PointCloud<pcl::PointXYZRGB>::ConstPtr cloud)
+  Segmenter::rgbVis (std::vector<pcl::PointCloud<pcl::PointXYZRGB>::ConstPtr> cloud, std::vector<pcl::PointIndices> label)
   {
   // --------------------------------------------
   // -----Open 3D viewer and add point cloud-----
   // --------------------------------------------
     boost::shared_ptr<pcl::visualization::PCLVisualizer> viewer (new pcl::visualization::PCLVisualizer ("3D Viewer"));
+
+    std::vector<string> idname;
+    std::cout<<"beforereserve"<<endl;
+    idname.reserve(label.size());
+    std::cout<<"afterreserve"<<endl;
     viewer->setBackgroundColor (0, 0, 0);
- // pcl::visualization::PointCloudColorHandlerRGBField<pcl::PointXYZ> rgb(cloud);
- //   pcl::visualization::PointCloudColorHandlerRandom <pcl::PointXYZRGB> rgb(cloud);
 
- //   viewer->addPointCloud<pcl::PointXYZRGB> (cloud, rgb, "sample cloud");
-    viewer->addPointCloud<pcl::PointXYZRGB> (cloud, "sample cloud");
-//    viewer->addPointCloud<pcl::PointXYZ> (cloud, "sample cloud");
+    char *intitializevar;
+    *intitializevar='t';
 
+    for(int i=0;i<label.size();i++)
+    {
+//      char c = i;
+     // char c =static_cast<char>(i);/
+      int *inte=new int;
+      char c[10];
+      *inte=i;
+
+
+      sprintf(c,"%d",i);
+
+     std::cout<<*inte<<endl;
+      std::cout<<*c<<endl;
+      string s;
+
+//      string s = boost::lexical_cast<string>(i);
+      s.push_back(c[10]);
+ //     std::cout<<c<<endl;
+      idname.push_back(s);
+      std::cout<<"beforevisualize"<<endl;
+      pcl::visualization::PointCloudColorHandlerRandom<pcl::PointXYZRGB> rgb(cloud[i]);
+      std::cout<<"afterrandomcolor"<<std::endl;
+      std::cout<<idname[i]<<endl;
+      viewer->addPointCloud<pcl::PointXYZRGB> (cloud[i], rgb, idname[i]);
+
+ //    c = intitializevar;
+  //    std::cout<<*c<<endl;
+      delete c;
+   //   delete inte;
+
+    }
 
     viewer->initCameraParameters ();
 
+    while (!viewer->wasStopped ())
+    {
+      viewer->spinOnce (100);
 
+
+   //   pcl::visualization::PointCloudColorHandlerRandom <pcl::PointXYZRGB> rgb(cloud_output[0]);
+
+   //   viewer->addPointCloud<pcl::PointXYZRGB> (cloud_output[0],rgb);
+
+      boost::this_thread::sleep (boost::posix_time::microseconds (100000));
+    }
 
     return (viewer);
   }
