@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/v4r/!svn/ver/4105/stable/Segmenter-1.0/v4r/TomGinePCL
+END
+tgPCL2TomGine.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/v4r/!svn/ver/3871/stable/Segmenter-1.0/v4r/TomGinePCL/tgPCL2TomGine.cpp
+END
+tgPCL2TomGine.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/v4r/!svn/ver/3871/stable/Segmenter-1.0/v4r/TomGinePCL/tgPCL2TomGine.h
+END
+tgTomGineThreadPCL.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/v4r/!svn/ver/4105/stable/Segmenter-1.0/v4r/TomGinePCL/tgTomGineThreadPCL.cpp
+END
+tgTomGineThreadPCL.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/v4r/!svn/ver/4105/stable/Segmenter-1.0/v4r/TomGinePCL/tgTomGineThreadPCL.h
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/v4r/!svn/ver/3871/stable/Segmenter-1.0/v4r/TomGinePCL/CMakeLists.txt
+END

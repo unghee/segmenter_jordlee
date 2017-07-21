@@ -1,0 +1,166 @@
+/**
+ * @file Vector3.ic
+ * @author Zillich, Richtsfeld
+ * @date 2006, 2010
+ * @version 0.1
+ * @brief 3D Vector class.
+ */
+
+#include <math.h>
+
+namespace VEC
+{
+
+inline Vector3 operator-(const Vector3 &v)
+{
+  return Vector3(-v.x, -v.y, -v.z);
+}
+
+inline Vector3& Vector3::operator+=(const Vector3 &v)
+{
+  x += v.x;
+  y += v.y;
+  z += v.z;
+  return *this;
+}
+
+inline Vector3& Vector3::operator-=(const Vector3 &v)
+{
+  x -= v.x;
+  y -= v.y;
+  z -= v.z;
+  return *this;
+}
+
+inline Vector3& Vector3::operator*=(double s)
+{
+  x *= s;
+  y *= s;
+  z *= s;
+  return *this;
+}
+
+inline Vector3& Vector3::operator/=(double s) throw(std::runtime_error)
+{
+  if(s == 0)
+    throw std::runtime_error("Vector3::operator/= : division by zero");
+  x /= s;
+  y /= s;
+  z /= s;
+  return *this;
+}
+
+inline double Vector3::Norm() const
+{
+  return sqrt(x*x + y*y + z*z);
+}
+
+inline bool Vector3::Normalise()
+{
+  double n = Norm();
+  if(n != 0.)
+	{
+		*this /= n;
+		return true;
+	} else return false;
+}
+
+inline Vector3 operator+(const Vector3 &a, const Vector3 &b)
+{
+  return Vector3(a.x + b.x, a.y + b.y, a.z + b.z);
+}
+
+inline Vector3 operator-(const Vector3 &a, const Vector3 &b)
+{
+  return Vector3(a.x - b.x, a.y - b.y, a.z - b.z);
+}
+
+inline Vector3 operator*(const double s, const Vector3 &v)
+{
+  return Vector3(v.x*s, v.y*s, v.z*s);
+}
+
+inline Vector3 operator*(const Vector3 &v, const double s)
+{
+  return s*v;
+}
+
+inline Vector3 operator/(const Vector3 &v, const double s) throw(std::runtime_error)
+{
+  if(s == 0)
+    throw std::runtime_error("Vector3::operator/ : division by zero");
+  return Vector3(v.x/s, v.y/s, v.z/s);
+}
+
+inline double Norm(const Vector3 &v)
+{
+  return sqrt(v.x*v.x + v.y*v.y + v.z*v.z);
+}
+
+inline double Length(const Vector3 &v)
+{
+  return sqrt(v.x*v.x + v.y*v.y + v.z*v.z);
+}
+
+/**
+ * Vector dot product.
+ */
+inline double Dot(const Vector3 &a, const Vector3 &b)
+{
+  return a.x*b.x + a.y*b.y + a.z*b.z;
+}
+
+/**
+ * Vector cross product.
+ */
+inline Vector3 Cross(const Vector3 &a, const Vector3 &b)
+{
+  return Vector3(a.y*b.z - a.z*b.y,
+                 a.z*b.x - a.x*b.z,
+                 a.x*b.y - a.y*b.x);
+}
+
+inline Vector3 Normalise(const Vector3 &v)
+{
+  double n = Norm(v);
+  return v/n;
+}
+
+/**
+ * @brief Opening angle between two 3d voctors (0 - PI)
+ */ 
+inline double OpeningAngle(const Vector3 &a, const Vector3 &b)
+{
+  double angle = 0.;
+  double dot = Dot(a, b);
+  double norm = Length(a) * Length(b);
+  if(norm !=0)
+    angle = acos(dot/norm);
+  else
+    printf("Vector3::Angle: Warning: Division by zero.\n");
+  return angle;
+}
+
+/**
+ * @brief Smallest angle between two 3d voctors (intersecting lines) (0 - PI/2)
+ */ 
+inline double SmallestAngle(const Vector3 &a, const Vector3 &b)
+{
+  double angle = OpeningAngle(a, b);
+  if(angle > M_PI/2.) angle = M_PI - angle;
+  return angle;
+}
+
+inline std::istream& operator>>(std::istream &is, Vector3 &v)
+{
+  return is >> v.x >> v.y >> v.z;
+}
+
+inline std::ostream& operator<<(std::ostream &os, const Vector3 &v)
+{
+  return os << v.x << " " << v.y << " " << v.z;
+}
+
+
+}
+

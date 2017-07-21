@@ -1,0 +1,839 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/v4r/!svn/ver/3803/stable/Segmenter-1.0/v4r/vs3
+END
+fitellipse.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/fitellipse.c
+END
+Vector3.hh
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Vector3.hh
+END
+fitellipse.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/fitellipse.h
+END
+Pose3.hh
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Pose3.hh
+END
+LJunction.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/LJunction.cc
+END
+cvFunctions.ic
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/cvFunctions.ic
+END
+EJunction.hh
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/EJunction.hh
+END
+Cylinder.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Cylinder.cc
+END
+FormCorners.hh
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormCorners.hh
+END
+HCF.hh
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/HCF.hh
+END
+TJunction.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/TJunction.cc
+END
+Rectangle.hh
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Rectangle.hh
+END
+CDataFile.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/CDataFile.h
+END
+FlapAri.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FlapAri.cc
+END
+Array.ic
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Array.ic
+END
+FormConvexArcGroups.hh
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormConvexArcGroups.hh
+END
+Closure.hh
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Closure.hh
+END
+Color.hh
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Color.hh
+END
+Edgel.hh
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Edgel.hh
+END
+VoteImage.hh
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/VoteImage.hh
+END
+Vector3.ic
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Vector3.ic
+END
+FormFlapsAri.hh
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormFlapsAri.hh
+END
+IdImage.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/IdImage.cc
+END
+ConfigFile.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/ConfigFile.cc
+END
+FormEJunctions.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormEJunctions.cc
+END
+nrutil.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/nrutil.c
+END
+Segment.hh
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Segment.hh
+END
+FormEllipses.hh
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormEllipses.hh
+END
+nrutil.h
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/nrutil.h
+END
+ExtEllipse.hh
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/ExtEllipse.hh
+END
+Cube.hh
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Cube.hh
+END
+FormLines.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormLines.cc
+END
+Collinearity.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Collinearity.cc
+END
+Circle.cc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Circle.cc
+END
+rosin_arcs.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/rosin_arcs.cc
+END
+Gestalt.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Gestalt.cc
+END
+FormFlaps.hh
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormFlaps.hh
+END
+ConvexArcGroup.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/ConvexArcGroup.cc
+END
+gammln.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/gammln.c
+END
+GestaltPrinciple.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/GestaltPrinciple.cc
+END
+Vector.hh
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Vector.hh
+END
+MathUtils.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/MathUtils.h
+END
+FormArcs.cc
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormArcs.cc
+END
+Config.hh
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Config.hh
+END
+Arc.hh
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Arc.hh
+END
+FormCylinders.hh
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormCylinders.hh
+END
+ParallelLineGroup.hh
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/ParallelLineGroup.hh
+END
+EJunction.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/EJunction.cc
+END
+FormCorners.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormCorners.cc
+END
+Utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Utils.h
+END
+Math.hh
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Math.hh
+END
+Rectangle.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Rectangle.cc
+END
+Draw.hh
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Draw.hh
+END
+CDataFile.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/CDataFile.cpp
+END
+Closure.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Closure.cc
+END
+FormConvexArcGroups.cc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormConvexArcGroups.cc
+END
+Color.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Color.cc
+END
+VoteImage.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/VoteImage.cc
+END
+CEdge.hh
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/CEdge.hh
+END
+HCF2.cc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/HCF2.cc
+END
+FormSegments.hh
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormSegments.hh
+END
+FormFlapsAri.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormFlapsAri.cc
+END
+Histogram.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Histogram.cpp
+END
+VisionCore.hh
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/VisionCore.hh
+END
+Flap.hh
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Flap.hh
+END
+ColorHistogram.h
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/ColorHistogram.h
+END
+Cone.hh
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Cone.hh
+END
+Doxyfile
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Doxyfile
+END
+FormCubes.hh
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormCubes.hh
+END
+FormExtEllipses.hh
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormExtEllipses.hh
+END
+Math.ic
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Math.ic
+END
+rosin_arcline.hh
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/rosin_arcline.hh
+END
+Line.hh
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Line.hh
+END
+fitcircle.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/fitcircle.c
+END
+Corner.hh
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Corner.hh
+END
+FormParallelLineGroups.hh
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormParallelLineGroups.hh
+END
+Segment.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Segment.cc
+END
+AJunction.hh
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/AJunction.hh
+END
+FormEllipses.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/v4r/!svn/ver/5011/stable/Segmenter-1.0/v4r/vs3/FormEllipses.cc
+END
+FormCones.hh
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormCones.hh
+END
+fitcircle.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/fitcircle.h
+END
+Ellipse.hh
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Ellipse.hh
+END
+FormJunctions.hh
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormJunctions.hh
+END
+ExtEllipse.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/ExtEllipse.cc
+END
+Cube.cc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Cube.cc
+END
+betai.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/betai.c
+END
+FormCircles.hh
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormCircles.hh
+END
+FormRectangles.hh
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormRectangles.hh
+END
+FormFlaps.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormFlaps.cc
+END
+FormClosures.hh
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormClosures.hh
+END
+rosin_lines.hh
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/rosin_lines.hh
+END
+Vector2.hh
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Vector2.hh
+END
+FormArcJunctions.hh
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormArcJunctions.hh
+END
+Arc.cc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Arc.cc
+END
+Config.cc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Config.cc
+END
+ImgUtils.hh
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/ImgUtils.hh
+END
+LJunction.hh
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/LJunction.hh
+END
+FormCylinders.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormCylinders.cc
+END
+ParallelLineGroup.cc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/ParallelLineGroup.cc
+END
+Cylinder.hh
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Cylinder.hh
+END
+TJunction.hh
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/TJunction.hh
+END
+FlapAri.hh
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FlapAri.hh
+END
+Draw.cc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Draw.cc
+END
+CEdge.cc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/CEdge.cc
+END
+FormSegments.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormSegments.cc
+END
+IdImage.hh
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/IdImage.hh
+END
+ConfigFile.hh
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/ConfigFile.hh
+END
+FormEJunctions.hh
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormEJunctions.hh
+END
+VisionCore.cc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/v4r/!svn/ver/3803/stable/Segmenter-1.0/v4r/vs3/VisionCore.cc
+END
+GraphLink.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/GraphLink.h
+END
+betacf.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/betacf.c
+END
+Flap.cc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Flap.cc
+END
+Cone.cc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Cone.cc
+END
+FormCubes.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormCubes.cc
+END
+FormExtEllipses.cc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormExtEllipses.cc
+END
+rosin_arcline.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/rosin_arcline.cc
+END
+Line.cc
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Line.cc
+END
+Corner.cc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Corner.cc
+END
+FormParallelLineGroups.cc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormParallelLineGroups.cc
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/CMakeLists.txt
+END
+ColorHistogram.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/ColorHistogram.cpp
+END
+AJunction.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/AJunction.cc
+END
+FormCones.cc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormCones.cc
+END
+Ellipse.cc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Ellipse.cc
+END
+Histogram.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Histogram.h
+END
+FormJunctions.cc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormJunctions.cc
+END
+FormLines.hh
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormLines.hh
+END
+Collinearity.hh
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Collinearity.hh
+END
+FormCircles.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormCircles.cc
+END
+FormRectangles.cc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormRectangles.cc
+END
+Circle.hh
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Circle.hh
+END
+Gestalt.hh
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Gestalt.hh
+END
+ConvexArcGroup.hh
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/ConvexArcGroup.hh
+END
+GestaltPrinciple.hh
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/GestaltPrinciple.hh
+END
+FormClosures.cc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormClosures.cc
+END
+rosin_lines.cc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/rosin_lines.cc
+END
+FormArcJunctions.cc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormArcJunctions.cc
+END
+FormArcs.hh
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/FormArcs.hh
+END
+Array.hh
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/v4r/!svn/ver/3726/stable/Segmenter-1.0/v4r/vs3/Array.hh
+END

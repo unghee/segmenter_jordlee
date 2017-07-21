@@ -1,0 +1,34 @@
+SET(V4R_KINECT_INTERFACE 1 CACHE BOOL "Interface for Kinect sensor based on OpenNI driver." )
+IF(V4R_KINECT_INTERFACE)
+cmake_minimum_required (VERSION 2.6)
+
+find_package(OpenCV REQUIRED)
+include_directories(${OpenCV_INCLUDE_DIRS})
+
+find_package(PCL REQUIRED)
+include_directories(${PCL_INCLUDE_DIRS})
+link_directories(${PCL_LIBRARY_DIRS})
+add_definitions(${PCL_DEFINITIONS})
+include_directories(${OPENNI_INCLUDE_DIRS})
+
+PROJECT(v4rKinectInterface)
+
+SET(SOURCE_H
+  Capture.h
+  Device.h
+  Kinect.h
+  KinectData.h
+)
+
+SET(SOURCE_CPP
+  Capture.cpp
+  Device.cpp
+  Kinect.cpp
+  KinectData.cpp
+)
+
+add_library(${PROJECT_NAME} SHARED ${SOURCE_H} ${SOURCE_CPP})
+target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} ${PCL_LIBRARIES} v4rPCLAddOns v4rSurfaceUtils)
+v4r_add_library(${PROJECT_NAME} "${SOURCE_H}")
+
+ENDIF(V4R_KINECT_INTERFACE)

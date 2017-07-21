@@ -1,0 +1,2 @@
+int ErrStatus=0;
+

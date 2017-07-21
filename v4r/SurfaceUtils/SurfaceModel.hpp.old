@@ -1,0 +1,235 @@
+/**
+ *  Copyright (C) 2012  
+ *    Andreas Richtsfeld, Johann Prankl, Thomas Mörwald
+ *    Automation and Control Institute
+ *    Vienna University of Technology
+ *    Gusshausstraße 25-29
+ *    1170 Vienn, Austria
+ *    ari(at)acin.tuwien.ac.at
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see http://www.gnu.org/licenses/
+ */
+
+#ifndef SURFACE_SURFACEMODEL_HPP
+#define SURFACE_SURFACEMODEL_HPP
+
+#ifndef MODEL_NURBS
+#define MODEL_NURBS 20  // Should be higher than pcl::SACMODEL_STICK
+#endif
+
+#include <vector>
+#include <pcl/surface/on_nurbs/sequential_fitter.h>
+#include <opencv2/core/core.hpp>
+
+#include "Relation.h"
+
+#include "v4r/TomGine/tgRenderModel.h"
+
+
+namespace surface
+{
+
+/** Edge **/
+struct Edge {
+// public:
+  unsigned index;
+  bool horizontal;                      ///< edge is horizontal
+  unsigned ids[2];                      ///< surface ids (left/right or top/bottom)
+  
+//   Edge() {
+//     index = -1;
+//   }
+};
+  
+/** Corner **/
+struct Corner {
+// public:
+  unsigned index;                       ///< Index of corner point
+  unsigned ids[4];                      ///< surface ids (clockwise)
+
+//   Corner() {
+//     index = -1;
+//   }
+};
+
+struct EdgeChain {
+// public:
+  unsigned index;                       ///< Index of corner 
+  unsigned indices;                     ///< Indices of edges belonging to the chain
+
+//   EdgeChain() {
+//     index = -1;
+//   }
+};
+
+/** Surface model **/
+class SurfaceModel
+{
+  public:
+    int idx;                            ///< for merging in surface modeling
+    int type;                           ///< type of surface model (plane, NURBS, (same than pcl::SACMODEL))
+    int label;                          ///< object assignment label
+    int level;                          ///< pyramid level for MoSPlanes
+    bool used;                          ///< for surface modeling
+    bool selected;                      ///< for surface modeling
+    double savings;                     ///< for surface modeling
+
+    std::vector<int> indices;           ///< index list for 2D data
+    std::vector<double> error;          ///< error of each point
+    std::vector<double> probs;          ///< probability of each points
+    std::vector<Eigen::Vector3d, Eigen::aligned_allocator<Eigen::Vector3d> > normals;
+    
+    std::vector<float> coeffs;          ///< model coefficiants
+    std::vector<unsigned> neighbors2D;  ///< 2D neighbors of patch (not related to idx => related with view->surfaces[i])
+    std::vector<unsigned> neighbors3D;  ///< 3D neighbors of patch (not related to idx=> related with view->surfaces[i])
+    std::vector<Eigen::Vector2d, Eigen::aligned_allocator<Eigen::Vector2d> > nurbs_params;
+
+    
+    std::vector<int> contour;           ///< ordered boundary contour (only outer boundary without holes !!!)
+//     std::vector<unsigned> corner;       ///< corner ids of the contour
+    std::vector<unsigned> edgeChains;      ///< IDs of edge chains of the contour
+    
+    ON_NurbsSurface nurbs;                      // B-spline surface
+    std::vector<ON_NurbsCurve> curves_image;       // B-spline curves in image space
+    std::vector<ON_NurbsCurve> curves_param;       // B-spline curves in image space
+    TomGine::tgRenderModel mesh;                // mesh model for displaying @ tgTomGineThread
+
+    SurfaceModel(): idx(-1), label(-1), used(false), selected(true) {}
+    SurfaceModel(int _idx) : idx(_idx), label(-1), used(false), selected(true) {}
+
+    void AddTo(SurfaceModel &model)
+    {
+      for (unsigned i=0; i<indices.size(); i++)
+        model.indices.push_back(indices[i]);
+      for (unsigned i=0; i<neighbors3D.size(); i++)
+        model.neighbors3D.push_back(neighbors3D[i]);
+      for (unsigned i=0; i<neighbors2D.size(); i++)
+        model.neighbors2D.push_back(neighbors2D[i]);
+    }
+
+    typedef boost::shared_ptr< ::surface::SurfaceModel> Ptr;
+    typedef boost::shared_ptr< ::surface::SurfaceModel const> ConstPtr;
+
+    void Print() {
+      printf("[SurfaceModel]\n  ");
+      printf("  idx: %d\n  ", idx);
+      printf("  type: %d\n  ", type);
+      printf("  level: %d\n  ", level);
+      printf("  label: %d\n  ", label);
+      printf("  used: %d\n  ", used);
+      printf("  selected: %d\n  ", selected);
+      printf("  savings: %f\n  ", savings);
+      printf("  indices.size: %lu\n  ", indices.size());
+      printf("  errors.size: %lu\n  ", error.size());
+      printf("  probs.size: %lu\n  ", probs.size());
+      printf("  coeffs.size %lu: ", coeffs.size());
+      for(size_t i=0; i<coeffs.size(); i++)
+        printf("%f ", coeffs[i]);
+      printf("\n  ");
+      printf("  contour.size %lu\n  ", contour.size());
+      printf("  neighbors2D [%lu]: ", neighbors2D.size());
+      for(size_t i=0; i<neighbors2D.size(); i++)
+        printf("%d ", neighbors2D[i]);
+      printf("\n  ");
+      printf("  neighbors3D [%lu]: ", neighbors3D.size());
+      for(size_t i=0; i<neighbors3D.size(); i++)
+        printf("%d ", neighbors3D[i]);
+      printf("\n  ");
+      printf("  nurbs: order: %dx%d, control-points: %dx%d\n  ",
+             nurbs.Order(0), nurbs.Order(1), nurbs.CVCount(0), nurbs.CVCount(1));
+      printf("  mesh: faces: %lu, vertices: %lu\n", mesh.m_faces.size(), mesh.m_vertices.size());
+      printf("\n");
+    }
+};
+
+
+/** View **/
+class View{
+public:
+  unsigned width;
+  unsigned height;
+  Eigen::Matrix3d intrinsic;
+  Eigen::Matrix4d extrinsic;
+  std::vector<SurfaceModel::Ptr> surfaces;              ///< Surface models
+  std::vector<Relation> relations;                      ///< PG relation vectors between surface patches
+  std::vector< std::vector<unsigned> > graphCutGroups;  ///< Object model groups
+  
+  std::vector<Edge> edges;                              ///< List of edges
+  std::vector<Corner> corners;                          ///< List of corners
+  std::vector<EdgeChain> edgeChains;                     ///< Edge chain between corners
+
+  void Print() {
+    for(size_t i=0; i<relations.size(); i++)
+      printf("Relation [%u, %u] %4.3f\n", relations[i].id_0, relations[i].id_1, relations[i].prediction);
+    for(size_t i=0; i<surfaces.size(); i++) {
+      printf("%lu ", i);
+      surfaces[i]->Print();
+    }
+  }
+};
+
+class Scene{
+  // todo timestamp
+  std::vector<View> views;
+};
+
+
+/* --------------------------- inline --------------------------- */
+
+/** create a deep copy of surface pointers **/
+inline std::vector<surface::SurfaceModel::Ptr>
+deepCopy(const std::vector<surface::SurfaceModel::Ptr> &_surfaces) {
+  std::vector<surface::SurfaceModel::Ptr> surfaces;
+  for(unsigned i=0; i<_surfaces.size(); i++) {
+    surface::SurfaceModel::Ptr c_surface;
+    c_surface.reset(new surface::SurfaceModel());
+    (*c_surface) = *_surfaces[i];
+    surfaces.push_back(c_surface);
+  }
+  return surfaces;
+}
+
+/** create a deep copy of surface pointers **/
+inline std::vector<surface::SurfaceModel::Ptr>
+deepCopyType(const std::vector<surface::SurfaceModel::Ptr> &_surfaces, int type) {
+  std::vector<surface::SurfaceModel::Ptr> surfaces;
+  for(unsigned i=0; i<_surfaces.size(); i++) {
+    if(_surfaces[i]->type == type) {
+      surface::SurfaceModel::Ptr c_surface;
+      c_surface.reset(new surface::SurfaceModel());
+      (*c_surface) = *_surfaces[i];
+      surfaces.push_back(c_surface);
+    }
+  }
+  return surfaces;
+}
+
+inline unsigned 
+isCornerPoint(surface::View &_view, unsigned _index) {
+  for(unsigned i=0; i<_view.corners.size(); i++) {
+    if(_index == _view.corners[i].index)
+      return i;
+    else if(_index == _view.corners[i].index + 1)
+      return i;
+    else if(_index == _view.corners[i].index + _view.width)
+      return i;
+    else if(_index == _view.corners[i].index + _view.width + 1)
+      return i;
+  }
+}
+
+}
+
+#endif
+
