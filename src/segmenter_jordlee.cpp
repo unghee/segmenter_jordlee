@@ -145,7 +145,7 @@ Segmenter::processPointCloudV(pcl::PointCloud<pcl::PointXYZRGB>::Ptr &pcl_cloud)
                                                         relation_vector[i].rel_value,
                                                         relation_vector[i].rel_probability);
   }
-
+//githubtest
   graphCutGroups.clear();
   graphCut->init(surfaces.size(), relation_vector);
   graphCut->process();
