@@ -48,8 +48,27 @@
 #include "v4r/ObjectModeling/ContourRefinement.h"
 #include "v4r/ObjectModeling/CreateMeshModel.hh"
 
+//PCL
 #include <pcl/io/pcd_io.h>
 #include <pcl/visualization/pcl_visualizer.h>
+
+//ROS
+#include <pcl_ros/point_cloud.h>
+#include <pcl_ros/transforms.h>
+#include <rail_manipulation_msgs/SegmentedObjectList.h>
+#include <rail_segmentation/RemoveObject.h>
+#include <ros/package.h>
+#include <ros/ros.h>
+#include <sensor_msgs/Image.h>
+#include <sensor_msgs/image_encodings.h>
+#include <sensor_msgs/PointCloud2.h>
+#include <sensor_msgs/point_cloud_conversion.h>
+#include <std_srvs/Empty.h>
+#include <tf/transform_listener.h>
+#include <tf2/LinearMath/Matrix3x3.h>
+#include <tf2_ros/transform_listener.h>
+#include <visualization_msgs/Marker.h>
+#include <visualization_msgs/MarkerArray.h>
 
 namespace segment
 {
@@ -89,6 +108,11 @@ private:
   surface::SaveFileSequence *resultSaver;                 ///< Save segmented object models to sfv file
 
 
+//  boost::mutex pc_mutex_;                                 ///< Mutex for locking on the point cloud and messages
+//  ros::NodeHandle node_;                                  ///< ROS Node handles
+//  ros::Subscriber sub;                                    ///< ROS subscirber
+  /*! Latest point cloud. */
+  pcl::PointCloud<pcl::PointXYZRGB>::ConstPtr pc_;
 public:
 
 private:
@@ -117,12 +141,6 @@ public:
     processPointCloudV(pcl::PointCloud<pcl::PointXYZRGB>::Ptr &pcl_cloud);
 
   /** Run the segmenter **/
-  /*void run(std::string _rgbd_filename,
-           std::string _kinect_config,
-           std::string _model_path,
-           int _startIdx, int _endIdx, 
-           bool _live, bool _useAssemblyLevel); 
-   */
   void run(std::string _rgbd_filename,
       std::string _model_path,
       int _startIdx, int _endIdx);
@@ -130,6 +148,11 @@ public:
 //    boost::shared_ptr<pcl::visualization::PCLVisualizer> rgbVis(pcl::PointCloud<pcl::PointXYZRGB>::ConstPtr cloud);
     boost::shared_ptr<pcl::visualization::PCLVisualizer>
     rgbVis(std::vector<pcl::PointCloud<pcl::PointXYZRGB>::ConstPtr> cloud,  std::vector<pcl::PointIndices> label);
+
+
+
+  /** Ros related **/
+ //   void pointCloudCallback(const sensor_msgs::PointCloud2ConstPtr& input);
 };
 
 }

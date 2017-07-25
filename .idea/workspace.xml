@@ -12,38 +12,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e65eac6e-f254-425d-87fb-e472e531f23b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/rctoris.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/screenshot-1500507843.cam" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/screenshot-1500507843.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/segmenter_jordlee1.cpp" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/segmenter_jordlee" afterPath="$PROJECT_DIR$/build/segmenter_jordlee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeCache.txt" afterPath="$PROJECT_DIR$/build/CMakeCache.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="$PROJECT_DIR$/build/CMakeFiles/CMakeDirectoryInformation.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/CMakeOutput.log" afterPath="$PROJECT_DIR$/build/CMakeFiles/CMakeOutput.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/Makefile.cmake" afterPath="$PROJECT_DIR$/build/CMakeFiles/Makefile.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/Makefile2" afterPath="$PROJECT_DIR$/build/CMakeFiles/Makefile2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/TargetDirectories.txt" afterPath="$PROJECT_DIR$/build/CMakeFiles/TargetDirectories.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/segmenter_jordlee.dir/CXX.includecache" afterPath="$PROJECT_DIR$/build/CMakeFiles/segmenter_jordlee.dir/CXX.includecache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/segmenter_jordlee.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/build/CMakeFiles/segmenter_jordlee.dir/DependInfo.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/segmenter_jordlee.dir/build.make" afterPath="$PROJECT_DIR$/build/CMakeFiles/segmenter_jordlee.dir/build.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/segmenter_jordlee.dir/depend.internal" afterPath="$PROJECT_DIR$/build/CMakeFiles/segmenter_jordlee.dir/depend.internal" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/segmenter_jordlee.dir/flags.make" afterPath="$PROJECT_DIR$/build/CMakeFiles/segmenter_jordlee.dir/flags.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.o" afterPath="$PROJECT_DIR$/build/CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/Makefile" afterPath="$PROJECT_DIR$/build/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/cmake_install.cmake" afterPath="$PROJECT_DIR$/build/cmake_install.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/segmenter_jordlee.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/segmenter_jordlee.dir/DependInfo.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/segmenter_jordlee.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/segmenter_jordlee.dir/build.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/segmenter_jordlee.dir/flags.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/segmenter_jordlee.dir/flags.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/segmenter_jordlee.cbp" afterPath="$PROJECT_DIR$/cmake-build-debug/segmenter_jordlee.cbp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/Segmenter1.h" afterPath="$PROJECT_DIR$/include/Segmenter1.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/segmenter_jordlee.cpp" afterPath="$PROJECT_DIR$/src/segmenter_jordlee.cpp" />
     </list>
@@ -61,20 +32,8 @@
       <file leaf-file-name="segmenter_jordlee.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/segmenter_jordlee.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="230" column="19" lean-forward="true" selection-start-line="230" selection-start-column="19" selection-end-line="230" selection-end-column="19" />
-              <folding>
-                <element signature="e#61#84#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pcl_visualizer.hpp" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/include/pcl-1.7/pcl/visualization/impl/pcl_visualizer.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="121" column="35" lean-forward="false" selection-start-line="121" selection-start-column="35" selection-end-line="121" selection-end-column="35" />
+            <state relative-caret-position="509">
+              <caret line="316" column="63" lean-forward="true" selection-start-line="316" selection-start-column="63" selection-end-line="316" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -83,14 +42,22 @@
       <file leaf-file-name="Segmenter1.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/Segmenter1.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="103" column="2" lean-forward="false" selection-start-line="103" selection-start-column="2" selection-end-line="103" selection-end-column="2" />
-              <folding />
+            <state relative-caret-position="997">
+              <caret line="154" column="3" lean-forward="false" selection-start-line="154" selection-start-column="3" selection-end-line="154" selection-end-column="3" />
+              <folding>
+                <element signature="e#1085#1103#0" expanded="true" />
+                <element signature="e#1658#1684#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>pcl_cloud</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -170,7 +137,7 @@
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="javascript.nodejs.core.library.configured.version" value="5.8.0" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/catkin_ws/src/rail_segmentation" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -383,15 +350,15 @@
       <option name="presentableId" value="Default" />
       <updated>1500654726674</updated>
       <workItem from="1500654729767" duration="2000" />
-      <workItem from="1500654754095" duration="12057000" />
+      <workItem from="1500654754095" duration="26865000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12059000" />
+    <option name="totallyTimeSpent" value="26867000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <frame x="65" y="-4" width="1855" height="1084" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25234678" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -421,7 +388,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -443,19 +412,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/include/Segmenter1.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="103" column="2" lean-forward="false" selection-start-line="103" selection-start-column="2" selection-end-line="103" selection-end-column="2" />
-          <folding />
+        <state relative-caret-position="997">
+          <caret line="154" column="3" lean-forward="false" selection-start-line="154" selection-start-column="3" selection-end-line="154" selection-end-column="3" />
+          <folding>
+            <element signature="e#1085#1103#0" expanded="true" />
+            <element signature="e#1658#1684#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/segmenter_jordlee.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="230" column="19" lean-forward="true" selection-start-line="230" selection-start-column="19" selection-end-line="230" selection-end-column="19" />
-          <folding>
-            <element signature="e#61#84#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="509">
+          <caret line="316" column="63" lean-forward="true" selection-start-line="316" selection-start-column="63" selection-end-line="316" selection-end-column="63" />
+          <folding />
         </state>
       </provider>
     </entry>

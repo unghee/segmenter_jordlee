@@ -4,7 +4,7 @@
 //#include <pcl/point_types.h>
 
 #include "Segmenter1.h"
-#include <pcl/segmentation/region_growing.h>
+//#include <pcl/segmentation/region_growing.h>
 
 /* --------------- Segmenter --------------- */
 
@@ -38,6 +38,10 @@ Segmenter::~Segmenter()
 
 void Segmenter::init()
 {
+
+
+
+  // Mdoel
 
   bool load_models = false;   // load models from file
   bool data_depth = false;    // load depth data instead of pcd data
@@ -98,6 +102,11 @@ void Segmenter::init()
   resultSaver->InitFileSequence("result_%1d.sfv", 0, 1000);
 
 }
+
+
+
+
+
 std::vector<pcl::PointIndices>
 Segmenter::processPointCloudV(pcl::PointCloud<pcl::PointXYZRGB>::Ptr &pcl_cloud)
 {
@@ -176,17 +185,17 @@ Segmenter::processPointCloudV(pcl::PointCloud<pcl::PointXYZRGB>::Ptr &pcl_cloud)
 
     printf("init.\n");
   init();
-  pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_input (new pcl::PointCloud<pcl::PointXYZRGB>);
-  pcl::io::loadPCDFile (rgbd_filename, *cloud_input);
+
+
+   pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_input (new pcl::PointCloud<pcl::PointXYZRGB>);
+ // pcl::io::loadPCDFile (rgbd_filename, *cloud_input);
+    pcl::copyPointCloud(*pc_, *cloud_input);
 
     std::vector<pcl::PointIndices> label_indices;
   //  pcl::copyPointCloud(*(processPointCloudV(cloud_input)), *cloud_output);
 
-
-
     label_indices = processPointCloudV(cloud_input);
 
-//    std::vector<pcl::PointCloud<pcl::PointXYZRGB>::Ptr> cloud_output(label_indices.size())  ;
     std::vector<pcl::PointCloud<pcl::PointXYZRGB>::ConstPtr> cloud_output;
     std::cout<<"before"<<std::endl;
     for(int i =0;i<label_indices.size();i++)
@@ -195,7 +204,7 @@ Segmenter::processPointCloudV(pcl::PointCloud<pcl::PointXYZRGB>::Ptr &pcl_cloud)
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_temp(new pcl::PointCloud<pcl::PointXYZRGB>);
     pcl::copyPointCloud(*cloud_input, label_indices[i], *(cloud_temp));
     cloud_output.push_back(cloud_temp);
- //   pcl::copyPointCloud(*cloud_input, label_indices[1], *(cloud_output[1]));
+
     }
     std::cout<<"after"<<std::endl;
 
@@ -218,64 +227,27 @@ Segmenter::processPointCloudV(pcl::PointCloud<pcl::PointXYZRGB>::Ptr &pcl_cloud)
     boost::shared_ptr<pcl::visualization::PCLVisualizer> viewer (new pcl::visualization::PCLVisualizer ("3D Viewer"));
 
     std::vector<string> idname;
-    std::cout<<"beforereserve"<<endl;
     idname.reserve(label.size());
-    std::cout<<"afterreserve"<<endl;
     viewer->setBackgroundColor (0, 0, 0);
-
-    char *intitializevar;
-    *intitializevar='t';
 
     for(int i=0;i<label.size();i++)
     {
-//      char c = i;
-     // char c =static_cast<char>(i);/
-      int *inte=new int;
-      char c[10];
-      *inte=i;
 
-
-      sprintf(c,"%d",i);
-
-     std::cout<<*inte<<endl;
-      std::cout<<*c<<endl;
-      string s;
-
-//      string s = boost::lexical_cast<string>(i);
-      s.push_back(c[10]);
- //     std::cout<<c<<endl;
+      string s = boost::lexical_cast<string>(i);
       idname.push_back(s);
-      std::cout<<"beforevisualize"<<endl;
       pcl::visualization::PointCloudColorHandlerRandom<pcl::PointXYZRGB> rgb(cloud[i]);
-      std::cout<<"afterrandomcolor"<<std::endl;
-      std::cout<<idname[i]<<endl;
       viewer->addPointCloud<pcl::PointXYZRGB> (cloud[i], rgb, idname[i]);
 
- //    c = intitializevar;
-  //    std::cout<<*c<<endl;
-      delete c;
-   //   delete inte;
-
     }
-
     viewer->initCameraParameters ();
 
     while (!viewer->wasStopped ())
     {
       viewer->spinOnce (100);
-
-
-   //   pcl::visualization::PointCloudColorHandlerRandom <pcl::PointXYZRGB> rgb(cloud_output[0]);
-
-   //   viewer->addPointCloud<pcl::PointXYZRGB> (cloud_output[0],rgb);
-
       boost::this_thread::sleep (boost::posix_time::microseconds (100000));
     }
-
     return (viewer);
   }
-
-
 
 
 }
@@ -292,6 +264,17 @@ void printUsage(char *av)
                "   [-as usage] ... use assembly level: 0/1\n", av);
     std::cout << " Example: " << av << " -f /media/Daten/OSD-0.2/pcd/test%1d.pcd -m model/ -idx 0 10" << std::endl;
 }
+
+void pointCloudCallback(const sensor_msgs::PointCloud2ConstPtr& input)
+{
+  pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZRGB>);
+  pcl::fromROSMsg(*input, *cloud);
+//  pc_=cloud;
+  segment::Segmenter seg;
+  seg.processPointCloudV(cloud);
+
+}
+
 
 
 int main(int argc, char *argv[])
@@ -324,9 +307,22 @@ int main(int argc, char *argv[])
 
   }
 
+  //Receiving pointclouds
+  string point_cloud_topic("/camera/depth_registered/points");
+
+  ros::init(argc, argv, "segmenter");
+  ros::NodeHandle nh;
+  ros::Subscriber sub;
+
+  sub = nh.subscribe(point_cloud_topic, 1, pointCloudCallback);
+
+  ros::spin();
+
   segment::Segmenter seg;
   //seg.setMinMaxDepth(0.0, 1.5);
-  seg.run(rgbd_filename, model_path, startIdx, endIdx);
+//  seg.run(rgbd_filename, model_path, startIdx, endIdx);
+  seg.run(segment::Segmenter::pc_, model_path, startIdx, endIdx);
+
 
 
 
