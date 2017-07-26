@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: segmenter_jordlee
+Description: Description of segmenter_jordlee
+Version: 1.1.0
+Cflags: -I/usr/local/include -I/usr/include/eigen3
+Libs: -L/usr/local/lib -l:/usr/lib/liblapack.so -l:/usr/lib/libf77blas.so -l:/usr/lib/libatlas.so
+Requires: eigen_conversions geometry_msgs message_runtime roscpp pcl_ros pcl_conversions std_msgs tf tf_conversions visualization_msgs

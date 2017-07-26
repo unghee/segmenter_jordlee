@@ -55,8 +55,6 @@
 //ROS
 #include <pcl_ros/point_cloud.h>
 #include <pcl_ros/transforms.h>
-#include <rail_manipulation_msgs/SegmentedObjectList.h>
-#include <rail_segmentation/RemoveObject.h>
 #include <ros/package.h>
 #include <ros/ros.h>
 #include <sensor_msgs/Image.h>
@@ -141,9 +139,8 @@ public:
     processPointCloudV(pcl::PointCloud<pcl::PointXYZRGB>::Ptr &pcl_cloud);
 
   /** Run the segmenter **/
-  void run(std::string _rgbd_filename,
-      std::string _model_path,
-      int _startIdx, int _endIdx);
+//  void run(std::string _rgbd_filename, std::string _model_path, int _startIdx, int _endIdx);
+    void run(std::string _model_path);
 
 //    boost::shared_ptr<pcl::visualization::PCLVisualizer> rgbVis(pcl::PointCloud<pcl::PointXYZRGB>::ConstPtr cloud);
     boost::shared_ptr<pcl::visualization::PCLVisualizer>
@@ -152,7 +149,7 @@ public:
 
 
   /** Ros related **/
- //   void pointCloudCallback(const sensor_msgs::PointCloud2ConstPtr& input);
+    void pointCloudCallback(const sensor_msgs::PointCloud2ConstPtr& input);
 };
 
 }

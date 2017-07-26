@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/fetch/catkin_ws/src/segmenter_jordlee/cmake-build-debug/devel/setup.sh

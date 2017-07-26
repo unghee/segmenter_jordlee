@@ -38,10 +38,10 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/fetch/Documents/segmenter
+CMAKE_SOURCE_DIR = /home/fetch/catkin_ws/src/segmenter_jordlee
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/fetch/Documents/segmenter/cmake-build-debug
+CMAKE_BINARY_DIR = /home/fetch/catkin_ws/src/segmenter_jordlee/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/segmenter_jordlee.dir/depend.make
@@ -54,17 +54,17 @@ include CMakeFiles/segmenter_jordlee.dir/flags.make
 
 CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.o: CMakeFiles/segmenter_jordlee.dir/flags.make
 CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.o: ../src/segmenter_jordlee.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fetch/Documents/segmenter/cmake-build-debug/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fetch/catkin_ws/src/segmenter_jordlee/cmake-build-debug/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.o -c /home/fetch/Documents/segmenter/src/segmenter_jordlee.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.o -c /home/fetch/catkin_ws/src/segmenter_jordlee/src/segmenter_jordlee.cpp
 
 CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fetch/Documents/segmenter/src/segmenter_jordlee.cpp > CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fetch/catkin_ws/src/segmenter_jordlee/src/segmenter_jordlee.cpp > CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.i
 
 CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fetch/Documents/segmenter/src/segmenter_jordlee.cpp -o CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fetch/catkin_ws/src/segmenter_jordlee/src/segmenter_jordlee.cpp -o CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.s
 
 CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.o.requires:
 .PHONY : CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.o.requires
@@ -82,115 +82,229 @@ segmenter_jordlee_OBJECTS = \
 # External object files for target segmenter_jordlee
 segmenter_jordlee_EXTERNAL_OBJECTS =
 
-segmenter_jordlee: CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.o
-segmenter_jordlee: CMakeFiles/segmenter_jordlee.dir/build.make
-segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_system.so
-segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_iostreams.so
-segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_serialization.so
-segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libpthread.so
-segmenter_jordlee: /usr/local/lib/libpcl_common.so
-segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libflann_cpp_s.a
-segmenter_jordlee: /usr/local/lib/libpcl_kdtree.so
-segmenter_jordlee: /usr/local/lib/libpcl_octree.so
-segmenter_jordlee: /usr/lib/libOpenNI.so
-segmenter_jordlee: /usr/lib/libOpenNI2.so
-segmenter_jordlee: /usr/lib/libvtkCommon.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkFiltering.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkImaging.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkGraphics.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkGenericFiltering.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkIO.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkRendering.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkVolumeRendering.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkHybrid.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkWidgets.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkParallel.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkInfovis.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkGeovis.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkViews.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkCharts.so.5.8.0
-segmenter_jordlee: /usr/local/lib/libpcl_io.so
-segmenter_jordlee: /usr/local/lib/libpcl_search.so
-segmenter_jordlee: /usr/local/lib/libpcl_sample_consensus.so
-segmenter_jordlee: /usr/local/lib/libpcl_filters.so
-segmenter_jordlee: /usr/local/lib/libpcl_features.so
-segmenter_jordlee: /usr/local/lib/libpcl_keypoints.so
-segmenter_jordlee: /usr/local/lib/libpcl_segmentation.so
-segmenter_jordlee: /usr/local/lib/libpcl_visualization.so
-segmenter_jordlee: /usr/local/lib/libpcl_outofcore.so
-segmenter_jordlee: /usr/local/lib/libpcl_registration.so
-segmenter_jordlee: /usr/local/lib/libpcl_recognition.so
-segmenter_jordlee: /usr/local/lib/libpcl_tracking.so
-segmenter_jordlee: /usr/local/lib/libpcl_people.so
-segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libqhull.so
-segmenter_jordlee: /usr/local/lib/libpcl_surface.so
-segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_system.so
-segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_iostreams.so
-segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_serialization.so
-segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libpthread.so
-segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libqhull.so
-segmenter_jordlee: /usr/lib/libOpenNI.so
-segmenter_jordlee: /usr/lib/libOpenNI2.so
-segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libflann_cpp_s.a
-segmenter_jordlee: /usr/lib/libvtkCommon.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkFiltering.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkImaging.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkGraphics.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkGenericFiltering.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkIO.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkRendering.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkVolumeRendering.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkHybrid.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkWidgets.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkParallel.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkInfovis.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkGeovis.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkViews.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkCharts.so.5.8.0
-segmenter_jordlee: /usr/local/lib/libpcl_common.so
-segmenter_jordlee: /usr/local/lib/libpcl_kdtree.so
-segmenter_jordlee: /usr/local/lib/libpcl_octree.so
-segmenter_jordlee: /usr/local/lib/libpcl_io.so
-segmenter_jordlee: /usr/local/lib/libpcl_search.so
-segmenter_jordlee: /usr/local/lib/libpcl_sample_consensus.so
-segmenter_jordlee: /usr/local/lib/libpcl_filters.so
-segmenter_jordlee: /usr/local/lib/libpcl_features.so
-segmenter_jordlee: /usr/local/lib/libpcl_keypoints.so
-segmenter_jordlee: /usr/local/lib/libpcl_segmentation.so
-segmenter_jordlee: /usr/local/lib/libpcl_visualization.so
-segmenter_jordlee: /usr/local/lib/libpcl_outofcore.so
-segmenter_jordlee: /usr/local/lib/libpcl_registration.so
-segmenter_jordlee: /usr/local/lib/libpcl_recognition.so
-segmenter_jordlee: /usr/local/lib/libpcl_tracking.so
-segmenter_jordlee: /usr/local/lib/libpcl_people.so
-segmenter_jordlee: /usr/local/lib/libpcl_surface.so
-segmenter_jordlee: /usr/lib/libvtkViews.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkInfovis.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkWidgets.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkVolumeRendering.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkHybrid.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkParallel.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkRendering.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkImaging.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkGraphics.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkIO.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkFiltering.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtkCommon.so.5.8.0
-segmenter_jordlee: /usr/lib/libvtksys.so.5.8.0
-segmenter_jordlee: CMakeFiles/segmenter_jordlee.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable segmenter_jordlee"
+devel/lib/segmenter_jordlee/segmenter_jordlee: CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.o
+devel/lib/segmenter_jordlee/segmenter_jordlee: CMakeFiles/segmenter_jordlee.dir/build.make
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libeigen_conversions.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libpcl_ros_filters.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libpcl_ros_io.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libpcl_ros_tf.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libpcl_common.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libpcl_octree.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libpcl_io.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libpcl_kdtree.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libpcl_search.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libpcl_sample_consensus.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libpcl_filters.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libpcl_features.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libpcl_keypoints.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libpcl_segmentation.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libpcl_visualization.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libpcl_outofcore.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libpcl_registration.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libpcl_recognition.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libpcl_surface.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libpcl_people.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libpcl_tracking.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libpcl_apps.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_iostreams.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_serialization.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libqhull.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libOpenNI.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libflann_cpp_s.a
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkCommon.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkRendering.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkHybrid.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkCharts.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libdynamic_reconfigure_config_init_mutex.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libnodeletlib.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libbondcpp.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libuuid.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libclass_loader.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libPocoFoundation.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libdl.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libroslib.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/librospack.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libpython2.7.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libtinyxml.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/librosbag.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/librosbag_storage.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libroslz4.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/liblz4.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libtopic_tools.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libtf_conversions.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libkdl_conversions.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/liborocos-kdl.so.1.3.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libtf.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libtf2_ros.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libactionlib.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libmessage_filters.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libroscpp.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libxmlrpcpp.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libtf2.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/librosconsole.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/librosconsole_log4cxx.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/librosconsole_backend_interface.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/liblog4cxx.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libroscpp_serialization.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/librostime.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libcpp_common.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_system.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libpthread.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_system.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_iostreams.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_serialization.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libpthread.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_common.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libflann_cpp_s.a
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_kdtree.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_octree.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libOpenNI.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libOpenNI2.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkCommon.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkFiltering.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkImaging.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkGraphics.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkGenericFiltering.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkIO.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkRendering.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkVolumeRendering.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkHybrid.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkWidgets.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkParallel.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkInfovis.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkGeovis.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkViews.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkCharts.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_io.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_search.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_sample_consensus.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_filters.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_features.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_keypoints.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_segmentation.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_visualization.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_outofcore.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_registration.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_recognition.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_tracking.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_people.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libqhull.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_surface.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_system.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_iostreams.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_serialization.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libpthread.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libqhull.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libOpenNI.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libOpenNI2.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libflann_cpp_s.a
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkCommon.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkFiltering.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkImaging.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkGraphics.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkGenericFiltering.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkIO.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkRendering.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkVolumeRendering.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkHybrid.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkWidgets.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkParallel.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkInfovis.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkGeovis.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkViews.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkCharts.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkCommon.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkRendering.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkHybrid.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkCharts.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libdynamic_reconfigure_config_init_mutex.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libnodeletlib.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libbondcpp.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libuuid.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libclass_loader.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libPocoFoundation.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libdl.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libroslib.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/librospack.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libpython2.7.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libtinyxml.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/librosbag.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/librosbag_storage.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libroslz4.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/liblz4.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libtopic_tools.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libtf_conversions.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libkdl_conversions.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/liborocos-kdl.so.1.3.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libtf.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libtf2_ros.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libactionlib.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libmessage_filters.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libroscpp.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libxmlrpcpp.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libtf2.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/librosconsole.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/librosconsole_log4cxx.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/librosconsole_backend_interface.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/liblog4cxx.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libroscpp_serialization.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/librostime.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /opt/ros/indigo/lib/libcpp_common.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_common.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_kdtree.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_octree.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_io.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_search.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_sample_consensus.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_filters.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_features.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_keypoints.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_segmentation.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_visualization.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_outofcore.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_registration.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_recognition.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_tracking.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_people.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/local/lib/libpcl_surface.so
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkViews.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkInfovis.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkWidgets.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkVolumeRendering.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkHybrid.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkParallel.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkRendering.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkImaging.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkGraphics.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkIO.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkFiltering.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtkCommon.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: /usr/lib/libvtksys.so.5.8.0
+devel/lib/segmenter_jordlee/segmenter_jordlee: CMakeFiles/segmenter_jordlee.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable devel/lib/segmenter_jordlee/segmenter_jordlee"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/segmenter_jordlee.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/segmenter_jordlee.dir/build: segmenter_jordlee
+CMakeFiles/segmenter_jordlee.dir/build: devel/lib/segmenter_jordlee/segmenter_jordlee
 .PHONY : CMakeFiles/segmenter_jordlee.dir/build
 
 CMakeFiles/segmenter_jordlee.dir/requires: CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.o.requires
@@ -201,6 +315,6 @@ CMakeFiles/segmenter_jordlee.dir/clean:
 .PHONY : CMakeFiles/segmenter_jordlee.dir/clean
 
 CMakeFiles/segmenter_jordlee.dir/depend:
-	cd /home/fetch/Documents/segmenter/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fetch/Documents/segmenter /home/fetch/Documents/segmenter /home/fetch/Documents/segmenter/cmake-build-debug /home/fetch/Documents/segmenter/cmake-build-debug /home/fetch/Documents/segmenter/cmake-build-debug/CMakeFiles/segmenter_jordlee.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/fetch/catkin_ws/src/segmenter_jordlee/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fetch/catkin_ws/src/segmenter_jordlee /home/fetch/catkin_ws/src/segmenter_jordlee /home/fetch/catkin_ws/src/segmenter_jordlee/cmake-build-debug /home/fetch/catkin_ws/src/segmenter_jordlee/cmake-build-debug /home/fetch/catkin_ws/src/segmenter_jordlee/cmake-build-debug/CMakeFiles/segmenter_jordlee.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/segmenter_jordlee.dir/depend
 

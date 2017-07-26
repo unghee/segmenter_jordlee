@@ -39,10 +39,6 @@ Segmenter::~Segmenter()
 void Segmenter::init()
 {
 
-
-
-  // Mdoel
-
   bool load_models = false;   // load models from file
   bool data_depth = false;    // load depth data instead of pcd data
   std::string sfv_filename = "test_model%1d.sfv";
@@ -103,8 +99,13 @@ void Segmenter::init()
 
 }
 
+void Segmenter::pointCloudCallback(const sensor_msgs::PointCloud2ConstPtr& input)
+{
+  pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZRGB>);
+  pcl::fromROSMsg(*input, *cloud);
+  pc_=cloud;
 
-
+}
 
 
 std::vector<pcl::PointIndices>
@@ -171,26 +172,72 @@ Segmenter::processPointCloudV(pcl::PointCloud<pcl::PointXYZRGB>::Ptr &pcl_cloud)
 }
 
 
-  void Segmenter::run(std::string _rgbd_filename,
-    std::string _model_path,
-    int _startIdx, int _endIdx)
+//  void Segmenter::run(std::string _rgbd_filename,std::string _model_path, int _startIdx, int _endIdx)
+  void Segmenter::run(std::string _model_path)
   {
   bool processed = false;
   database_path = "";
   model_path = _model_path;
-  rgbd_filename = _rgbd_filename;
+ // rgbd_filename = _rgbd_filename;
 
-  startIdx = _startIdx;
-  endIdx = _endIdx;
+
 
     printf("init.\n");
   init();
 
+    //point from pointcloud
+    //make error message
+    string point_cloud_topic("/head_camera/depth_registered/points");
 
-   pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_input (new pcl::PointCloud<pcl::PointXYZRGB>);
- // pcl::io::loadPCDFile (rgbd_filename, *cloud_input);
+
+    ros::NodeHandle nh;
+    ros::Subscriber sub;
+
+    std::cout<< "subscribing pointcloud "<< std::endl;
+    sub = nh.subscribe(point_cloud_topic, 1, &segment::Segmenter::pointCloudCallback,this);
+    ros::spin();
+
+
+    std::cout<<" processing pointcloud" << std::endl;
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_input (new pcl::PointCloud<pcl::PointXYZRGB>);
+    // ######################## Setup TomGine ########################
+    int width = 640;
+    int height = 480;
+    surface::View view;
+
+    TomGine::tgTomGineThread dbgWin(width, height, "TomGine Render Engine");
+    cv::Mat R = (cv::Mat_<double>(3, 3) << 1, 0, 0, 0, 1, 0, 0, 0, 1);
+    cv::Mat t = (cv::Mat_<double>(3, 1) << 0, 0, 0);
+    cv::Vec3d rotCenter(0, 0, 1.0);
+
+    cv::Mat intrinsic;
+    intrinsic = cv::Mat::zeros(3, 3, CV_64F);
+    view.intrinsic = Eigen::Matrix3d::Zero();
+    intrinsic.at<double> (0, 0) = intrinsic.at<double> (1, 1) = view.intrinsic(0, 0) = view.intrinsic(1, 1) = 525;
+    intrinsic.at<double> (0, 2) = view.intrinsic(0, 2) = 320;
+    intrinsic.at<double> (1, 2) = view.intrinsic(1, 2) = 240;
+    intrinsic.at<double> (2, 2) = view.intrinsic(2, 2) = 1.;
+
+    dbgWin.SetClearColor(0.5, 0.5, 0.5);
+    dbgWin.SetCoordinateFrame();
+    dbgWin.SetCamera(intrinsic);
+    dbgWin.SetCamera(R, t);
+    dbgWin.SetRotationCenter(rotCenter);
+    dbgWin.Update();
+    cv::Mat_<cv::Vec3b> kImage = cv::Mat_<cv::Vec3b>::zeros(480, 640);
+ //   cv::Mat_<cv::Vec3b> image;
+
+ //   cv::namedWindow( "Debug image",cv::WINDOW_AUTOSIZE);
+
+
+    //loading pointcloud from pcd
+   // pcl::io::loadPCDFile (rgbd_filename, *cloud_input);
     pcl::copyPointCloud(*pc_, *cloud_input);
-
+    pclA::ConvertPCLCloud2Image(cloud_input, kImage);
+    cv::imshow("Debug image", kImage);
+    dbgWin.SetImage(kImage);
+    dbgWin.Update();
+    pcl::io::savePCDFileASCII("/home/fetch/catkin_ws/src/segmenter_jordlee/testsegment.pcd",*cloud_input);
     std::vector<pcl::PointIndices> label_indices;
   //  pcl::copyPointCloud(*(processPointCloudV(cloud_input)), *cloud_output);
 
@@ -265,25 +312,15 @@ void printUsage(char *av)
     std::cout << " Example: " << av << " -f /media/Daten/OSD-0.2/pcd/test%1d.pcd -m model/ -idx 0 10" << std::endl;
 }
 
-void pointCloudCallback(const sensor_msgs::PointCloud2ConstPtr& input)
-{
-  pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZRGB>);
-  pcl::fromROSMsg(*input, *cloud);
-//  pc_=cloud;
-  segment::Segmenter seg;
-  seg.processPointCloudV(cloud);
 
-}
-
-
-
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
 
   std::string rgbd_filename = "points2/test%1d.pcd";
-  std::string model_path = "model/";
-  int startIdx = 51;
-  int endIdx = 51;
+ // std::string model_path = "model/";
+  std::string model_path = "/home/fetch/catkin_ws/src/segmenter_jordlee/model/";
+
+  /*
   for(int i=1; i<argc; i++) {
     if(strcmp (argv[i], "-h") == 0) {
       printUsage(argv[0]);
@@ -295,36 +332,24 @@ int main(int argc, char *argv[])
       if(strcmp (argv[i], "-m") == 0)
         model_path = argv[i+1];
 
-      if(strcmp (argv[i], "-idx") == 0) {
-        startIdx = atoi(argv[i+1]);
-        if(i+2 < argc)
-          endIdx = atoi(argv[i+2]);
       }
 
-    }
+
     else
       printUsage(argv[0]);
 
   }
-
+*/
   //Receiving pointclouds
-  string point_cloud_topic("/camera/depth_registered/points");
 
   ros::init(argc, argv, "segmenter");
-  ros::NodeHandle nh;
-  ros::Subscriber sub;
-
-  sub = nh.subscribe(point_cloud_topic, 1, pointCloudCallback);
-
-  ros::spin();
-
   segment::Segmenter seg;
   //seg.setMinMaxDepth(0.0, 1.5);
 //  seg.run(rgbd_filename, model_path, startIdx, endIdx);
-  seg.run(segment::Segmenter::pc_, model_path, startIdx, endIdx);
+  seg.run(model_path);
 
 
-
+  //ros::spin();
 
 
 }

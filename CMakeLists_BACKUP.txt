@@ -1,0 +1,57 @@
+cmake_minimum_required(VERSION 2.8.3)
+
+project(segmenter_jordlee)
+
+
+#include pcl
+find_package(
+  catkin REQUIRED COMPONENTS 
+#  eigen_conversions 
+  geometry_msgs 
+  message_generation   
+  roscpp 
+  pcl_ros
+  pcl_conversions
+  std_msgs 
+  tf
+  tf_conversions
+  visualization_msgs
+  cmake_modules
+#  Eigen REQUIRED
+PCL 1.7 REQUIRED)
+## Declare a catkin package
+catkin_package(
+  INCLUDE_DIRS
+    include
+  CATKIN_DEPENDS 
+ #   eigen_conversions 
+    geometry_msgs 
+    message_runtime 
+    roscpp 
+    pcl_ros
+    pcl_conversions
+    std_msgs 
+    tf
+    tf_conversions
+    visualization_msgs
+ DEPENDS
+  #  Eigen
+  #  LAPACK
+  PCL
+   )
+
+
+include_directories(${OPENCV_INCLUDE_DIRS} )
+include_directories(include ${catkin_INCLUDE_DIRS} )
+include_directories(${PCL_INCLUDE_DIRS})
+
+link_directories(${PCL_LIBRARY_DIRS})
+add_definitions(${PCL_DEFINITIONS})
+
+# include project libraries
+include_directories( ${PROJECT_SOURCE_DIR} v4r include)
+
+add_executable ( ${PROJECT_NAME} src/segmenter_jordlee.cpp)
+target_link_libraries (segmenter_jordlee ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OPENCV_LIBRARIES} v4rKinectInterface v4rSurfaceModeling v4rSurfaceClustering v4rObjectModeling v4rSurfaceRelations v4rsvm v4rGraphCut v4rSurfaceUtils v4rvs3)
+
+

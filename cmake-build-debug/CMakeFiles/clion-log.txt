@@ -1,4 +1,23 @@
-/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/fetch/Documents/segmenter
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/fetch/catkin_ws/src/segmenter_jordlee
+-- OPENCV_LIBRARIES_DIRS: /usr/local/lib
+-- OPENCV_INCLUDE_PATH: /usr/local/include/opencv;/usr/local/include
+-- OPENCV_LIBRARIES   : opencv_videostab;opencv_video;opencv_ts;opencv_superres;opencv_stitching;opencv_photo;opencv_ocl;opencv_objdetect;opencv_nonfree;opencv_ml;opencv_legacy;opencv_imgproc;opencv_highgui;opencv_gpu;opencv_flann;opencv_features2d;opencv_core;opencv_contrib;opencv_calib3d
+-- Using CATKIN_DEVEL_PREFIX: /home/fetch/catkin_ws/src/segmenter_jordlee/devel
+-- Using CMAKE_PREFIX_PATH: /opt/ros/indigo
+-- This workspace overlays: /opt/ros/indigo
+-- Using PYTHON_EXECUTABLE: /usr/bin/python
+-- Using Debian Python package layout
+-- Using empy: /usr/bin/empy
+-- Using CATKIN_ENABLE_TESTING: ON
+-- Call enable_testing()
+-- Using CATKIN_TEST_RESULTS_DIR: /home/fetch/catkin_ws/src/segmenter_jordlee/test_results
+-- Found gtest sources under '/usr/src/gtest': gtests will be built
+-- Using Python nosetests: /usr/local/bin/nosetests-2.7
+-- catkin 0.6.19
+-- Using these message generators: gencpp;genlisp;genpy
+-- A library with BLAS API found.
+-- A library with LAPACK API found.
+-- Eigen found (include: /usr/include/eigen3)
 -- Boost version: 1.54.0
 -- Found the following Boost libraries:
 --   system
@@ -37,5 +56,91 @@
 -- looking for PCL_PEOPLE
 -- looking for PCL_SURFACE
 -- Configuring done
+CMake Warning at CMakeLists.txt:73 (add_executable):
+  Cannot generate a safe linker search path for target segmenter_jordlee
+  because files in some directories may conflict with libraries in implicit
+  directories:
+
+    link library [libpcl_common.so] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+    link library [libpcl_octree.so] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+    link library [libpcl_io.so] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+    link library [libpcl_kdtree.so] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+    link library [libpcl_search.so] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+    link library [libpcl_sample_consensus.so] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+    link library [libpcl_filters.so] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+    link library [libpcl_features.so] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+    link library [libpcl_keypoints.so] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+    link library [libpcl_segmentation.so] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+    link library [libpcl_visualization.so] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+    link library [libpcl_outofcore.so] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+    link library [libpcl_registration.so] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+    link library [libpcl_recognition.so] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+    link library [libpcl_surface.so] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+    link library [libpcl_people.so] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+    link library [libpcl_tracking.so] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+
+  Some of these libraries may not be found correctly.
+
+
+CMake Warning at CMakeLists.txt:73 (add_executable):
+  Cannot generate a safe runtime search path for target segmenter_jordlee
+  because files in some directories may conflict with libraries in implicit
+  directories:
+
+    runtime library [libpcl_common.so.1.7] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+    runtime library [libpcl_octree.so.1.7] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+    runtime library [libpcl_io.so.1.7] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+    runtime library [libpcl_kdtree.so.1.7] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+    runtime library [libpcl_search.so.1.7] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+    runtime library [libpcl_sample_consensus.so.1.7] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+    runtime library [libpcl_filters.so.1.7] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+    runtime library [libpcl_features.so.1.7] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+    runtime library [libpcl_keypoints.so.1.7] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+    runtime library [libpcl_segmentation.so.1.7] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+    runtime library [libpcl_visualization.so.1.7] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+    runtime library [libpcl_outofcore.so.1.7] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+    runtime library [libpcl_registration.so.1.7] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+    runtime library [libpcl_recognition.so.1.7] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+    runtime library [libpcl_surface.so.1.7] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+    runtime library [libpcl_people.so.1.7] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+    runtime library [libpcl_tracking.so.1.7] in /usr/lib may be hidden by files in:
+      /usr/local/lib
+
+  Some of these libraries may not be found correctly.
+
+
 -- Generating done
--- Build files have been written to: /home/fetch/Documents/segmenter/cmake-build-debug
+-- Build files have been written to: /home/fetch/catkin_ws/src/segmenter_jordlee

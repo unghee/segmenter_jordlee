@@ -4,7 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/fetch/Documents/segmenter/src/segmenter_jordlee.cpp" "/home/fetch/Documents/segmenter/cmake-build-debug/CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.o"
+  "/home/fetch/catkin_ws/src/segmenter_jordlee/src/segmenter_jordlee.cpp" "/home/fetch/catkin_ws/src/segmenter_jordlee/cmake-build-debug/CMakeFiles/segmenter_jordlee.dir/src/segmenter_jordlee.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -12,10 +12,8 @@ SET(CMAKE_CXX_COMPILER_ID "GNU")
 SET(CMAKE_TARGET_DEFINITIONS
   "DISABLE_PCAP"
   "DISABLE_PNG"
-  "EIGEN_USE_NEW_STDVECTOR"
-  "EIGEN_YES_I_KNOW_SPARSE_MODULE_IS_NOT_STABLE_YET"
-  "FLANN_STATIC"
-  "qh_QHpointer"
+  "ROSCONSOLE_BACKEND_LOG4CXX"
+  "ROS_PACKAGE_NAME=\"segmenter_jordlee\""
   )
 
 # Targets to which this target links.
@@ -24,10 +22,14 @@ SET(CMAKE_TARGET_LINKED_INFO_FILES
 
 # The include file search paths:
 SET(CMAKE_C_TARGET_INCLUDE_PATH
+  "/usr/local/include/opencv"
+  "/usr/local/include"
   "/usr/include/vtk-5.8"
-  "/usr/local/include/pcl-1.7"
+  "/opt/ros/indigo/include"
   "/usr/include/eigen3"
+  "/usr/include/pcl-1.7"
   "/usr/include/ni"
+  "/usr/local/include/pcl-1.7"
   "/usr/include/openni2"
   ".."
   "../v4r"
