@@ -53,6 +53,7 @@
 #include <pcl/visualization/pcl_visualizer.h>
 
 //ROS
+#include <pcl_conversions/pcl_conversions.h>
 #include <pcl_ros/point_cloud.h>
 #include <pcl_ros/transforms.h>
 #include <ros/package.h>
@@ -109,11 +110,19 @@ private:
 
 
 //  boost::mutex pc_mutex_;                                 ///< Mutex for locking on the point cloud and messages
-//  ros::NodeHandle node_;                                  ///< ROS Node handles
-//  ros::Subscriber sub;                                    ///< ROS subscirber
+  ros::NodeHandle nh;                                  ///< ROS Node handles
+  ros::Subscriber sub;                                    ///< ROS subscirber
+  ros::ServiceServer segment_srv_;
+  ros::Publisher pub;
   /*! Latest point cloud. */
   pcl::PointCloud<pcl::PointXYZRGB>::ConstPtr pc_;
 public:
+    static const float DOWNSAMPLE_LEAF_SIZE = 0.01;
+    /*! Size of the marker visualization scale factor. */
+    static const double MARKER_SCALE = 0.01;
+
+
+
 
 private:
   void init();
@@ -152,7 +161,8 @@ public:
 
   /** Ros related **/
     void pointCloudCallback(const sensor_msgs::PointCloud2ConstPtr& input);
- //   bool SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request &req, segmenter_jordlee::SegmentObject::Response &res);
+    bool SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request &req, segmenter_jordlee::SegmentObject::Response &res);
+    visualization_msgs::Marker createMarker(const pcl::PCLPointCloud2::ConstPtr &pc) const;
 };
 
 }

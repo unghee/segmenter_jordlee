@@ -29,12 +29,12 @@ Segmenter::Segmenter(std::string _db, std::string _rgbd, std::string _model, boo
 
   //ros subscribing
   string point_cloud_topic("/head_camera/depth_registered/points");
-  ros::NodeHandle nh;
-  ros::Subscriber sub;
-  ros::ServiceServer segment_srv_;
+
 
   sub = nh.subscribe(point_cloud_topic, 1, &Segmenter::pointCloudCallback,this);
- // segment_srv_ = nh.advertiseService("segment_object", &Segmenter::SegmentObjectCallback, this);
+  segment_srv_ = nh.advertiseService("segment_object", &Segmenter::SegmentObjectCallback, this);
+  pub = nh.advertise< pcl::PointCloud<pcl::PointXYZRGB> > ("pointstestinginput", 1,true);
+
   ROS_INFO("Ready to segment.");
  //ros::spin();
 
@@ -191,6 +191,149 @@ Segmenter::processPointCloudV(pcl::PointCloud<pcl::PointXYZRGB>::Ptr &pcl_cloud)
 //  void Segmenter::run(std::string _rgbd_filename,std::string _model_path, int _startIdx, int _endIdx)
 //  void Segmenter::run(std::string _model_path)
 
+bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request &req, segmenter_jordlee::SegmentObject::Response &res)
+{
+  bool processed = false;
+  // database_path = "";
+  // model_path = _model_path;
+  // rgbd_filename = _rgbd_filename;
+  // req.a;
+
+
+  printf("init.\n");
+  init();
+
+  //point from pointcloud
+  //make error message
+
+  // ros::spin();
+  // ros::Duration(15).sleep();
+  // ros::spinOnce();
+
+
+  std::cout<<" processing pointcloud" << std::endl;
+  pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_input (new pcl::PointCloud<pcl::PointXYZRGB>);
+
+/*
+  // ######################## Setup TomGine ########################
+  int width = 640;
+  int height = 480;
+  surface::View view;
+
+  TomGine::tgTomGineThread dbgWin(width, height, "TomGine Render Engine");
+  cv::Mat R = (cv::Mat_<double>(3, 3) << 1, 0, 0, 0, 1, 0, 0, 0, 1);
+  cv::Mat t = (cv::Mat_<double>(3, 1) << 0, 0, 0);
+  cv::Vec3d rotCenter(0, 0, 1.0);
+
+  cv::Mat intrinsic;
+  intrinsic = cv::Mat::zeros(3, 3, CV_64F);
+  view.intrinsic = Eigen::Matrix3d::Zero();
+  intrinsic.at<double> (0, 0) = intrinsic.at<double> (1, 1) = view.intrinsic(0, 0) = view.intrinsic(1, 1) = 525;
+  intrinsic.at<double> (0, 2) = view.intrinsic(0, 2) = 320;
+  intrinsic.at<double> (1, 2) = view.intrinsic(1, 2) = 240;
+  intrinsic.at<double> (2, 2) = view.intrinsic(2, 2) = 1.;
+
+  dbgWin.SetClearColor(0.5, 0.5, 0.5);
+  dbgWin.SetCoordinateFrame();
+  dbgWin.SetCamera(intrinsic);
+  dbgWin.SetCamera(R, t);
+  dbgWin.SetRotationCenter(rotCenter);
+  dbgWin.Update();
+  cv::Mat_<cv::Vec3b> kImage = cv::Mat_<cv::Vec3b>::zeros(480, 640);
+
+  pcl::copyPointCloud(*pc_, *cloud_input);
+  pclA::ConvertPCLCloud2Image(cloud_input, kImage);
+  cv::imshow("Debug image", kImage);
+  dbgWin.SetImage(kImage);
+  dbgWin.Update();
+*/
+
+  //loading pointcloud from pcd
+  // pcl::io::loadPCDFile (rgbd_filename, *cloud_input);
+  //save pointcloud to pcd
+  //pcl::io::savePCDFileASCII("/home/fetch/catkin_ws/src/segmenter_jordlee/testsegment.pcd",*cloud_input);
+
+  std::cout<<"copying pointcloud"<<std::endl;
+  pcl::copyPointCloud(*pc_, *cloud_input);
+  std::cout<<"after copying pointcloud"<<std::endl;
+
+
+  std::vector<pcl::PointIndices> label_indices;
+  //  pcl::copyPointCloud(*(processPointCloudV(cloud_input)), *cloud_output);
+
+  label_indices = processPointCloudV(cloud_input);
+
+  std::vector<pcl::PointCloud<pcl::PointXYZRGB>::ConstPtr> cloud_output;
+  std::cout<<"before"<<std::endl;
+  for(int i =0;i<label_indices.size();i++)
+  {
+
+    pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_temp(new pcl::PointCloud<pcl::PointXYZRGB>);
+    pcl::copyPointCloud(*cloud_input, label_indices[i], *(cloud_temp));
+    cloud_output.push_back(cloud_temp);
+
+  }
+  std::cout<<"after"<<std::endl;
+
+  /*
+  // rviz
+
+  sensor_msgs::PointCloud2 pc2msg;
+  pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_vis_rgb(new pcl::PointCloud<pcl::PointXYZRGB>);
+  ros::Publisher pcl_pub = nh.advertise<sensor_msgs::PointCloud2>("point_cloud", 10);
+
+// publication of grasp affordances and handles as ROS topics
+  visualization_msgs::MarkerArray marker_array_msg_handles;
+  ros::Publisher marker_array_pub_handles = nh.advertise<visualization_msgs::MarkerArray>("visualization_all_handles",
+                                                                                          10);
+
+  pcl::toROSMsg(*cloud_vis_rgb, pc2msg);
+  pc2msg.header.stamp = ros::Time::now();
+  pc2msg.header.frame_id = "head_camera_rgb_optical_frame";
+  pcl_pub.publish(pc2msg);
+
+  marker_array_pub_handles.publish(marker_array_msg_handles);
+
+*/
+
+//rviz
+
+  //cloud_output[1]->header.frame_id = "base_link";
+ // cloud_input->height = pc_->width = 1;
+
+
+  cloud_input->header.frame_id = "head_camera_depth_frame";
+
+  ros::Rate loop_rate(4);
+  while (nh.ok())
+  {
+  //  cloud_output[1]->header.stamp = ros::Time::now().toNSec();
+    /*
+    pcl::PCLPointCloud2::Ptr converted(new pcl::PCLPointCloud2);
+    pcl_conversions::fromPCL(*converted, cloud_input);
+    visualization_msgs::Marker markercloud;
+    markercloud=this->createMarker(converted);
+     pub.publish (markercloud);
+    */
+    pub.publish (cloud_input);
+
+    ros::spinOnce ();
+    loop_rate.sleep ();
+  }
+
+
+
+//pcl viewer
+//  boost::shared_ptr<pcl::visualization::PCLVisualizer> viewer (new pcl::visualization::PCLVisualizer ("3D Viewer"));
+//  segment::Segmenter::rgbVis(cloud_output,label_indices);
+
+
+  printf("[Segmenter::run] Done.\n");
+
+
+  ROS_INFO("sending back response");
+  return true;
+}
 
 boost::shared_ptr<pcl::visualization::PCLVisualizer>
 Segmenter::rgbVis (std::vector<pcl::PointCloud<pcl::PointXYZRGB>::ConstPtr> cloud, std::vector<pcl::PointIndices> label)
@@ -223,127 +366,72 @@ Segmenter::rgbVis (std::vector<pcl::PointCloud<pcl::PointXYZRGB>::ConstPtr> clou
     return (viewer);
   }
 
-
-}
-bool SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request &req, segmenter_jordlee::SegmentObject::Response &res)
+visualization_msgs::Marker Segmenter::createMarker(const pcl::PCLPointCloud2::ConstPtr &pc) const
 {
-  bool processed = false;
-  // database_path = "";
-  // model_path = _model_path;
-  // rgbd_filename = _rgbd_filename;
-  // req.a;
-/*
+  visualization_msgs::Marker marker;
+  // set header field
+  marker.header.frame_id = pc->header.frame_id;
 
-  printf("init.\n");
-  init();
+  // default position
+  marker.pose.position.x = 0.0;
+  marker.pose.position.y = 0.0;
+  marker.pose.position.z = 0.0;
+  marker.pose.orientation.x = 0.0;
+  marker.pose.orientation.y = 0.0;
+  marker.pose.orientation.z = 0.0;
+  marker.pose.orientation.w = 1.0;
 
-  //point from pointcloud
-  //make error message
+  // default scale
+  marker.scale.x = MARKER_SCALE;
+  marker.scale.y = MARKER_SCALE;
+  marker.scale.z = MARKER_SCALE;
 
-  // ros::spin();
-  // ros::Duration(15).sleep();
-  // ros::spinOnce();
+  // set the type of marker and our color of choice
+  marker.type = visualization_msgs::Marker::CUBE_LIST;
+  marker.color.a = 1.0;
 
+  // downsample point cloud for visualization
+  pcl::PCLPointCloud2 downsampled;
+  pcl::VoxelGrid<pcl::PCLPointCloud2> voxel_grid;
+  voxel_grid.setInputCloud(pc);
+  voxel_grid.setLeafSize(DOWNSAMPLE_LEAF_SIZE, DOWNSAMPLE_LEAF_SIZE, DOWNSAMPLE_LEAF_SIZE);
+  voxel_grid.filter(downsampled);
 
-  std::cout<<" processing pointcloud" << std::endl;
-  pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_input (new pcl::PointCloud<pcl::PointXYZRGB>);
+  // convert to an easy to use point cloud message
+  sensor_msgs::PointCloud2 pc2_msg;
+  pcl_conversions::fromPCL(downsampled, pc2_msg);
+  sensor_msgs::PointCloud pc_msg;
+  sensor_msgs::convertPointCloud2ToPointCloud(pc2_msg, pc_msg);
 
-
-  // ######################## Setup TomGine ########################
-  int width = 640;
-  int height = 480;
-  surface::View view;
-
-  TomGine::tgTomGineThread dbgWin(width, height, "TomGine Render Engine");
-  cv::Mat R = (cv::Mat_<double>(3, 3) << 1, 0, 0, 0, 1, 0, 0, 0, 1);
-  cv::Mat t = (cv::Mat_<double>(3, 1) << 0, 0, 0);
-  cv::Vec3d rotCenter(0, 0, 1.0);
-
-  cv::Mat intrinsic;
-  intrinsic = cv::Mat::zeros(3, 3, CV_64F);
-  view.intrinsic = Eigen::Matrix3d::Zero();
-  intrinsic.at<double> (0, 0) = intrinsic.at<double> (1, 1) = view.intrinsic(0, 0) = view.intrinsic(1, 1) = 525;
-  intrinsic.at<double> (0, 2) = view.intrinsic(0, 2) = 320;
-  intrinsic.at<double> (1, 2) = view.intrinsic(1, 2) = 240;
-  intrinsic.at<double> (2, 2) = view.intrinsic(2, 2) = 1.;
-
-  dbgWin.SetClearColor(0.5, 0.5, 0.5);
-  dbgWin.SetCoordinateFrame();
-  dbgWin.SetCamera(intrinsic);
-  dbgWin.SetCamera(R, t);
-  dbgWin.SetRotationCenter(rotCenter);
-  dbgWin.Update();
-  cv::Mat_<cv::Vec3b> kImage = cv::Mat_<cv::Vec3b>::zeros(480, 640);
-
-  pcl::copyPointCloud(*pc_, *cloud_input);
-  pclA::ConvertPCLCloud2Image(cloud_input, kImage);
-  cv::imshow("Debug image", kImage);
-  dbgWin.SetImage(kImage);
-  dbgWin.Update();
-
-
-  //loading pointcloud from pcd
-  // pcl::io::loadPCDFile (rgbd_filename, *cloud_input);
-  //save pointcloud to pcd
-  //pcl::io::savePCDFileASCII("/home/fetch/catkin_ws/src/segmenter_jordlee/testsegment.pcd",*cloud_input);
-
-
-  pcl::copyPointCloud(*pc_, *cloud_input);
-
-
-
-  std::vector<pcl::PointIndices> label_indices;
-  //  pcl::copyPointCloud(*(processPointCloudV(cloud_input)), *cloud_output);
-
-  label_indices = processPointCloudV(cloud_input);
-
-  std::vector<pcl::PointCloud<pcl::PointXYZRGB>::ConstPtr> cloud_output;
-  std::cout<<"before"<<std::endl;
-  for(int i =0;i<label_indices.size();i++)
+  // place in the marker message
+  marker.points.resize(pc_msg.points.size());
+  int r = 0, g = 0, b = 0;
+  for (size_t j = 0; j < pc_msg.points.size(); j++)
   {
+    marker.points[j].x = pc_msg.points[j].x;
+    marker.points[j].y = pc_msg.points[j].y;
+    marker.points[j].z = pc_msg.points[j].z;
 
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_temp(new pcl::PointCloud<pcl::PointXYZRGB>);
-    pcl::copyPointCloud(*cloud_input, label_indices[i], *(cloud_temp));
-    cloud_output.push_back(cloud_temp);
-
+    // use average RGB
+    uint32_t rgb = *reinterpret_cast<int *>(&pc_msg.channels[0].values[j]);
+    r += (int) ((rgb >> 16) & 0x0000ff);
+    g += (int) ((rgb >> 8) & 0x0000ff);
+    b += (int) ((rgb) & 0x0000ff);
   }
-  std::cout<<"after"<<std::endl;
 
-  // rviz
+  // set average RGB
+  marker.color.r = ((float) r / (float) pc_msg.points.size()) / 255.0;
+  marker.color.g = ((float) g / (float) pc_msg.points.size()) / 255.0;
+  marker.color.b = ((float) b / (float) pc_msg.points.size()) / 255.0;
+  marker.color.a = 1.0;
 
-  sensor_msgs::PointCloud2 pc2msg;
-  pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_vis_rgb(new pcl::PointCloud<pcl::PointXYZRGB>);
-  ros::Publisher pcl_pub = nh.advertise<sensor_msgs::PointCloud2>("point_cloud", 10);
-
-// publication of grasp affordances and handles as ROS topics
-  visualization_msgs::MarkerArray marker_array_msg_handles;
-  ros::Publisher marker_array_pub_handles = nh.advertise<visualization_msgs::MarkerArray>("visualization_all_handles",
-                                                                                          10);
-
-  pcl::toROSMsg(*cloud_vis_rgb, pc2msg);
-  pc2msg.header.stamp = ros::Time::now();
-  pc2msg.header.frame_id = "head_camera_rgb_optical_frame";
-  pcl_pub.publish(pc2msg);
-
-  marker_array_pub_handles.publish(marker_array_msg_handles);
+  return marker;
+}
 
 
 
 
 
-
-
-
-//pcl viewer
-  boost::shared_ptr<pcl::visualization::PCLVisualizer> viewer (new pcl::visualization::PCLVisualizer ("3D Viewer"));
-  segment::Segmenter::rgbVis(cloud_output,label_indices);
-
-*/
-  printf("[Segmenter::run] Done.\n");
-
-
-  ROS_INFO("sending back response");
-  return true;
 }
 
 void printUsage(char *av)
@@ -374,13 +462,13 @@ int main(int argc, char **argv)
   //seg.setMinMaxDepth(0.0, 1.5);
 //  seg.run(rgbd_filename, model_path, startIdx, endIdx);
  // seg.run(model_path);
-  string point_cloud_topic("/head_camera/depth_registered/points");
-  ros::NodeHandle nh2;
+ // string point_cloud_topic("/head_camera/depth_registered/points");
+ // ros::NodeHandle nh2;
 
-  ros::ServiceServer segment_srv_;
+ // ros::ServiceServer segment_srv_;
 
 
-  segment_srv_ = nh2.advertiseService("segment_object", SegmentObjectCallback);
+ // segment_srv_ = nh2.advertiseService("segment_object", SegmentObjectCallback);
 
   ros::spin();
   return 0;
