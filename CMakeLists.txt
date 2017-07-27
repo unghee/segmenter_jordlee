@@ -43,7 +43,13 @@ find_package(PCL 1.7 REQUIRED )
 #
 #generate_messages(DEPENDENCIES geometry_msgs)
 #
+add_service_files(
+ FILES
+ SegmentObject.srv
 
+)
+
+generate_messages()
 ## Declare a catkin package
 catkin_package(
   INCLUDE_DIRS

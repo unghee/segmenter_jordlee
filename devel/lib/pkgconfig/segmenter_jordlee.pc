@@ -3,6 +3,6 @@ prefix=/home/fetch/catkin_ws/src/segmenter_jordlee/devel
 Name: segmenter_jordlee
 Description: Description of segmenter_jordlee
 Version: 1.1.0
-Cflags: -I/home/fetch/catkin_ws/src/segmenter_jordlee/include -I/usr/include/eigen3
+Cflags: -I/home/fetch/catkin_ws/src/segmenter_jordlee/devel/include -I/home/fetch/catkin_ws/src/segmenter_jordlee/include -I/usr/include/eigen3
 Libs: -L/home/fetch/catkin_ws/src/segmenter_jordlee/devel/lib -l:/usr/lib/liblapack.so -l:/usr/lib/libf77blas.so -l:/usr/lib/libatlas.so
 Requires: eigen_conversions geometry_msgs message_runtime roscpp pcl_ros pcl_conversions std_msgs tf tf_conversions visualization_msgs

@@ -5,13 +5,23 @@
       <Option title="segmenter_jordlee" />
       <Option makefile_is_custom="1" />
       <Option compiler="gcc" />
-      <Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\usr\src\;CMake Files\..\..\..\..\..\usr\src\gtest\;CMake Files\..\..\..\..\..\usr\src\gtest\cmake\;CMake Files\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\usr\local\share\;CMake Files\..\..\..\..\..\usr\local\share\OpenCV\;CMake Files\..\..\..\..\..\usr\local\share\pcl-1.7\;CMake Files\..\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\..\usr\lib\vtk-5.8\;CMake Files\..\..\..\..\..\usr\lib\vtk-5.8\CMake\;CMake Files\..\..\..\..\..\opt\;CMake Files\..\..\..\..\..\opt\ros\;CMake Files\..\..\..\..\..\opt\ros\indigo\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\platform\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\test\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\tools\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\..\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\templates\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\em\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\eigen_conversions\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\eigen_conversions\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_runtime\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_runtime\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cpp_common\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cpp_common\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_serialization\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_serialization\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_traits\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_traits\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rostime\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rostime\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_generation\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_generation\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\gencpp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\gencpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genlisp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genlisp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genpy\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genpy\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosconsole\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosconsole\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\xmlrpcpp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\xmlrpcpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\pcl_ros\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\pcl_ros\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\dynamic_reconfigure\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\dynamic_reconfigure\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_filters\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_filters\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\nodelet\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\nodelet\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\bondcpp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\bondcpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\bond\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\bond\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\smclib\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\smclib\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\pluginlib\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\pluginlib\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\class_loader\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\class_loader\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roslib\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roslib\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rospack\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rospack\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\pcl_conversions\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\pcl_conversions\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\pcl_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\pcl_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\sensor_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\sensor_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosbag\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosbag\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosbag_storage\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosbag_storage\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roslz4\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roslz4\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\topic_tools\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\topic_tools\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_ros\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_ros\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_py\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_py\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rospy\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rospy\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf_conversions\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf_conversions\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\kdl_conversions\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\kdl_conversions\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\visualization_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\visualization_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\cmake\Modules\;CMake Files\catkin\;CMake Files\catkin\catkin_generated\;CMake Files\catkin\catkin_generated\version\;CMake Files\catkin_generated\;CMake Files\catkin_generated\installspace\;" />
+      <Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\usr\src\;CMake Files\..\..\..\..\..\usr\src\gtest\;CMake Files\..\..\..\..\..\usr\src\gtest\cmake\;CMake Files\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\usr\local\share\;CMake Files\..\..\..\..\..\usr\local\share\OpenCV\;CMake Files\..\..\..\..\..\usr\local\share\pcl-1.7\;CMake Files\..\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\..\usr\lib\vtk-5.8\;CMake Files\..\..\..\..\..\usr\lib\vtk-5.8\CMake\;CMake Files\..\..\..\..\..\opt\;CMake Files\..\..\..\..\..\opt\ros\;CMake Files\..\..\..\..\..\opt\ros\indigo\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\platform\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\test\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\tools\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\..\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\templates\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\em\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\eigen_conversions\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\eigen_conversions\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_runtime\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_runtime\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cpp_common\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cpp_common\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_serialization\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_serialization\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_traits\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_traits\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rostime\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rostime\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_generation\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_generation\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\gencpp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\gencpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genlisp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genlisp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genpy\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genpy\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosconsole\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosconsole\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\xmlrpcpp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\xmlrpcpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\pcl_ros\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\pcl_ros\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\dynamic_reconfigure\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\dynamic_reconfigure\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_filters\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_filters\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\nodelet\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\nodelet\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\bondcpp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\bondcpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\bond\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\bond\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\smclib\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\smclib\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\pluginlib\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\pluginlib\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\class_loader\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\class_loader\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roslib\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roslib\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rospack\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rospack\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\pcl_conversions\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\pcl_conversions\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\pcl_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\pcl_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\sensor_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\sensor_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosbag\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosbag\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosbag_storage\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosbag_storage\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roslz4\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roslz4\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\topic_tools\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\topic_tools\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_ros\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_ros\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_py\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_py\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rospy\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rospy\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf_conversions\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf_conversions\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\kdl_conversions\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\kdl_conversions\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\visualization_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\visualization_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\cmake\Modules\;CMake Files\catkin\;CMake Files\catkin\catkin_generated\;CMake Files\catkin\catkin_generated\version\;CMake Files\catkin_generated\;CMake Files\catkin_generated\installspace\;CMake Files\devel\;CMake Files\devel\share\;CMake Files\devel\share\segmenter_jordlee\;CMake Files\devel\share\segmenter_jordlee\cmake\;CMake Files\cmake\;" />
       <Build>
       <Target title="all">
          <Option working_dir="/home/fetch/catkin_ws/src/segmenter_jordlee" />
          <Option type="4" />
          <MakeCommands>
             <Build command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_segmenter_jordlee_generate_messages_check_deps_SegmentObject">
+         <Option working_dir="/home/fetch/catkin_ws/src/segmenter_jordlee" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 _segmenter_jordlee_generate_messages_check_deps_SegmentObject" />
             <CompileFile command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
             <Clean command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 clean" />
             <DistClean command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 clean" />
@@ -409,6 +419,7 @@
             <Add option="-DDISABLE_PCAP" />
             <Add option="-DDISABLE_PNG" />
             <Add directory="/home/fetch/catkin_ws/src/segmenter_jordlee" />
+            <Add directory="/home/fetch/catkin_ws/src/segmenter_jordlee/devel/include" />
             <Add directory="/home/fetch/catkin_ws/src/segmenter_jordlee/include" />
             <Add directory="/home/fetch/catkin_ws/src/segmenter_jordlee/v4r" />
             <Add directory="/opt/ros/indigo/include" />
@@ -447,6 +458,7 @@
             <Add option="-DDISABLE_PCAP" />
             <Add option="-DDISABLE_PNG" />
             <Add directory="/home/fetch/catkin_ws/src/segmenter_jordlee" />
+            <Add directory="/home/fetch/catkin_ws/src/segmenter_jordlee/devel/include" />
             <Add directory="/home/fetch/catkin_ws/src/segmenter_jordlee/include" />
             <Add directory="/home/fetch/catkin_ws/src/segmenter_jordlee/v4r" />
             <Add directory="/opt/ros/indigo/include" />
@@ -468,6 +480,76 @@
          </Compiler>
          <MakeCommands>
             <Build command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 segmenter_jordlee/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="segmenter_jordlee_gencpp">
+         <Option working_dir="/home/fetch/catkin_ws/src/segmenter_jordlee" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 segmenter_jordlee_gencpp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="segmenter_jordlee_generate_messages">
+         <Option working_dir="/home/fetch/catkin_ws/src/segmenter_jordlee" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 segmenter_jordlee_generate_messages" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="segmenter_jordlee_generate_messages_cpp">
+         <Option working_dir="/home/fetch/catkin_ws/src/segmenter_jordlee" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 segmenter_jordlee_generate_messages_cpp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="segmenter_jordlee_generate_messages_lisp">
+         <Option working_dir="/home/fetch/catkin_ws/src/segmenter_jordlee" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 segmenter_jordlee_generate_messages_lisp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="segmenter_jordlee_generate_messages_py">
+         <Option working_dir="/home/fetch/catkin_ws/src/segmenter_jordlee" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 segmenter_jordlee_generate_messages_py" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="segmenter_jordlee_genlisp">
+         <Option working_dir="/home/fetch/catkin_ws/src/segmenter_jordlee" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 segmenter_jordlee_genlisp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="segmenter_jordlee_genpy">
+         <Option working_dir="/home/fetch/catkin_ws/src/segmenter_jordlee" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 segmenter_jordlee_genpy" />
             <CompileFile command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
             <Clean command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 clean" />
             <DistClean command="/usr/bin/make -f &quot;/home/fetch/catkin_ws/src/segmenter_jordlee/Makefile&quot;  VERBOSE=1 clean" />
@@ -1170,6 +1252,12 @@
       <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/gencpp/cmake/gencpp-extras.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\gencpp\cmake\" />
       </Unit>
+      <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/gencpp/cmake/gencppConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\gencpp\cmake\" />
+      </Unit>
+      <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/gencpp/cmake/gencppConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\gencpp\cmake\" />
+      </Unit>
       <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/genmsg/cmake/genmsgConfig-version.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
       </Unit>
@@ -1191,6 +1279,24 @@
       <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/genmsg/cmake/genmsgConfig.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
       </Unit>
+      <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/genmsg/cmake/pkg-msg-paths.cmake.develspace.in">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
+      </Unit>
+      <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/genmsg/cmake/pkg-msg-paths.cmake.installspace.in">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
+      </Unit>
+      <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/genmsg/cmake/pkg-msg-extras.cmake.in">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
+      </Unit>
+      <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/genmsg/cmake/pkg-msg-extras.cmake.in">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
+      </Unit>
+      <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/genmsg/cmake/pkg-genmsg.context.in">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
+      </Unit>
+      <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/genmsg/cmake/pkg-genmsg.cmake.em">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
+      </Unit>
       <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/genlisp/cmake/genlispConfig-version.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genlisp\cmake\" />
       </Unit>
@@ -1200,6 +1306,12 @@
       <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/genlisp/cmake/genlisp-extras.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genlisp\cmake\" />
       </Unit>
+      <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/genlisp/cmake/genlispConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genlisp\cmake\" />
+      </Unit>
+      <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/genlisp/cmake/genlispConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genlisp\cmake\" />
+      </Unit>
       <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/genpy/cmake/genpyConfig-version.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genpy\cmake\" />
       </Unit>
@@ -1207,6 +1319,12 @@
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genpy\cmake\" />
       </Unit>
       <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/genpy/cmake/genpy-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genpy\cmake\" />
+      </Unit>
+      <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/genpy/cmake/genpyConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genpy\cmake\" />
+      </Unit>
+      <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/genpy/cmake/genpyConfig.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genpy\cmake\" />
       </Unit>
       <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/roscpp/cmake/roscppConfig-version.cmake">
@@ -1506,8 +1624,20 @@
       <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/catkin_generated/package.cmake">
           <Option virtualFolder="CMake Files\catkin_generated\" />
       </Unit>
+      <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/catkin_generated/segmenter_jordlee-msg-extras.cmake.develspace.in">
+          <Option virtualFolder="CMake Files\catkin_generated\" />
+      </Unit>
+      <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/catkin_generated/segmenter_jordlee-msg-extras.cmake.installspace.in">
+          <Option virtualFolder="CMake Files\catkin_generated\" />
+      </Unit>
       <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/catkin_generated/installspace/_setup_util.py">
           <Option virtualFolder="CMake Files\catkin_generated\installspace\" />
+      </Unit>
+      <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/devel/share/segmenter_jordlee/cmake/segmenter_jordlee-msg-paths.cmake">
+          <Option virtualFolder="CMake Files\devel\share\segmenter_jordlee\cmake\" />
+      </Unit>
+      <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/cmake/segmenter_jordlee-genmsg.cmake">
+          <Option virtualFolder="CMake Files\cmake\" />
       </Unit>
    </Project>
 </CodeBlocks_project_file>

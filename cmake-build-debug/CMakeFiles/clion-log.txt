@@ -55,8 +55,18 @@
 -- looking for PCL_TRACKING
 -- looking for PCL_PEOPLE
 -- looking for PCL_SURFACE
+-- segmenter_jordlee: 0 messages, 1 services
+CMake Warning at /opt/ros/indigo/share/catkin/cmake/catkin_package.cmake:411 (message):
+  catkin_package() include dir
+  '/home/fetch/catkin_ws/src/segmenter_jordlee/devel/include' should be
+  placed in the devel space instead of the build space
+Call Stack (most recent call first):
+  /opt/ros/indigo/share/catkin/cmake/catkin_package.cmake:100 (_catkin_package)
+  CMakeLists.txt:54 (catkin_package)
+
+
 -- Configuring done
-CMake Warning at CMakeLists.txt:73 (add_executable):
+CMake Warning at CMakeLists.txt:79 (add_executable):
   Cannot generate a safe linker search path for target segmenter_jordlee
   because files in some directories may conflict with libraries in implicit
   directories:
@@ -99,7 +109,7 @@ CMake Warning at CMakeLists.txt:73 (add_executable):
   Some of these libraries may not be found correctly.
 
 
-CMake Warning at CMakeLists.txt:73 (add_executable):
+CMake Warning at CMakeLists.txt:79 (add_executable):
   Cannot generate a safe runtime search path for target segmenter_jordlee
   because files in some directories may conflict with libraries in implicit
   directories:

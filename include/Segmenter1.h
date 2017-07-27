@@ -150,6 +150,7 @@ public:
 
   /** Ros related **/
     void pointCloudCallback(const sensor_msgs::PointCloud2ConstPtr& input);
+    bool Segmenter::removeObjectCallback(Segmenter::SegmentObject::Request &req,Segmenter::SegmentObject::Response &res);
 };
 
 }
