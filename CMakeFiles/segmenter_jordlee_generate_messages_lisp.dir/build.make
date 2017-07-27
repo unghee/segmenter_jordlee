@@ -54,7 +54,7 @@ devel/share/common-lisp/ros/segmenter_jordlee/srv/SegmentObject.lisp: /opt/ros/i
 devel/share/common-lisp/ros/segmenter_jordlee/srv/SegmentObject.lisp: srv/SegmentObject.srv
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/fetch/catkin_ws/src/segmenter_jordlee/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Lisp code from segmenter_jordlee/SegmentObject.srv"
-	catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/fetch/catkin_ws/src/segmenter_jordlee/srv/SegmentObject.srv -p segmenter_jordlee -o /home/fetch/catkin_ws/src/segmenter_jordlee/devel/share/common-lisp/ros/segmenter_jordlee/srv
+	catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/fetch/catkin_ws/src/segmenter_jordlee/srv/SegmentObject.srv -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p segmenter_jordlee -o /home/fetch/catkin_ws/src/segmenter_jordlee/devel/share/common-lisp/ros/segmenter_jordlee/srv
 
 segmenter_jordlee_generate_messages_lisp: CMakeFiles/segmenter_jordlee_generate_messages_lisp
 segmenter_jordlee_generate_messages_lisp: devel/share/common-lisp/ros/segmenter_jordlee/srv/SegmentObject.lisp

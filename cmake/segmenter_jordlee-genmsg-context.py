@@ -3,9 +3,9 @@
 messages_str = ""
 services_str = "/home/fetch/catkin_ws/src/segmenter_jordlee/srv/SegmentObject.srv"
 pkg_name = "segmenter_jordlee"
-dependencies_str = ""
+dependencies_str = "std_msgs"
 langs = "gencpp;genlisp;genpy"
-dep_include_paths_str = ""
+dep_include_paths_str = "std_msgs;/opt/ros/indigo/share/std_msgs/cmake/../msg"
 PYTHON_EXECUTABLE = "/usr/bin/python"
 package_has_static_sources = '' == 'TRUE'
 genmsg_check_deps_script = "/opt/ros/indigo/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py"

@@ -55,7 +55,7 @@ devel/lib/python2.7/dist-packages/segmenter_jordlee/srv/_SegmentObject.py: /opt/
 devel/lib/python2.7/dist-packages/segmenter_jordlee/srv/_SegmentObject.py: srv/SegmentObject.srv
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/fetch/catkin_ws/src/segmenter_jordlee/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python code from SRV segmenter_jordlee/SegmentObject"
-	catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/fetch/catkin_ws/src/segmenter_jordlee/srv/SegmentObject.srv -p segmenter_jordlee -o /home/fetch/catkin_ws/src/segmenter_jordlee/devel/lib/python2.7/dist-packages/segmenter_jordlee/srv
+	catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/fetch/catkin_ws/src/segmenter_jordlee/srv/SegmentObject.srv -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p segmenter_jordlee -o /home/fetch/catkin_ws/src/segmenter_jordlee/devel/lib/python2.7/dist-packages/segmenter_jordlee/srv
 
 devel/lib/python2.7/dist-packages/segmenter_jordlee/srv/__init__.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
 devel/lib/python2.7/dist-packages/segmenter_jordlee/srv/__init__.py: devel/lib/python2.7/dist-packages/segmenter_jordlee/srv/_SegmentObject.py

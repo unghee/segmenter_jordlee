@@ -49,7 +49,10 @@ add_service_files(
 
 )
 
-generate_messages()
+generate_messages(
+DEPENDENCIES
+std_msgs
+)
 ## Declare a catkin package
 catkin_package(
   INCLUDE_DIRS

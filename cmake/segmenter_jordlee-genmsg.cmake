@@ -2,7 +2,7 @@
 
 message(STATUS "segmenter_jordlee: 0 messages, 1 services")
 
-set(MSG_I_FLAGS "")
+set(MSG_I_FLAGS "-Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg")
 
 # Find all generators
 find_package(gencpp REQUIRED)
@@ -132,6 +132,9 @@ if(gencpp_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/se
     DESTINATION ${gencpp_INSTALL_DIR}
   )
 endif()
+if(TARGET std_msgs_generate_messages_cpp)
+  add_dependencies(segmenter_jordlee_generate_messages_cpp std_msgs_generate_messages_cpp)
+endif()
 
 if(genlisp_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/segmenter_jordlee)
   # install generated code
@@ -139,6 +142,9 @@ if(genlisp_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/
     DIRECTORY ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/segmenter_jordlee
     DESTINATION ${genlisp_INSTALL_DIR}
   )
+endif()
+if(TARGET std_msgs_generate_messages_lisp)
+  add_dependencies(segmenter_jordlee_generate_messages_lisp std_msgs_generate_messages_lisp)
 endif()
 
 if(genpy_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/segmenter_jordlee)
@@ -148,4 +154,7 @@ if(genpy_INSTALL_DIR AND EXISTS ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/segm
     DIRECTORY ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/segmenter_jordlee
     DESTINATION ${genpy_INSTALL_DIR}
   )
+endif()
+if(TARGET std_msgs_generate_messages_py)
+  add_dependencies(segmenter_jordlee_generate_messages_py std_msgs_generate_messages_py)
 endif()

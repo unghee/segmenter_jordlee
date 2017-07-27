@@ -56,7 +56,7 @@ devel/include/segmenter_jordlee/SegmentObject.h: /opt/ros/indigo/share/gencpp/cm
 devel/include/segmenter_jordlee/SegmentObject.h: /opt/ros/indigo/share/gencpp/cmake/../srv.h.template
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/fetch/catkin_ws/src/segmenter_jordlee/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating C++ code from segmenter_jordlee/SegmentObject.srv"
-	catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/fetch/catkin_ws/src/segmenter_jordlee/srv/SegmentObject.srv -p segmenter_jordlee -o /home/fetch/catkin_ws/src/segmenter_jordlee/devel/include/segmenter_jordlee -e /opt/ros/indigo/share/gencpp/cmake/..
+	catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/fetch/catkin_ws/src/segmenter_jordlee/srv/SegmentObject.srv -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p segmenter_jordlee -o /home/fetch/catkin_ws/src/segmenter_jordlee/devel/include/segmenter_jordlee -e /opt/ros/indigo/share/gencpp/cmake/..
 
 segmenter_jordlee_generate_messages_cpp: CMakeFiles/segmenter_jordlee_generate_messages_cpp
 segmenter_jordlee_generate_messages_cpp: devel/include/segmenter_jordlee/SegmentObject.h

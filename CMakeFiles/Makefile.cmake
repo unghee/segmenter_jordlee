@@ -177,6 +177,7 @@ SET(CMAKE_MAKEFILE_DEPENDS
   "/opt/ros/indigo/share/smclib/cmake/smclibConfig-version.cmake"
   "/opt/ros/indigo/share/smclib/cmake/smclibConfig.cmake"
   "/opt/ros/indigo/share/std_msgs/cmake/std_msgs-msg-extras.cmake"
+  "/opt/ros/indigo/share/std_msgs/cmake/std_msgs-msg-paths.cmake"
   "/opt/ros/indigo/share/std_msgs/cmake/std_msgsConfig-version.cmake"
   "/opt/ros/indigo/share/std_msgs/cmake/std_msgsConfig.cmake"
   "/opt/ros/indigo/share/tf/cmake/tf-msg-extras.cmake"

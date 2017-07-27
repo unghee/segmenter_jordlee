@@ -68,6 +68,8 @@
 #include <visualization_msgs/Marker.h>
 #include <visualization_msgs/MarkerArray.h>
 
+//ROS srv
+#include "SegmentObject.h"
 namespace segment
 {
   
@@ -150,7 +152,7 @@ public:
 
   /** Ros related **/
     void pointCloudCallback(const sensor_msgs::PointCloud2ConstPtr& input);
-    bool Segmenter::removeObjectCallback(Segmenter::SegmentObject::Request &req,Segmenter::SegmentObject::Response &res);
+ //   bool SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request &req, segmenter_jordlee::SegmentObject::Response &res);
 };
 
 }

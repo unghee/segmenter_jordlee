@@ -491,6 +491,9 @@
       <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/std_msgs/cmake/std_msgsConfig.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\cmake\" />
       </Unit>
+      <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/std_msgs/cmake/std_msgs-msg-paths.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\cmake\" />
+      </Unit>
       <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/message_generation/cmake/message_generationConfig-version.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_generation\cmake\" />
       </Unit>
