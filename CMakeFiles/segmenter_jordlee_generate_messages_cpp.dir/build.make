@@ -52,11 +52,25 @@ CMakeFiles/segmenter_jordlee_generate_messages_cpp: devel/include/segmenter_jord
 
 devel/include/segmenter_jordlee/SegmentObject.h: /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py
 devel/include/segmenter_jordlee/SegmentObject.h: srv/SegmentObject.srv
+devel/include/segmenter_jordlee/SegmentObject.h: /opt/ros/indigo/share/rail_manipulation_msgs/cmake/../msg/SegmentedObjectList.msg
+devel/include/segmenter_jordlee/SegmentObject.h: /opt/ros/indigo/share/geometry_msgs/cmake/../msg/Vector3.msg
+devel/include/segmenter_jordlee/SegmentObject.h: /opt/ros/indigo/share/geometry_msgs/cmake/../msg/Quaternion.msg
+devel/include/segmenter_jordlee/SegmentObject.h: /opt/ros/indigo/share/sensor_msgs/cmake/../msg/PointField.msg
+devel/include/segmenter_jordlee/SegmentObject.h: /opt/ros/indigo/share/rail_manipulation_msgs/cmake/../msg/Grasp.msg
+devel/include/segmenter_jordlee/SegmentObject.h: /opt/ros/indigo/share/rail_manipulation_msgs/cmake/../msg/SegmentedObject.msg
+devel/include/segmenter_jordlee/SegmentObject.h: /opt/ros/indigo/share/sensor_msgs/cmake/../msg/PointCloud2.msg
+devel/include/segmenter_jordlee/SegmentObject.h: /opt/ros/indigo/share/visualization_msgs/cmake/../msg/Marker.msg
+devel/include/segmenter_jordlee/SegmentObject.h: /opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg
+devel/include/segmenter_jordlee/SegmentObject.h: /opt/ros/indigo/share/sensor_msgs/cmake/../msg/Image.msg
+devel/include/segmenter_jordlee/SegmentObject.h: /opt/ros/indigo/share/std_msgs/cmake/../msg/ColorRGBA.msg
+devel/include/segmenter_jordlee/SegmentObject.h: /opt/ros/indigo/share/geometry_msgs/cmake/../msg/Pose.msg
+devel/include/segmenter_jordlee/SegmentObject.h: /opt/ros/indigo/share/geometry_msgs/cmake/../msg/PoseStamped.msg
+devel/include/segmenter_jordlee/SegmentObject.h: /opt/ros/indigo/share/geometry_msgs/cmake/../msg/Point.msg
 devel/include/segmenter_jordlee/SegmentObject.h: /opt/ros/indigo/share/gencpp/cmake/../msg.h.template
 devel/include/segmenter_jordlee/SegmentObject.h: /opt/ros/indigo/share/gencpp/cmake/../srv.h.template
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/fetch/catkin_ws/src/segmenter_jordlee/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating C++ code from segmenter_jordlee/SegmentObject.srv"
-	catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/fetch/catkin_ws/src/segmenter_jordlee/srv/SegmentObject.srv -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p segmenter_jordlee -o /home/fetch/catkin_ws/src/segmenter_jordlee/devel/include/segmenter_jordlee -e /opt/ros/indigo/share/gencpp/cmake/..
+	catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/fetch/catkin_ws/src/segmenter_jordlee/srv/SegmentObject.srv -Irail_manipulation_msgs:/opt/ros/indigo/share/rail_manipulation_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/indigo/share/actionlib_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/indigo/share/sensor_msgs/cmake/../msg -Ivisualization_msgs:/opt/ros/indigo/share/visualization_msgs/cmake/../msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p segmenter_jordlee -o /home/fetch/catkin_ws/src/segmenter_jordlee/devel/include/segmenter_jordlee -e /opt/ros/indigo/share/gencpp/cmake/..
 
 segmenter_jordlee_generate_messages_cpp: CMakeFiles/segmenter_jordlee_generate_messages_cpp
 segmenter_jordlee_generate_messages_cpp: devel/include/segmenter_jordlee/SegmentObject.h

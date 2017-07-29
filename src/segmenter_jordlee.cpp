@@ -34,6 +34,11 @@ Segmenter::Segmenter(std::string _db, std::string _rgbd, std::string _model, boo
   sub = nh.subscribe(point_cloud_topic, 1, &Segmenter::pointCloudCallback,this);
   segment_srv_ = nh.advertiseService("segment_object", &Segmenter::SegmentObjectCallback, this);
   pub = nh.advertise< pcl::PointCloud<pcl::PointXYZRGB> > ("pointstestinginput", 1,true);
+  markers_pub_ = nh.advertise<visualization_msgs::MarkerArray>("markers_jordlee", 1, true);
+  segmented_objects_pub_ = nh.advertise<std_msgs::String>("segmented_objects", 1, true);
+ // segmented_objects_pub_ = nh.advertise<rail_manipulation_msgs::SegmentedObjectList>("segmented_objects", 1, true);
+ // segmented_objects_pub_ = nh.advertise<rail_manipulation_msgs::SegmentedObjectList>("segmented_objects", 1, true);
+//  segmented_objects_pub_ = nh.advertise<rail_manipulation_msgs::SegmentedObject>("segmented_objects", 1, true);
 
   ROS_INFO("Ready to segment.");
  //ros::spin();
@@ -298,16 +303,20 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
 
 //rviz
 
-  //cloud_output[1]->header.frame_id = "base_link";
- // cloud_input->height = pc_->width = 1;
+
+//  //cloud_output[1]->header.frame_id = "base_link";
+// // cloud_input->height = pc_->width = 1;
 
 
-  cloud_input->header.frame_id = "head_camera_depth_frame";
+  cloud_input->header.frame_id = "head_camera_depth_optical_frame";
+//  cloud_input->header.frame_id = "base_link";
 
-  ros::Rate loop_rate(4);
-  while (nh.ok())
-  {
-  //  cloud_output[1]->header.stamp = ros::Time::now().toNSec();
+  // ros::Rate loop_rate(4);
+//  while (nh.ok())
+  // {
+// cloud_input->header.stamp = ros::Time::now().toNSec();
+// //   cloud_output[1]->header.stamp = ros::Time::now().toNSec();
+
     /*
     pcl::PCLPointCloud2::Ptr converted(new pcl::PCLPointCloud2);
     pcl_conversions::fromPCL(*converted, cloud_input);
@@ -315,12 +324,39 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
     markercloud=this->createMarker(converted);
      pub.publish (markercloud);
     */
-    pub.publish (cloud_input);
+  pub.publish (cloud_input);
 
-    ros::spinOnce ();
-    loop_rate.sleep ();
+  ros::spinOnce ();
+  //   loop_rate.sleep ();
+ //}
+  for(int i =0;i<label_indices.size();i++)
+  {
+  pcl::PCLPointCloud2::Ptr converted(new pcl::PCLPointCloud2);
+  pcl::toPCLPointCloud2(*cloud_output[i], *converted);
+  rail_manipulation_msgs::SegmentedObject segmented_object;
+  pcl_conversions::fromPCL(*converted, segmented_object.point_cloud);
+  segmented_object.point_cloud.header.stamp = ros::Time::now();
+  segmented_object.marker = this->createMarker(converted);
+  segmented_object.marker.id = i;
+  markers_.markers.push_back(segmented_object.marker);
+    object_list_.objects.push_back(segmented_object);
+ //   segmented_objects_pub_.publish(segmented_object);
   }
+  markers_pub_.publish(markers_);
 
+  // publish the new list
+  object_list_.header.seq++;
+  object_list_.header.stamp = ros::Time::now();
+ // object_list_.header.frame_id = zone.getSegmentationFrameID();
+  object_list_.cleared = false;
+
+
+//  res.object_list_;
+
+//  segmented_objects_pub_.publish(object_list_);
+   a=1;
+   res.a;
+//  res.segmented_object;
 
 
 //pcl viewer

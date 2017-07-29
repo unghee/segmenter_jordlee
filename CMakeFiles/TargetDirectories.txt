@@ -27,6 +27,9 @@
 /home/fetch/catkin_ws/src/segmenter_jordlee/CMakeFiles/pcl_msgs_generate_messages_lisp.dir
 /home/fetch/catkin_ws/src/segmenter_jordlee/CMakeFiles/pcl_msgs_generate_messages_py.dir
 /home/fetch/catkin_ws/src/segmenter_jordlee/CMakeFiles/pcl_ros_gencfg.dir
+/home/fetch/catkin_ws/src/segmenter_jordlee/CMakeFiles/rail_manipulation_msgs_generate_messages_cpp.dir
+/home/fetch/catkin_ws/src/segmenter_jordlee/CMakeFiles/rail_manipulation_msgs_generate_messages_lisp.dir
+/home/fetch/catkin_ws/src/segmenter_jordlee/CMakeFiles/rail_manipulation_msgs_generate_messages_py.dir
 /home/fetch/catkin_ws/src/segmenter_jordlee/CMakeFiles/roscpp_generate_messages_cpp.dir
 /home/fetch/catkin_ws/src/segmenter_jordlee/CMakeFiles/roscpp_generate_messages_lisp.dir
 /home/fetch/catkin_ws/src/segmenter_jordlee/CMakeFiles/roscpp_generate_messages_py.dir

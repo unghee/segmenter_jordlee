@@ -504,6 +504,45 @@ pcl_ros_gencfg/fast:
 .PHONY : pcl_ros_gencfg/fast
 
 #=============================================================================
+# Target rules for targets named rail_manipulation_msgs_generate_messages_cpp
+
+# Build rule for target.
+rail_manipulation_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rail_manipulation_msgs_generate_messages_cpp
+.PHONY : rail_manipulation_msgs_generate_messages_cpp
+
+# fast build rule for target.
+rail_manipulation_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f CMakeFiles/rail_manipulation_msgs_generate_messages_cpp.dir/build.make CMakeFiles/rail_manipulation_msgs_generate_messages_cpp.dir/build
+.PHONY : rail_manipulation_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named rail_manipulation_msgs_generate_messages_lisp
+
+# Build rule for target.
+rail_manipulation_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rail_manipulation_msgs_generate_messages_lisp
+.PHONY : rail_manipulation_msgs_generate_messages_lisp
+
+# fast build rule for target.
+rail_manipulation_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f CMakeFiles/rail_manipulation_msgs_generate_messages_lisp.dir/build.make CMakeFiles/rail_manipulation_msgs_generate_messages_lisp.dir/build
+.PHONY : rail_manipulation_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named rail_manipulation_msgs_generate_messages_py
+
+# Build rule for target.
+rail_manipulation_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rail_manipulation_msgs_generate_messages_py
+.PHONY : rail_manipulation_msgs_generate_messages_py
+
+# fast build rule for target.
+rail_manipulation_msgs_generate_messages_py/fast:
+	$(MAKE) -f CMakeFiles/rail_manipulation_msgs_generate_messages_py.dir/build.make CMakeFiles/rail_manipulation_msgs_generate_messages_py.dir/build
+.PHONY : rail_manipulation_msgs_generate_messages_py/fast
+
+#=============================================================================
 # Target rules for targets named roscpp_generate_messages_cpp
 
 # Build rule for target.
@@ -1033,6 +1072,9 @@ help:
 	@echo "... pcl_msgs_generate_messages_lisp"
 	@echo "... pcl_msgs_generate_messages_py"
 	@echo "... pcl_ros_gencfg"
+	@echo "... rail_manipulation_msgs_generate_messages_cpp"
+	@echo "... rail_manipulation_msgs_generate_messages_lisp"
+	@echo "... rail_manipulation_msgs_generate_messages_py"
 	@echo "... rebuild_cache"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_lisp"

@@ -55,6 +55,7 @@
 //ROS
 #include <pcl_conversions/pcl_conversions.h>
 #include <pcl_ros/point_cloud.h>
+#include <rail_manipulation_msgs/SegmentedObjectList.h>
 #include <pcl_ros/transforms.h>
 #include <ros/package.h>
 #include <ros/ros.h>
@@ -113,9 +114,13 @@ private:
   ros::NodeHandle nh;                                  ///< ROS Node handles
   ros::Subscriber sub;                                    ///< ROS subscirber
   ros::ServiceServer segment_srv_;
-  ros::Publisher pub;
+  ros::Publisher pub,segmented_objects_pub_, markers_pub_;
   /*! Latest point cloud. */
   pcl::PointCloud<pcl::PointXYZRGB>::ConstPtr pc_;
+  visualization_msgs::MarkerArray markers_;
+  rail_manipulation_msgs::SegmentedObjectList object_list_;
+    int a;
+
 public:
     static const float DOWNSAMPLE_LEAF_SIZE = 0.01;
     /*! Size of the marker visualization scale factor. */

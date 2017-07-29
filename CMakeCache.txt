@@ -638,6 +638,9 @@ pcl_ros_DIR:PATH=/opt/ros/indigo/share/pcl_ros/cmake
 //The directory containing a CMake configuration file for pluginlib.
 pluginlib_DIR:PATH=/opt/ros/indigo/share/pluginlib/cmake
 
+//The directory containing a CMake configuration file for rail_manipulation_msgs.
+rail_manipulation_msgs_DIR:PATH=/opt/ros/indigo/share/rail_manipulation_msgs/cmake
+
 //The directory containing a CMake configuration file for rosbag.
 rosbag_DIR:PATH=/opt/ros/indigo/share/rosbag/cmake
 

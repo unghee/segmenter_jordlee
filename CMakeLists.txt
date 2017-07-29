@@ -17,8 +17,8 @@ find_package(
   tf_conversions
   visualization_msgs
   cmake_modules
+  rail_manipulation_msgs
 )
-
 # find opencfind_package(OPENCV REQUIRED)
 find_package(OpenCV REQUIRED)
 ## find Lapack
@@ -52,6 +52,7 @@ add_service_files(
 generate_messages(
 DEPENDENCIES
 std_msgs
+rail_manipulation_msgs
 )
 ## Declare a catkin package
 catkin_package(
