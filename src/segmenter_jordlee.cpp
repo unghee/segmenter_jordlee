@@ -199,22 +199,8 @@ Segmenter::processPointCloudV(pcl::PointCloud<pcl::PointXYZRGB>::Ptr &pcl_cloud)
 bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request &req, segmenter_jordlee::SegmentObject::Response &res)
 {
 
-  bool processed = false;
-  // database_path = "";
-  // model_path = _model_path;
-  // rgbd_filename = _rgbd_filename;
-  // req.a;
-
-
   printf("init.\n");
   init();
-
-  //point from pointcloud
-  //make error message
-
-  // ros::spin();
-  // ros::Duration(15).sleep();
-  // ros::spinOnce();
 
 
   std::cout<<" processing pointcloud" << std::endl;
@@ -261,12 +247,9 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
 
   std::cout<<"copying pointcloud"<<std::endl;
   pcl::copyPointCloud(*pc_, *cloud_input);
+
   std::cout<<"after copying pointcloud"<<std::endl;
-
-
   std::vector<pcl::PointIndices> label_indices;
-  //  pcl::copyPointCloud(*(processPointCloudV(cloud_input)), *cloud_output);
-
   label_indices = processPointCloudV(cloud_input);
 
   std::vector<pcl::PointCloud<pcl::PointXYZRGB>::ConstPtr> cloud_output;
@@ -281,91 +264,47 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
   }
   std::cout<<"after"<<std::endl;
 
-  /*
-  // rviz
-
-  sensor_msgs::PointCloud2 pc2msg;
-  pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_vis_rgb(new pcl::PointCloud<pcl::PointXYZRGB>);
-  ros::Publisher pcl_pub = nh.advertise<sensor_msgs::PointCloud2>("point_cloud", 10);
-
-// publication of grasp affordances and handles as ROS topics
-  visualization_msgs::MarkerArray marker_array_msg_handles;
-  ros::Publisher marker_array_pub_handles = nh.advertise<visualization_msgs::MarkerArray>("visualization_all_handles",
-                                                                                          10);
-
-  pcl::toROSMsg(*cloud_vis_rgb, pc2msg);
-  pc2msg.header.stamp = ros::Time::now();
-  pc2msg.header.frame_id = "head_camera_rgb_optical_frame";
-  pcl_pub.publish(pc2msg);
-
-  marker_array_pub_handles.publish(marker_array_msg_handles);
-
-*/
-
+  
 //rviz
 
-
-//  //cloud_output[1]->header.frame_id = "base_link";
-// // cloud_input->height = pc_->width = 1;
-
-
   cloud_input->header.frame_id = "head_camera_depth_optical_frame";
-//  cloud_input->header.frame_id = "base_link";
+//  cloud_output[1]->header.stamp = ros::Time::now().toNSec();
 
-  // ros::Rate loop_rate(4);
-//  while (nh.ok())
-  // {
-// cloud_input->header.stamp = ros::Time::now().toNSec();
-// //   cloud_output[1]->header.stamp = ros::Time::now().toNSec();
-
-    /*
-    pcl::PCLPointCloud2::Ptr converted(new pcl::PCLPointCloud2);
-    pcl_conversions::fromPCL(*converted, cloud_input);
-    visualization_msgs::Marker markercloud;
-    markercloud=this->createMarker(converted);
-     pub.publish (markercloud);
-    */
   pub.publish (cloud_input);
-
   ros::spinOnce ();
-  //   loop_rate.sleep ();
- //}
+
   for(int i =0;i<label_indices.size();i++)
   {
-  pcl::PCLPointCloud2::Ptr converted(new pcl::PCLPointCloud2);
-  pcl::toPCLPointCloud2(*cloud_output[i], *converted);
-  rail_manipulation_msgs::SegmentedObject segmented_object;
-  pcl_conversions::fromPCL(*converted, segmented_object.point_cloud);
-  segmented_object.point_cloud.header.stamp = ros::Time::now();
-  segmented_object.marker = this->createMarker(converted);
-  segmented_object.marker.id = i;
-  markers_.markers.push_back(segmented_object.marker);
+    pcl::PCLPointCloud2::Ptr converted(new pcl::PCLPointCloud2);
+    pcl::toPCLPointCloud2(*cloud_output[i], *converted);
+
+    rail_manipulation_msgs::SegmentedObject segmented_object;
+    pcl_conversions::fromPCL(*converted, segmented_object.point_cloud);
+
+    segmented_object.point_cloud.header.stamp = ros::Time::now();
+    segmented_object.marker = this->createMarker(converted);
+    segmented_object.marker.id = i;
+
+    markers_.markers.push_back(segmented_object.marker);
+
     object_list_.objects.push_back(segmented_object);
  //   segmented_objects_pub_.publish(segmented_object);
   }
+
+  //publish markers
   markers_pub_.publish(markers_);
 
-  // publish the new list
+  // save into object_list
   object_list_.header.seq++;
   object_list_.header.stamp = ros::Time::now();
  // object_list_.header.frame_id = zone.getSegmentationFrameID();
   object_list_.header.frame_id = "test";
   object_list_.cleared = false;
 
-  std::cout<<object_list_.objects.size()<<std::endl;
+  //save it into response
   res.object_list_ = object_list_;
-
-//  segmented_objects_pub_.publish(object_list_);
-   //a=1;
-  // req.a;
-  // res.a;
- // res.segmented_object;
-
-
-
-//  res.sum = req.a + req.b;
-//  ROS_INFO("request: x=%ld, y=%ld", (long int)req.a, (long int)req.b);
   ROS_INFO("sending back response: ");
+
   return true;
 
 
@@ -379,6 +318,7 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
 
   ROS_INFO("sending back response");
   return true;
+
 }
 
 boost::shared_ptr<pcl::visualization::PCLVisualizer>
@@ -475,9 +415,6 @@ visualization_msgs::Marker Segmenter::createMarker(const pcl::PCLPointCloud2::Co
 }
 
 
-
-
-
 }
 
 void printUsage(char *av)
@@ -492,44 +429,16 @@ void printUsage(char *av)
                "   [-as usage] ... use assembly level: 0/1\n", av);
     std::cout << " Example: " << av << " -f /media/Daten/OSD-0.2/pcd/test%1d.pcd -m model/ -idx 0 10" << std::endl;
 }
-/*
-
-bool addjord(segmenter_jordlee::SegmentObject::Request &req, segmenter_jordlee::SegmentObject::Response &res)
-{
-  res.sum = req.a + req.b;
-  ROS_INFO("request: x=%ld, y=%ld", (long int)req.a, (long int)req.b);
-  ROS_INFO("sending back response: [%ld]", (long int)res.sum);
-  return true;
-}
-*/
 
 int main(int argc, char **argv)
 {
 
   std::string rgbd_filename = "points2/test%1d.pcd";
- // std::string model_path = "model/";
   std::string model_path = "/home/fetch/catkin_ws/src/segmenter_jordlee/model/";
 
-  //Receiving pointclouds
-
   ros::init(argc, argv, "segmenter");
+
   segment::Segmenter seg;
-  //seg.setMinMaxDepth(0.0, 1.5);
-//  seg.run(rgbd_filename, model_path, startIdx, endIdx);
- // seg.run(model_path);
- // string point_cloud_topic("/head_camera/depth_registered/points");
- // ros::NodeHandle nh2;
-
- // ros::ServiceServer segment_srv_;
-
-
- // segment_srv_ = nh2.advertiseService("segment_object", SegmentObjectCallback);
-
- // ros::NodeHandle n;
-
- // ros::ServiceServer service = n.advertiseService("add_two_ints_jordlee", addjord);
- // ROS_INFO("Ready to add two ints.");
-
 
   ros::spin();
   return 0;

@@ -402,9 +402,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/segmenter_jordlee.cbp" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/include/SegmentObject.h" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/srv/.SegmentObject.srv.swp" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/Segmenter1.h" afterPath="$PROJECT_DIR$/include/Segmenter1.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/segmenter_jordlee.cpp" afterPath="$PROJECT_DIR$/src/segmenter_jordlee.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/srv/SegmentObject.srv" afterPath="$PROJECT_DIR$/srv/SegmentObject.srv" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/CMakeFiles/" />
@@ -421,8 +419,8 @@
       <file leaf-file-name="segmenter_jordlee.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/segmenter_jordlee.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1693">
-              <caret line="305" column="0" lean-forward="true" selection-start-line="305" selection-start-column="0" selection-end-line="305" selection-end-column="0" />
+            <state relative-caret-position="309">
+              <caret line="266" column="2" lean-forward="false" selection-start-line="266" selection-start-column="2" selection-end-line="266" selection-end-column="2" />
               <folding>
                 <element signature="e#1556#1723#0" expanded="false" />
                 <element signature="e#4321#6819#0" expanded="false" />
@@ -1159,12 +1157,12 @@
       <workItem from="1500654729767" duration="2000" />
       <workItem from="1500654754095" duration="29701000" />
       <workItem from="1501019232736" duration="19296000" />
-      <workItem from="1501103878492" duration="57608000" />
+      <workItem from="1501103878492" duration="58367000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106607000" />
+    <option name="totallyTimeSpent" value="107366000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
@@ -1379,8 +1377,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/segmenter_jordlee.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1693">
-          <caret line="305" column="0" lean-forward="true" selection-start-line="305" selection-start-column="0" selection-end-line="305" selection-end-column="0" />
+        <state relative-caret-position="309">
+          <caret line="266" column="2" lean-forward="false" selection-start-line="266" selection-start-column="2" selection-end-line="266" selection-end-column="2" />
           <folding>
             <element signature="e#1556#1723#0" expanded="false" />
             <element signature="e#4321#6819#0" expanded="false" />
