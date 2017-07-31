@@ -119,7 +119,7 @@ private:
   pcl::PointCloud<pcl::PointXYZRGB>::ConstPtr pc_;
   visualization_msgs::MarkerArray markers_;
   rail_manipulation_msgs::SegmentedObjectList object_list_;
-    int a;
+   // int a;
 
 public:
     static const float DOWNSAMPLE_LEAF_SIZE = 0.01;
