@@ -18,6 +18,9 @@ find_package(
   visualization_msgs
   cmake_modules
   rail_manipulation_msgs
+#  rospy
+#  genmsg
+#  sensor_msgs
 )
 # find opencfind_package(OPENCV REQUIRED)
 find_package(OpenCV REQUIRED)
@@ -80,7 +83,9 @@ include_directories(${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS} ${PCL_INCLUDE_D
 include_directories( ${PROJECT_SOURCE_DIR} v4r include)
 
 ## create executables
-add_executable(${PROJECT_NAME} src/segmenter_jordlee.cpp)
+add_executable(${PROJECT_NAME} src/segmenter_jordlee.cpp )
+#add_executable(${PROJECT_NAME} src/segmenter_servicetest.cpp)
+
 
 ## link libraries to localization executable
  target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OPENCV_LIBRARIES} v4rKinectInterface v4rSurfaceModeling v4rSurfaceClustering v4rObjectModeling v4rSurfaceRelations v4rsvm v4rGraphCut v4rSurfaceUtils v4rvs3 v4rPCLAddOns v4rTomGine)

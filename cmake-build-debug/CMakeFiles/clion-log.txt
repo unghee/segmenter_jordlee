@@ -62,11 +62,11 @@ CMake Warning at /opt/ros/indigo/share/catkin/cmake/catkin_package.cmake:411 (me
   placed in the devel space instead of the build space
 Call Stack (most recent call first):
   /opt/ros/indigo/share/catkin/cmake/catkin_package.cmake:100 (_catkin_package)
-  CMakeLists.txt:57 (catkin_package)
+  CMakeLists.txt:61 (catkin_package)
 
 
 -- Configuring done
-CMake Warning at CMakeLists.txt:82 (add_executable):
+CMake Warning at CMakeLists.txt:86 (add_executable):
   Cannot generate a safe linker search path for target segmenter_jordlee
   because files in some directories may conflict with libraries in implicit
   directories:
@@ -109,7 +109,7 @@ CMake Warning at CMakeLists.txt:82 (add_executable):
   Some of these libraries may not be found correctly.
 
 
-CMake Warning at CMakeLists.txt:82 (add_executable):
+CMake Warning at CMakeLists.txt:86 (add_executable):
   Cannot generate a safe runtime search path for target segmenter_jordlee
   because files in some directories may conflict with libraries in implicit
   directories:

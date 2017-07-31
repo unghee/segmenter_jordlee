@@ -53,23 +53,9 @@ CMakeFiles/segmenter_jordlee_generate_messages_py: devel/lib/python2.7/dist-pack
 
 devel/lib/python2.7/dist-packages/segmenter_jordlee/srv/_SegmentObject.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/gensrv_py.py
 devel/lib/python2.7/dist-packages/segmenter_jordlee/srv/_SegmentObject.py: srv/SegmentObject.srv
-devel/lib/python2.7/dist-packages/segmenter_jordlee/srv/_SegmentObject.py: /opt/ros/indigo/share/rail_manipulation_msgs/cmake/../msg/SegmentedObjectList.msg
-devel/lib/python2.7/dist-packages/segmenter_jordlee/srv/_SegmentObject.py: /opt/ros/indigo/share/geometry_msgs/cmake/../msg/Vector3.msg
-devel/lib/python2.7/dist-packages/segmenter_jordlee/srv/_SegmentObject.py: /opt/ros/indigo/share/geometry_msgs/cmake/../msg/Quaternion.msg
-devel/lib/python2.7/dist-packages/segmenter_jordlee/srv/_SegmentObject.py: /opt/ros/indigo/share/sensor_msgs/cmake/../msg/PointField.msg
-devel/lib/python2.7/dist-packages/segmenter_jordlee/srv/_SegmentObject.py: /opt/ros/indigo/share/rail_manipulation_msgs/cmake/../msg/Grasp.msg
-devel/lib/python2.7/dist-packages/segmenter_jordlee/srv/_SegmentObject.py: /opt/ros/indigo/share/rail_manipulation_msgs/cmake/../msg/SegmentedObject.msg
-devel/lib/python2.7/dist-packages/segmenter_jordlee/srv/_SegmentObject.py: /opt/ros/indigo/share/sensor_msgs/cmake/../msg/PointCloud2.msg
-devel/lib/python2.7/dist-packages/segmenter_jordlee/srv/_SegmentObject.py: /opt/ros/indigo/share/visualization_msgs/cmake/../msg/Marker.msg
-devel/lib/python2.7/dist-packages/segmenter_jordlee/srv/_SegmentObject.py: /opt/ros/indigo/share/std_msgs/cmake/../msg/Header.msg
-devel/lib/python2.7/dist-packages/segmenter_jordlee/srv/_SegmentObject.py: /opt/ros/indigo/share/sensor_msgs/cmake/../msg/Image.msg
-devel/lib/python2.7/dist-packages/segmenter_jordlee/srv/_SegmentObject.py: /opt/ros/indigo/share/std_msgs/cmake/../msg/ColorRGBA.msg
-devel/lib/python2.7/dist-packages/segmenter_jordlee/srv/_SegmentObject.py: /opt/ros/indigo/share/geometry_msgs/cmake/../msg/Pose.msg
-devel/lib/python2.7/dist-packages/segmenter_jordlee/srv/_SegmentObject.py: /opt/ros/indigo/share/geometry_msgs/cmake/../msg/PoseStamped.msg
-devel/lib/python2.7/dist-packages/segmenter_jordlee/srv/_SegmentObject.py: /opt/ros/indigo/share/geometry_msgs/cmake/../msg/Point.msg
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/fetch/catkin_ws/src/segmenter_jordlee/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python code from SRV segmenter_jordlee/SegmentObject"
-	catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/fetch/catkin_ws/src/segmenter_jordlee/srv/SegmentObject.srv -Irail_manipulation_msgs:/opt/ros/indigo/share/rail_manipulation_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/indigo/share/actionlib_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/indigo/share/sensor_msgs/cmake/../msg -Ivisualization_msgs:/opt/ros/indigo/share/visualization_msgs/cmake/../msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p segmenter_jordlee -o /home/fetch/catkin_ws/src/segmenter_jordlee/devel/lib/python2.7/dist-packages/segmenter_jordlee/srv
+	catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/fetch/catkin_ws/src/segmenter_jordlee/srv/SegmentObject.srv -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -Irail_manipulation_msgs:/opt/ros/indigo/share/rail_manipulation_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/indigo/share/actionlib_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/indigo/share/sensor_msgs/cmake/../msg -Ivisualization_msgs:/opt/ros/indigo/share/visualization_msgs/cmake/../msg -p segmenter_jordlee -o /home/fetch/catkin_ws/src/segmenter_jordlee/devel/lib/python2.7/dist-packages/segmenter_jordlee/srv
 
 devel/lib/python2.7/dist-packages/segmenter_jordlee/srv/__init__.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
 devel/lib/python2.7/dist-packages/segmenter_jordlee/srv/__init__.py: devel/lib/python2.7/dist-packages/segmenter_jordlee/srv/_SegmentObject.py

@@ -71,7 +71,7 @@
 #include <visualization_msgs/MarkerArray.h>
 
 //ROS srv
-#include "SegmentObject.h"
+#include "segmenter_jordlee/SegmentObject.h"
 namespace segment
 {
   
