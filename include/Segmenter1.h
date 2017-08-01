@@ -51,6 +51,7 @@
 //PCL
 #include <pcl/io/pcd_io.h>
 #include <pcl/visualization/pcl_visualizer.h>
+#include <pcl/filters/crop_box.h>
 
 //ROS
 #include <pcl_conversions/pcl_conversions.h>
@@ -119,7 +120,12 @@ private:
   pcl::PointCloud<pcl::PointXYZRGB>::ConstPtr pc_;
   visualization_msgs::MarkerArray markers_;
   rail_manipulation_msgs::SegmentedObjectList object_list_;
-   // int a;
+  /*! List of segmentation zones. */
+//  std::vector<SegmentationZone> zones_;
+  /*! The transform tree buffer for the tf2 listener. */
+//  tf2_ros::Buffer tf_buffer_;
+  /*! Main transform listener. */
+ // tf::TransformListener tf_;
 
 public:
     static const float DOWNSAMPLE_LEAF_SIZE = 0.01;

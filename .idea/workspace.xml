@@ -402,6 +402,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/segmenter_jordlee.cbp" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/include/SegmentObject.h" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/srv/.SegmentObject.srv.swp" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/Segmenter1.h" afterPath="$PROJECT_DIR$/include/Segmenter1.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/segmenter_jordlee.cpp" afterPath="$PROJECT_DIR$/src/segmenter_jordlee.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -419,8 +420,8 @@
       <file leaf-file-name="segmenter_jordlee.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/segmenter_jordlee.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="266" column="2" lean-forward="false" selection-start-line="266" selection-start-column="2" selection-end-line="266" selection-end-column="2" />
+            <state relative-caret-position="209">
+              <caret line="258" column="30" lean-forward="false" selection-start-line="258" selection-start-column="30" selection-end-line="258" selection-end-column="30" />
               <folding>
                 <element signature="e#1556#1723#0" expanded="false" />
                 <element signature="e#4321#6819#0" expanded="false" />
@@ -429,41 +430,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="segmenter_servicetest.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/segmenter_servicetest.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="15" column="40" lean-forward="false" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="message_traits.h" pinned="false" current-in-tab="false">
-        <entry file="file:///opt/ros/indigo/include/ros/message_traits.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="669">
-              <caret line="140" column="38" lean-forward="false" selection-start-line="140" selection-start-column="38" selection-end-line="140" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="49" column="6" lean-forward="false" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pcl_conversions.h" pinned="false" current-in-tab="false">
-        <entry file="file:///opt/ros/indigo/include/pcl_conversions/pcl_conversions.h">
+      <file leaf-file-name="filter_indices.h" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/include/pcl-1.7/pcl/filters/filter_indices.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="209">
-              <caret line="250" column="7" lean-forward="false" selection-start-line="250" selection-start-column="7" selection-end-line="250" selection-end-column="7" />
+              <caret line="126" column="6" lean-forward="false" selection-start-line="126" selection-start-column="6" selection-end-line="126" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="transforms.h" pinned="false" current-in-tab="false">
+        <entry file="file:///opt/ros/indigo/include/pcl_ros/transforms.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="249">
+              <caret line="94" column="52" lean-forward="true" selection-start-line="94" selection-start-column="52" selection-end-line="94" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tf.h" pinned="false" current-in-tab="false">
+        <entry file="file:///opt/ros/indigo/include/tf/tf.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="229">
+              <caret line="129" column="65" lean-forward="false" selection-start-line="129" selection-start-column="65" selection-end-line="129" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -472,13 +463,22 @@
       <file leaf-file-name="Segmenter1.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/Segmenter1.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="120" column="2" lean-forward="false" selection-start-line="120" selection-start-column="2" selection-end-line="120" selection-end-column="45" />
+            <state relative-caret-position="409">
+              <caret line="53" column="27" lean-forward="false" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="30" />
               <folding>
                 <element signature="e#1085#1103#0" expanded="true" />
-                <element signature="e#1658#1684#0" expanded="true" />
-                <element signature="e#1738#1782#0" expanded="true" />
+                <element signature="e#1772#1816#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="crop_box.h" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/include/pcl-1.7/pcl/filters/crop_box.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -1157,12 +1157,12 @@
       <workItem from="1500654729767" duration="2000" />
       <workItem from="1500654754095" duration="29701000" />
       <workItem from="1501019232736" duration="19296000" />
-      <workItem from="1501103878492" duration="58367000" />
+      <workItem from="1501103878492" duration="69805000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107366000" />
+    <option name="totallyTimeSpent" value="118804000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
@@ -1244,8 +1244,7 @@
           <caret line="56" column="31" lean-forward="false" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="31" />
           <folding>
             <element signature="e#1085#1103#0" expanded="true" />
-            <element signature="e#1658#1684#0" expanded="true" />
-            <element signature="e#1738#1782#0" expanded="true" />
+            <element signature="e#1772#1816#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1275,8 +1274,7 @@
           <caret line="56" column="31" lean-forward="false" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="31" />
           <folding>
             <element signature="e#1085#1103#0" expanded="true" />
-            <element signature="e#1658#1684#0" expanded="true" />
-            <element signature="e#1738#1782#0" expanded="true" />
+            <element signature="e#1772#1816#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1339,14 +1337,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///opt/ros/indigo/include/ros/message_traits.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="669">
-          <caret line="140" column="38" lean-forward="false" selection-start-line="140" selection-start-column="38" selection-end-line="140" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///opt/ros/indigo/include/pcl_conversions/pcl_conversions.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -1363,22 +1353,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///opt/ros/indigo/include/ros/message_traits.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="669">
+          <caret line="140" column="38" lean-forward="false" selection-start-line="140" selection-start-column="38" selection-end-line="140" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///opt/ros/indigo/include/tf/tf.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="129" column="65" lean-forward="false" selection-start-line="129" selection-start-column="65" selection-end-line="129" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///opt/ros/indigo/include/pcl_ros/transforms.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="94" column="52" lean-forward="true" selection-start-line="94" selection-start-column="52" selection-end-line="94" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/pcl-1.7/pcl/filters/filter_indices.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="126" column="6" lean-forward="false" selection-start-line="126" selection-start-column="6" selection-end-line="126" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/include/Segmenter1.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="120" column="2" lean-forward="false" selection-start-line="120" selection-start-column="2" selection-end-line="120" selection-end-column="45" />
+        <state relative-caret-position="409">
+          <caret line="53" column="27" lean-forward="false" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="30" />
           <folding>
             <element signature="e#1085#1103#0" expanded="true" />
-            <element signature="e#1658#1684#0" expanded="true" />
-            <element signature="e#1738#1782#0" expanded="true" />
+            <element signature="e#1772#1816#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/pcl-1.7/pcl/filters/crop_box.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/segmenter_jordlee.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="266" column="2" lean-forward="false" selection-start-line="266" selection-start-column="2" selection-end-line="266" selection-end-column="2" />
+        <state relative-caret-position="209">
+          <caret line="258" column="30" lean-forward="false" selection-start-line="258" selection-start-column="30" selection-end-line="258" selection-end-column="30" />
           <folding>
             <element signature="e#1556#1723#0" expanded="false" />
             <element signature="e#4321#6819#0" expanded="false" />

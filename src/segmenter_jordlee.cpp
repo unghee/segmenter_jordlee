@@ -206,6 +206,66 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
   std::cout<<" processing pointcloud" << std::endl;
   pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_input (new pcl::PointCloud<pcl::PointXYZRGB>);
 
+  std::cout<<"copying pointcloud"<<std::endl;
+  pcl::copyPointCloud(*pc_, *cloud_input);
+
+  std::string parentFrame = "/head_camera_depth_optical_frame";
+  std::string targetFrame = "/base_link";
+  //geometry_msgs::TransformStamped tf = tf_buffer_.lookupTransform(parentFrame,targetFrame, ros::Time(0));
+
+  ///frame transformation
+  tf::TransformListener listener;
+  tf::StampedTransform transform;
+  listener.waitForTransform(targetFrame, parentFrame, ros::Time(), ros::Duration(4.0));
+  listener.lookupTransform(targetFrame, parentFrame , ros::Time(0), transform);
+
+  pcl::PointCloud<pcl::PointXYZRGB>::Ptr transformed_pc(new pcl::PointCloud<pcl::PointXYZRGB>);
+
+  //pcl_ros::transformPointCloud(targetFrame, *cloud_input, *transformed_pc,listener);
+ // pcl_ros::transformPointCloud(targetFrame, transform, *cloud_input,*transformed_pc);
+  pcl_ros::transformPointCloud(*cloud_input,*transformed_pc,transform);
+
+  ///remove plane
+  pcl::ModelCoefficients::Ptr coefficients (new pcl::ModelCoefficients);
+  pcl::PointIndices::Ptr inliers (new pcl::PointIndices);
+  // Create the segmentation object
+  pcl::SACSegmentation<pcl::PointXYZRGB> seg;
+  // Optional
+  seg.setOptimizeCoefficients (true);
+  // Mandatory
+  seg.setModelType (pcl::SACMODEL_PLANE);
+  seg.setMethodType (pcl::SAC_RANSAC);
+  seg.setDistanceThreshold (0.03);
+  seg.setInputCloud (transformed_pc);
+  seg.segment (*inliers, *coefficients);
+  //remove the plane
+  pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_plane (new pcl::PointCloud<pcl::PointXYZRGB>);
+  pcl::ExtractIndices<pcl::PointXYZRGB> extract(true);
+  extract.setInputCloud(transformed_pc);
+  extract.setIndices(inliers);
+  extract.setNegative(true); //whether to keep only plane or opposite behavior.
+  extract.filter(*cloud_plane);
+  //extract.setKeepOrganized(true);
+  seg.setIndices(extract.getRemovedIndices());
+
+
+  ///cropbox
+  pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_cropped (new pcl::PointCloud<pcl::PointXYZRGB>);
+
+  vector<int> filteredIndices;
+
+  pcl::CropBox<pcl::PointXYZRGB> cropper;
+  cropper.getMax();
+  Eigen::Vector4f minVec(-5,-5,0.7,0);
+  Eigen::Vector4f maxVec(5,3,1,0);
+//  pcl::CropBox< pcl::PCLPointCloud2 >::getMax();
+
+  cropper.setMax(maxVec);
+  cropper.setMin(minVec);
+  cropper.setInputCloud(cloud_plane);
+  cropper.filter(*cloud_cropped);
+  cropper.filter(filteredIndices);
+
 /*
   // ######################## Setup TomGine ########################
   int width = 640;
@@ -242,15 +302,16 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
 
   //loading pointcloud from pcd
   // pcl::io::loadPCDFile (rgbd_filename, *cloud_input);
+
   //save pointcloud to pcd
   //pcl::io::savePCDFileASCII("/home/fetch/catkin_ws/src/segmenter_jordlee/testsegment.pcd",*cloud_input);
 
-  std::cout<<"copying pointcloud"<<std::endl;
-  pcl::copyPointCloud(*pc_, *cloud_input);
+
 
   std::cout<<"after copying pointcloud"<<std::endl;
   std::vector<pcl::PointIndices> label_indices;
-  label_indices = processPointCloudV(cloud_input);
+  label_indices = processPointCloudV(cloud_input);  ///need to change
+//  label_indices = processPointCloudV(cloud_plane);  ///need to change
 
   std::vector<pcl::PointCloud<pcl::PointXYZRGB>::ConstPtr> cloud_output;
   std::cout<<"before"<<std::endl;
@@ -259,18 +320,22 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
 
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_temp(new pcl::PointCloud<pcl::PointXYZRGB>);
     pcl::copyPointCloud(*cloud_input, label_indices[i], *(cloud_temp));
+  //  pcl::copyPointCloud(*transformed_pc, label_indices[i], *(cloud_temp));
+   // pcl::copyPointCloud(*cloud_plane, label_indices[i], *(cloud_temp));
     cloud_output.push_back(cloud_temp);
 
   }
   std::cout<<"after"<<std::endl;
 
-  
+
 //rviz
 
   cloud_input->header.frame_id = "head_camera_depth_optical_frame";
 //  cloud_output[1]->header.stamp = ros::Time::now().toNSec();
 
-  pub.publish (cloud_input);
+ // pub.publish (cloud_input);
+ // pub.publish (cloud_plane);
+  pub.publish (cloud_cropped);  ///need to change
   ros::spinOnce ();
 
   for(int i =0;i<label_indices.size();i++)
@@ -302,7 +367,7 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
   object_list_.cleared = false;
 
   //save it into response
-  res.object_list_ = object_list_;
+ // res.object_list_ = object_list_;
   ROS_INFO("sending back response: ");
 
   return true;
@@ -413,6 +478,34 @@ visualization_msgs::Marker Segmenter::createMarker(const pcl::PCLPointCloud2::Co
 
   return marker;
 }
+/*
+const SegmentationZone &Segmenter::getCurrentZone() const
+{
+  // check each zone
+  for (size_t i = 0; i < zones_.size(); i++)
+  {
+    // get the current TF information
+    geometry_msgs::TransformStamped tf = tf_buffer_.lookupTransform(zones_[i].getParentFrameID(),
+                                                                    zones_[i].getChildFrameID(), ros::Time(0));
+
+    // convert to a Matrix3x3 to get RPY
+    tf2::Matrix3x3 mat(tf2::Quaternion(tf.transform.rotation.x, tf.transform.rotation.y, tf.transform.rotation.z,
+                                       tf.transform.rotation.w));
+    double roll, pitch, yaw;
+    mat.getRPY(roll, pitch, yaw);
+
+    // check if all the bounds meet
+    if (roll >= zones_[i].getRollMin() && pitch >= zones_[i].getPitchMin() && yaw >= zones_[i].getYawMin() &&
+        roll <= zones_[i].getRollMax() && pitch <= zones_[i].getPitchMax() && yaw <= zones_[i].getYawMax())
+    {
+      return zones_[i];
+    }
+  }
+
+  ROS_WARN("Current state not in a valid segmentation zone. Defaulting to first zone.");
+  return zones_[0];
+}
+*/
 
 
 }
