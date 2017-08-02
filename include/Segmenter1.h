@@ -52,6 +52,7 @@
 #include <pcl/io/pcd_io.h>
 #include <pcl/visualization/pcl_visualizer.h>
 #include <pcl/filters/crop_box.h>
+#include <pcl/segmentation/region_growing_rgb.h>
 
 //ROS
 #include <pcl_conversions/pcl_conversions.h>
@@ -127,12 +128,25 @@ private:
   /*! Main transform listener. */
  // tf::TransformListener tf_;
 
+
 public:
     static const float DOWNSAMPLE_LEAF_SIZE = 0.01;
     /*! Size of the marker visualization scale factor. */
     static const double MARKER_SCALE = 0.01;
-
-
+    /*! The minimum cluster size. */
+    static const int DEFAULT_MIN_CLUSTER_SIZE = 200;
+    /*! The maximum cluster size. */
+    static const int DEFAULT_MAX_CLUSTER_SIZE = 10000;
+    /*! The cluster tolerance level. */
+    static const double CLUSTER_TOLERANCE = 0.02;
+    /*! The color tolerance level, only for RGB segmentation */
+    static const double POINT_COLOR_THRESHOLD = 10;
+    /*! The region color tolerance, only for small region merging in RGB segmentation */
+    static const double REGION_COLOR_THRESHOLD = 10;
+    /*! Leaf size of the voxel grid for downsampling. */
+  //  static const float DOWNSAMPLE_LEAF_SIZE = 0.01;
+    /*! Size of the marker visualization scale factor. */
+  //  static const double MARKER_SCALE = 0.01;
 
 
 private:

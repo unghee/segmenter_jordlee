@@ -244,29 +244,37 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
   extract.setInputCloud(transformed_pc);
   extract.setIndices(inliers);
   extract.setNegative(true); //whether to keep only plane or opposite behavior.
+  extract.setKeepOrganized(true); //keep organized should be first stated
   extract.filter(*cloud_plane);
-  //extract.setKeepOrganized(true);
   seg.setIndices(extract.getRemovedIndices());
 
 
   ///cropbox
   pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_cropped (new pcl::PointCloud<pcl::PointXYZRGB>);
 
-  vector<int> filteredIndices;
-
+  //vector<int> filteredIndices;
+  pcl::IndicesPtr filteredIndices(new vector<int>);
   pcl::CropBox<pcl::PointXYZRGB> cropper;
   cropper.getMax();
-  Eigen::Vector4f minVec(-5,-5,0.7,0);
-  Eigen::Vector4f maxVec(5,3,1,0);
+  Eigen::Vector4f minVec(-3,-3,0.7,0);
+  Eigen::Vector4f maxVec(1,3,1,0);
 //  pcl::CropBox< pcl::PCLPointCloud2 >::getMax();
 
   cropper.setMax(maxVec);
   cropper.setMin(minVec);
   cropper.setInputCloud(cloud_plane);
+  cropper.setKeepOrganized(true);
   cropper.filter(*cloud_cropped);
-  cropper.filter(filteredIndices);
+  cropper.filter(*filteredIndices);
 
-/*
+
+
+
+
+
+
+ //for visualizing rgb image
+
   // ######################## Setup TomGine ########################
   int width = 640;
   int height = 480;
@@ -293,12 +301,13 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
   dbgWin.Update();
   cv::Mat_<cv::Vec3b> kImage = cv::Mat_<cv::Vec3b>::zeros(480, 640);
 
-  pcl::copyPointCloud(*pc_, *cloud_input);
+//  pcl::copyPointCloud(*pc_, *cloud_input);
   pclA::ConvertPCLCloud2Image(cloud_input, kImage);
   cv::imshow("Debug image", kImage);
   dbgWin.SetImage(kImage);
   dbgWin.Update();
-*/
+  ros::Duration(10).sleep();
+
 
   //loading pointcloud from pcd
   // pcl::io::loadPCDFile (rgbd_filename, *cloud_input);
@@ -310,35 +319,90 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
 
   std::cout<<"after copying pointcloud"<<std::endl;
   std::vector<pcl::PointIndices> label_indices;
-  label_indices = processPointCloudV(cloud_input);  ///need to change
-//  label_indices = processPointCloudV(cloud_plane);  ///need to change
+//  label_indices = processPointCloudV(cloud_input);  ///need to change
+ // label_indices = processPointCloudV(cloud_plane);  ///need to change
+  label_indices = processPointCloudV(cloud_cropped);  ///need to change
+ // label_indices = processPointCloudV(clusters);  ///need to change
 
+  std::cout<<"finished labeling"<<std::endl;
   std::vector<pcl::PointCloud<pcl::PointXYZRGB>::ConstPtr> cloud_output;
   std::cout<<"before"<<std::endl;
+ // std::cout << "total object number" << cloud_output.size() << endl;
   for(int i =0;i<label_indices.size();i++)
   {
 
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_temp(new pcl::PointCloud<pcl::PointXYZRGB>);
-    pcl::copyPointCloud(*cloud_input, label_indices[i], *(cloud_temp));
+  //  pcl::copyPointCloud(*cloud_input, label_indices[i], *(cloud_temp));
   //  pcl::copyPointCloud(*transformed_pc, label_indices[i], *(cloud_temp));
-   // pcl::copyPointCloud(*cloud_plane, label_indices[i], *(cloud_temp));
+  //  pcl::copyPointCloud(*cloud_plane, label_indices[i], *(cloud_temp));
+    pcl::copyPointCloud(*cloud_cropped, label_indices[i], *(cloud_temp));
+    // setting size threshold
+    if (cloud_temp->points.size() > 100)
+    {
+
     cloud_output.push_back(cloud_temp);
-
+    }
+    else
+    {
+      std::cout << "removing pointcluster with size of " << cloud_temp->points.size() << endl;
+    }
   }
-  std::cout<<"after"<<std::endl;
 
+  std::cout << "total object number" << cloud_output.size() << endl;
+
+
+  ///setting color threshold
+//  pcl::IndicesPtr valid(new vector<int>);
+//  for (size_t i = 0; i < filteredIndices->size(); i++)
+//  {
+//    if (pcl_isfinite(cloud_cropped->points[filteredIndices->at(i)].x) & pcl_isfinite(cloud_cropped->points[filteredIndices->at(i)].y) &
+//        pcl_isfinite(cloud_cropped->points[filteredIndices->at(i)].z))
+//    {
+//      valid->push_back(filteredIndices->at(i));
+//    }
+//  }
+//  vector<pcl::PointIndices> clusters;
+//  pcl::RegionGrowingRGB<pcl::PointXYZRGB> reg;
+//  pcl::search::KdTree<pcl::PointXYZRGB>::Ptr kd_tree(new pcl::search::KdTree<pcl::PointXYZRGB>);
+//  // add two pointclouds to one for searching all pairs of pointclouds
+//  // or
+//  // USE HSV!! value
+//  // but if objects have same colors, this will cause a problem
+//  // kd_tree search through cluster indices?
+//
+//  kd_tree->setInputCloud(cloud_cropped);
+//  reg.setPointColorThreshold(POINT_COLOR_THRESHOLD);
+//  reg.setRegionColorThreshold(REGION_COLOR_THRESHOLD);
+////  reg.setDistanceThreshold(CLUSTER_TOLERANCE);
+//  // reg.setMinClusterSize(min_cluster_size_);
+////  reg.setMaxClusterSize(max_cluster_size_);
+//  reg.setSearchMethod(kd_tree);
+//  reg.setInputCloud(cloud_cropped);
+//  reg.setIndices(valid);
+//  reg.extract(clusters);
+//
+//
+
+
+
+
+
+
+
+ // std::cout<<cloud_output[1]->points.size()<<std::endl;
 
 //rviz
 
-  cloud_input->header.frame_id = "head_camera_depth_optical_frame";
+ // cloud_input->header.frame_id = "head_camera_depth_optical_frame";
 //  cloud_output[1]->header.stamp = ros::Time::now().toNSec();
 
  // pub.publish (cloud_input);
  // pub.publish (cloud_plane);
   pub.publish (cloud_cropped);  ///need to change
-  ros::spinOnce ();
+//  ros::spinOnce ();
 
-  for(int i =0;i<label_indices.size();i++)
+ // for(int i =0;i<label_indices.size();i++)
+  for(int i =0;i<cloud_output.size();i++)
   {
     pcl::PCLPointCloud2::Ptr converted(new pcl::PCLPointCloud2);
     pcl::toPCLPointCloud2(*cloud_output[i], *converted);

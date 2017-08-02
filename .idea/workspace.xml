@@ -420,12 +420,21 @@
       <file leaf-file-name="segmenter_jordlee.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/segmenter_jordlee.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="258" column="30" lean-forward="false" selection-start-line="258" selection-start-column="30" selection-end-line="258" selection-end-column="30" />
+            <state relative-caret-position="-339">
+              <caret line="376" column="48" lean-forward="true" selection-start-line="376" selection-start-column="48" selection-end-line="376" selection-end-column="48" />
               <folding>
                 <element signature="e#1556#1723#0" expanded="false" />
-                <element signature="e#4321#6819#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pcl_base.h" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/include/pcl-1.7/pcl/pcl_base.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="869">
+              <caret line="110" column="6" lean-forward="false" selection-start-line="110" selection-start-column="6" selection-end-line="110" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -434,7 +443,7 @@
         <entry file="file:///usr/include/pcl-1.7/pcl/filters/filter_indices.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="209">
-              <caret line="126" column="6" lean-forward="false" selection-start-line="126" selection-start-column="6" selection-end-line="126" selection-end-column="6" />
+              <caret line="145" column="6" lean-forward="false" selection-start-line="145" selection-start-column="6" selection-end-line="145" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -463,12 +472,23 @@
       <file leaf-file-name="Segmenter1.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/Segmenter1.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="53" column="27" lean-forward="false" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="30" />
+            <state relative-caret-position="369">
+              <caret line="50" column="5" lean-forward="true" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
               <folding>
                 <element signature="e#1085#1103#0" expanded="true" />
-                <element signature="e#1772#1816#0" expanded="true" />
+                <element signature="e#1658#1684#0" expanded="true" />
+                <element signature="e#1821#1865#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="region_growing.h" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/include/pcl-1.7/pcl/segmentation/region_growing.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1680">
+              <caret line="321" column="16" lean-forward="false" selection-start-line="321" selection-start-column="16" selection-end-line="321" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -490,6 +510,9 @@
       <find>pcl_cloud</find>
       <find>spinO</find>
       <find>lexic</find>
+      <find>size</find>
+      <find>label_in</find>
+      <find>rgb</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -1157,12 +1180,12 @@
       <workItem from="1500654729767" duration="2000" />
       <workItem from="1500654754095" duration="29701000" />
       <workItem from="1501019232736" duration="19296000" />
-      <workItem from="1501103878492" duration="69805000" />
+      <workItem from="1501103878492" duration="84216000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118804000" />
+    <option name="totallyTimeSpent" value="133215000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
@@ -1207,7 +1230,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#1556#1723#0" expanded="false" />
-            <element signature="e#4321#6819#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1244,7 +1266,8 @@
           <caret line="56" column="31" lean-forward="false" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="31" />
           <folding>
             <element signature="e#1085#1103#0" expanded="true" />
-            <element signature="e#1772#1816#0" expanded="true" />
+            <element signature="e#1658#1684#0" expanded="true" />
+            <element signature="e#1821#1865#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1255,7 +1278,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#1556#1723#0" expanded="false" />
-            <element signature="e#4321#6819#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1274,7 +1296,8 @@
           <caret line="56" column="31" lean-forward="false" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="31" />
           <folding>
             <element signature="e#1085#1103#0" expanded="true" />
-            <element signature="e#1772#1816#0" expanded="true" />
+            <element signature="e#1658#1684#0" expanded="true" />
+            <element signature="e#1821#1865#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1380,19 +1403,8 @@
     <entry file="file:///usr/include/pcl-1.7/pcl/filters/filter_indices.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
-          <caret line="126" column="6" lean-forward="false" selection-start-line="126" selection-start-column="6" selection-end-line="126" selection-end-column="6" />
+          <caret line="145" column="6" lean-forward="false" selection-start-line="145" selection-start-column="6" selection-end-line="145" selection-end-column="6" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/Segmenter1.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="53" column="27" lean-forward="false" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="30" />
-          <folding>
-            <element signature="e#1085#1103#0" expanded="true" />
-            <element signature="e#1772#1816#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1404,13 +1416,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/include/pcl-1.7/pcl/pcl_base.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="869">
+          <caret line="110" column="6" lean-forward="false" selection-start-line="110" selection-start-column="6" selection-end-line="110" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/pcl-1.7/pcl/segmentation/region_growing.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1680">
+          <caret line="321" column="16" lean-forward="false" selection-start-line="321" selection-start-column="16" selection-end-line="321" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/Segmenter1.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="50" column="5" lean-forward="true" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+          <folding>
+            <element signature="e#1085#1103#0" expanded="true" />
+            <element signature="e#1658#1684#0" expanded="true" />
+            <element signature="e#1821#1865#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/segmenter_jordlee.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="258" column="30" lean-forward="false" selection-start-line="258" selection-start-column="30" selection-end-line="258" selection-end-column="30" />
+        <state relative-caret-position="-339">
+          <caret line="376" column="48" lean-forward="true" selection-start-line="376" selection-start-column="48" selection-end-line="376" selection-end-column="48" />
           <folding>
             <element signature="e#1556#1723#0" expanded="false" />
-            <element signature="e#4321#6819#0" expanded="false" />
           </folding>
         </state>
       </provider>
