@@ -35,6 +35,9 @@ Segmenter::Segmenter(std::string _db, std::string _rgbd, std::string _model, boo
   segment_srv_ = nh.advertiseService("segment_object", &Segmenter::SegmentObjectCallback, this);
   pub = nh.advertise< pcl::PointCloud<pcl::PointXYZRGB> > ("pointstestinginput", 1,true);
   markers_pub_ = nh.advertise<visualization_msgs::MarkerArray>("markers_jordlee", 1, true);
+
+
+//  marker_pub_ = nh.advertise<visualization_msgs::Marker>(markname, 1, true);
  // segmented_objects_pub_ = nh.advertise<std_msgs::String>("segmented_objects", 1, true);
  // segmented_objects_pub_ = nh.advertise<rail_manipulation_msgs::SegmentedObjectList>("segmented_objects", 1, true);
  // segmented_objects_pub_ = nh.advertise<rail_manipulation_msgs::SegmentedObjectList>("segmented_objects", 1, true);
@@ -216,7 +219,7 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
   ///frame transformation
   tf::TransformListener listener;
   tf::StampedTransform transform;
-  listener.waitForTransform(targetFrame, parentFrame, ros::Time(), ros::Duration(4.0));
+  listener.waitForTransform(targetFrame, parentFrame, ros::Time(), ros::Duration(4.0)); // wait for transform
   listener.lookupTransform(targetFrame, parentFrame , ros::Time(0), transform);
 
   pcl::PointCloud<pcl::PointXYZRGB>::Ptr transformed_pc(new pcl::PointCloud<pcl::PointXYZRGB>);
@@ -269,12 +272,8 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
 
 
 
-
-
-
-
  //for visualizing rgb image
-
+/*
   // ######################## Setup TomGine ########################
   int width = 640;
   int height = 480;
@@ -307,7 +306,7 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
   dbgWin.SetImage(kImage);
   dbgWin.Update();
   ros::Duration(10).sleep();
-
+*/
 
   //loading pointcloud from pcd
   // pcl::io::loadPCDFile (rgbd_filename, *cloud_input);
@@ -413,6 +412,41 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
     segmented_object.point_cloud.header.stamp = ros::Time::now();
     segmented_object.marker = this->createMarker(converted);
     segmented_object.marker.id = i;
+
+    ros::NodeHandle node;
+    ros::Publisher publishe;
+    //markname = boost::lexical_cast<string>(i);
+    //markname = i ;
+   // marker_pub_.publish(segmented_object.marker);
+  //  stringstream ss;
+    string s;
+    char c = 'A'+ i;
+  //   ss<<c;
+  //   ss>>s;
+ //   s = string(c);
+    std::cout<<"goingintoloop"<<std::endl;
+    s=std::string(1,c);
+     std::cout<<s<<std::endl;
+  //  std::cout<<c<<std::endl;
+    std::cout<<"before advertising"<<std::endl;
+   // markname=s;
+  //  marker_pub_ = node.advertise<visualization_msgs::Marker>(markname, 1, true);
+ //   publishe = node.advertise<visualization_msgs::Marker>(markname, 1, true);
+    publishe = node.advertise<visualization_msgs::Marker>(s, 1, true);
+
+  //  ros::Rate loop_rate(4);
+ //   while (node.ok())
+  //  {
+      publishe.publish(segmented_object.marker);
+
+    publishe.publish(segmented_object.marker);
+
+    publishe.publish(segmented_object.marker);
+    ros::Duration(10).sleep();
+   //   ros::spinOnce ();
+  //    loop_rate.sleep();
+  //  }
+ //   marker_pub_.publish(segmented_object.marker);
 
     markers_.markers.push_back(segmented_object.marker);
 
@@ -535,9 +569,14 @@ visualization_msgs::Marker Segmenter::createMarker(const pcl::PCLPointCloud2::Co
   }
 
   // set average RGB
-  marker.color.r = ((float) r / (float) pc_msg.points.size()) / 255.0;
-  marker.color.g = ((float) g / (float) pc_msg.points.size()) / 255.0;
-  marker.color.b = ((float) b / (float) pc_msg.points.size()) / 255.0;
+//  marker.color.r = ((float) r / (float) pc_msg.points.size()) / 255.0;
+//  marker.color.g = ((float) g / (float) pc_msg.points.size()) / 255.0;
+//  marker.color.b = ((float) b / (float) pc_msg.points.size()) / 255.0;
+
+  marker.color.r =rand() % 255;
+  marker.color.g = rand() % 255;
+  marker.color.b = rand() % 255;
+
   marker.color.a = 1.0;
 
   return marker;

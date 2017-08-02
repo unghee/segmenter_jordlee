@@ -116,7 +116,7 @@ private:
   ros::NodeHandle nh;                                  ///< ROS Node handles
   ros::Subscriber sub;                                    ///< ROS subscirber
   ros::ServiceServer segment_srv_;
-  ros::Publisher pub,segmented_objects_pub_, markers_pub_;
+  ros::Publisher pub,segmented_objects_pub_, markers_pub_, marker_pub_;
   /*! Latest point cloud. */
   pcl::PointCloud<pcl::PointXYZRGB>::ConstPtr pc_;
   visualization_msgs::MarkerArray markers_;
@@ -127,7 +127,7 @@ private:
 //  tf2_ros::Buffer tf_buffer_;
   /*! Main transform listener. */
  // tf::TransformListener tf_;
-
+  string markname;
 
 public:
     static const float DOWNSAMPLE_LEAF_SIZE = 0.01;
