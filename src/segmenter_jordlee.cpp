@@ -36,8 +36,6 @@ Segmenter::Segmenter(std::string _db, std::string _rgbd, std::string _model, boo
   pub = nh.advertise< pcl::PointCloud<pcl::PointXYZRGB> > ("pointstestinginput", 1,true);
   markers_pub_ = nh.advertise<visualization_msgs::MarkerArray>("markers_jordlee", 1, true);
 
-
-//  marker_pub_ = nh.advertise<visualization_msgs::Marker>(markname, 1, true);
  // segmented_objects_pub_ = nh.advertise<std_msgs::String>("segmented_objects", 1, true);
  // segmented_objects_pub_ = nh.advertise<rail_manipulation_msgs::SegmentedObjectList>("segmented_objects", 1, true);
  // segmented_objects_pub_ = nh.advertise<rail_manipulation_msgs::SegmentedObjectList>("segmented_objects", 1, true);
@@ -238,7 +236,7 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
   // Mandatory
   seg.setModelType (pcl::SACMODEL_PLANE);
   seg.setMethodType (pcl::SAC_RANSAC);
-  seg.setDistanceThreshold (0.03);
+  seg.setDistanceThreshold (0.009);
   seg.setInputCloud (transformed_pc);
   seg.segment (*inliers, *coefficients);
   //remove the plane
@@ -259,8 +257,8 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
   pcl::IndicesPtr filteredIndices(new vector<int>);
   pcl::CropBox<pcl::PointXYZRGB> cropper;
   cropper.getMax();
-  Eigen::Vector4f minVec(-3,-3,0.7,0);
-  Eigen::Vector4f maxVec(1,3,1,0);
+  Eigen::Vector4f minVec(0.47,-3,0.7,0);
+  Eigen::Vector4f maxVec(0.8,3,1,0);
 //  pcl::CropBox< pcl::PCLPointCloud2 >::getMax();
 
   cropper.setMax(maxVec);
@@ -300,7 +298,7 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
   dbgWin.Update();
   cv::Mat_<cv::Vec3b> kImage = cv::Mat_<cv::Vec3b>::zeros(480, 640);
 
-//  pcl::copyPointCloud(*pc_, *cloud_input);
+  pcl::copyPointCloud(*pc_, *cloud_input);
   pclA::ConvertPCLCloud2Image(cloud_input, kImage);
   cv::imshow("Debug image", kImage);
   dbgWin.SetImage(kImage);
@@ -412,41 +410,6 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
     segmented_object.point_cloud.header.stamp = ros::Time::now();
     segmented_object.marker = this->createMarker(converted);
     segmented_object.marker.id = i;
-
-    ros::NodeHandle node;
-    ros::Publisher publishe;
-    //markname = boost::lexical_cast<string>(i);
-    //markname = i ;
-   // marker_pub_.publish(segmented_object.marker);
-  //  stringstream ss;
-    string s;
-    char c = 'A'+ i;
-  //   ss<<c;
-  //   ss>>s;
- //   s = string(c);
-    std::cout<<"goingintoloop"<<std::endl;
-    s=std::string(1,c);
-     std::cout<<s<<std::endl;
-  //  std::cout<<c<<std::endl;
-    std::cout<<"before advertising"<<std::endl;
-   // markname=s;
-  //  marker_pub_ = node.advertise<visualization_msgs::Marker>(markname, 1, true);
- //   publishe = node.advertise<visualization_msgs::Marker>(markname, 1, true);
-    publishe = node.advertise<visualization_msgs::Marker>(s, 1, true);
-
-  //  ros::Rate loop_rate(4);
- //   while (node.ok())
-  //  {
-      publishe.publish(segmented_object.marker);
-
-    publishe.publish(segmented_object.marker);
-
-    publishe.publish(segmented_object.marker);
-    ros::Duration(10).sleep();
-   //   ros::spinOnce ();
-  //    loop_rate.sleep();
-  //  }
- //   marker_pub_.publish(segmented_object.marker);
 
     markers_.markers.push_back(segmented_object.marker);
 

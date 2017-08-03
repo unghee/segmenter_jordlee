@@ -420,10 +420,10 @@
       <file leaf-file-name="segmenter_jordlee.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/segmenter_jordlee.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="444" column="2" lean-forward="false" selection-start-line="444" selection-start-column="2" selection-end-line="444" selection-end-column="2" />
+            <state relative-caret-position="279">
+              <caret line="238" column="33" lean-forward="false" selection-start-line="238" selection-start-column="33" selection-end-line="238" selection-end-column="33" />
               <folding>
-                <element signature="e#1637#1804#0" expanded="false" />
+                <element signature="e#1557#1724#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -483,7 +483,7 @@
         <entry file="file://$PROJECT_DIR$/include/Segmenter1.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="369">
-              <caret line="129" column="18" lean-forward="false" selection-start-line="129" selection-start-column="18" selection-end-line="129" selection-end-column="18" />
+              <caret line="129" column="0" lean-forward="false" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
               <folding>
                 <element signature="e#1085#1103#0" expanded="true" />
                 <element signature="e#1658#1684#0" expanded="true" />
@@ -1191,12 +1191,12 @@
       <workItem from="1500654729767" duration="2000" />
       <workItem from="1500654754095" duration="29701000" />
       <workItem from="1501019232736" duration="19296000" />
-      <workItem from="1501103878492" duration="97627000" />
+      <workItem from="1501103878492" duration="103530000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146626000" />
+    <option name="totallyTimeSpent" value="152529000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
@@ -1240,7 +1240,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1637#1804#0" expanded="false" />
+            <element signature="e#1557#1724#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1288,7 +1288,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1637#1804#0" expanded="false" />
+            <element signature="e#1557#1724#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1435,18 +1435,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/Segmenter1.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="129" column="18" lean-forward="false" selection-start-line="129" selection-start-column="18" selection-end-line="129" selection-end-column="18" />
-          <folding>
-            <element signature="e#1085#1103#0" expanded="true" />
-            <element signature="e#1658#1684#0" expanded="true" />
-            <element signature="e#1821#1865#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///opt/ros/indigo/include/ros/node_handle.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-211">
@@ -1455,12 +1443,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/include/Segmenter1.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="129" column="0" lean-forward="false" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+          <folding>
+            <element signature="e#1085#1103#0" expanded="true" />
+            <element signature="e#1658#1684#0" expanded="true" />
+            <element signature="e#1821#1865#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/segmenter_jordlee.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="444" column="2" lean-forward="false" selection-start-line="444" selection-start-column="2" selection-end-line="444" selection-end-column="2" />
+        <state relative-caret-position="279">
+          <caret line="238" column="33" lean-forward="false" selection-start-line="238" selection-start-column="33" selection-end-line="238" selection-end-column="33" />
           <folding>
-            <element signature="e#1637#1804#0" expanded="false" />
+            <element signature="e#1557#1724#0" expanded="false" />
           </folding>
         </state>
       </provider>
