@@ -1315,12 +1315,6 @@
       <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/genmsg/cmake/genmsgConfig.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
       </Unit>
-      <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/genmsg/cmake/genmsgConfig-version.cmake">
-          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
-      </Unit>
-      <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/genmsg/cmake/genmsgConfig.cmake">
-          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
-      </Unit>
       <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/genmsg/cmake/pkg-msg-paths.cmake.develspace.in">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
       </Unit>
@@ -1519,12 +1513,6 @@
       <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/sensor_msgs/cmake/sensor_msgs-msg-extras.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\sensor_msgs\cmake\" />
       </Unit>
-      <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/sensor_msgs/cmake/sensor_msgsConfig-version.cmake">
-          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\sensor_msgs\cmake\" />
-      </Unit>
-      <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/sensor_msgs/cmake/sensor_msgsConfig.cmake">
-          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\sensor_msgs\cmake\" />
-      </Unit>
       <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/sensor_msgs/cmake/sensor_msgs-msg-paths.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\sensor_msgs\cmake\" />
       </Unit>
@@ -1626,12 +1614,6 @@
       </Unit>
       <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/tf2_py/cmake/tf2_pyConfig.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_py\cmake\" />
-      </Unit>
-      <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/rospy/cmake/rospyConfig-version.cmake">
-          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\rospy\cmake\" />
-      </Unit>
-      <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/rospy/cmake/rospyConfig.cmake">
-          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\rospy\cmake\" />
       </Unit>
       <Unit filename="/home/fetch/catkin_ws/src/segmenter_jordlee/../../../../../opt/ros/indigo/share/rospy/cmake/rospyConfig-version.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\rospy\cmake\" />

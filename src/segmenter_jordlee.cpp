@@ -176,6 +176,15 @@ Segmenter::processPointCloudV(pcl::PointCloud<pcl::PointXYZRGB>::Ptr &pcl_cloud)
                                                         relation_vector[i].rel_value,
                                                         relation_vector[i].rel_probability);
   }
+
+  //svm file create
+ /*
+  svm::SVMFileCreator svmFileCreator;
+  svmFileCreator.setRelations(relation_vector);
+  svmFileCreator.setAnalyzeOutput(false);
+  svmFileCreator.setTestSet(true);
+  svmFileCreator.process();
+ */
 //githubtest
   graphCutGroups.clear();
   graphCut->init(surfaces.size(), relation_vector);
@@ -257,7 +266,7 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
   pcl::IndicesPtr filteredIndices(new vector<int>);
   pcl::CropBox<pcl::PointXYZRGB> cropper;
   cropper.getMax();
-  Eigen::Vector4f minVec(0.47,-3,0.7,0);
+  Eigen::Vector4f minVec(0.3,-3,0.7,0);
   Eigen::Vector4f maxVec(0.8,3,1,0);
 //  pcl::CropBox< pcl::PCLPointCloud2 >::getMax();
 
@@ -428,7 +437,7 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
   object_list_.cleared = false;
 
   //save it into response
- // res.object_list_ = object_list_;
+  res.object_list_ = object_list_;
   ROS_INFO("sending back response: ");
 
   return true;
@@ -532,13 +541,13 @@ visualization_msgs::Marker Segmenter::createMarker(const pcl::PCLPointCloud2::Co
   }
 
   // set average RGB
-//  marker.color.r = ((float) r / (float) pc_msg.points.size()) / 255.0;
-//  marker.color.g = ((float) g / (float) pc_msg.points.size()) / 255.0;
-//  marker.color.b = ((float) b / (float) pc_msg.points.size()) / 255.0;
+  marker.color.r = ((float) r / (float) pc_msg.points.size()) / 255.0;
+  marker.color.g = ((float) g / (float) pc_msg.points.size()) / 255.0;
+  marker.color.b = ((float) b / (float) pc_msg.points.size()) / 255.0;
 
-  marker.color.r =rand() % 255;
-  marker.color.g = rand() % 255;
-  marker.color.b = rand() % 255;
+//  marker.color.r =rand() % 255;
+//  marker.color.g = rand() % 255;
+//  marker.color.b = rand() % 255;
 
   marker.color.a = 1.0;
 

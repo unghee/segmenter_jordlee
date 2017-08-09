@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC   -Wno-deprecated -g    -shared -Wl,-soname,libttl.so -o ../../devel/lib/libttl.so CMakeFiles/ttl.dir/HandleId.cpp.o CMakeFiles/ttl.dir/HeTriang.cpp.o  -L/usr/local/lib -Wl,-rpath,:::::::::::::: 

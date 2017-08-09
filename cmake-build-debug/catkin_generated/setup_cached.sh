@@ -8,7 +8,9 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/fetch/catkin_ws/src/segmenter_jordlee/cmake-build-debug/devel:$CMAKE_PREFIX_PATH"
+export CPATH="/home/fetch/catkin_ws/src/segmenter_jordlee/cmake-build-debug/devel/include:$CPATH"
 export LD_LIBRARY_PATH="/home/fetch/catkin_ws/src/segmenter_jordlee/cmake-build-debug/devel/lib:/opt/ros/indigo/lib:/opt/clion/bin:/usr/local/cuda/lib64"
 export PKG_CONFIG_PATH="/home/fetch/catkin_ws/src/segmenter_jordlee/cmake-build-debug/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PYTHONPATH="/home/fetch/catkin_ws/src/segmenter_jordlee/cmake-build-debug/devel/lib/python2.7/dist-packages:$PYTHONPATH"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/fetch/catkin_ws/src/segmenter_jordlee/cmake-build-debug/devel/share/common-lisp"
 export ROS_PACKAGE_PATH="/home/fetch/catkin_ws/src/segmenter_jordlee:$ROS_PACKAGE_PATH"

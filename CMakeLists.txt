@@ -3,6 +3,14 @@ project(segmenter_jordlee)
 
 ## find catkin and required packages
 include(opencv.cmake)
+include(v4rutils.cmake) # V4R utils
+
+SET(LIBRARY_OUTPUT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/lib")
+SET(EXECUTABLE_OUTPUT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/bin")
+
+SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+set(V4R_BUILD 1)
+
 find_package(
   catkin REQUIRED 
   COMPONENTS 
@@ -80,7 +88,25 @@ catkin_package(
 
 include_directories(${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS} ${PCL_INCLUDE_DIRS} ${Eigen_INCLUDE_DIRS} ${OPENCV_INCLUDE_DIRS})
 # include project libraries
-include_directories( ${PROJECT_SOURCE_DIR} v4r include)
+include_directories( ${PROJECT_SOURCE_DIR} v4r v4rexternal include)
+
+#include_directories(.)
+add_subdirectory(v4r)
+add_subdirectory(v4rexternal)
+                 
+#install target
+configure_file(v4r.pc.in "${PROJECT_BINARY_DIR}/v4r.pc" @ONLY)
+INSTALL(FILES ${PROJECT_BINARY_DIR}/v4r.pc DESTINATION lib/pkgconfig)
+
+
+
+# uninstall target
+configure_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake"
+    IMMEDIATE @ONLY)
+add_custom_target(uninstall COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake)
+
 
 ## create executables
 add_executable(${PROJECT_NAME} src/segmenter_jordlee.cpp )
@@ -89,5 +115,15 @@ add_executable(${PROJECT_NAME} src/segmenter_jordlee.cpp )
 
 ## link libraries to localization executable
  target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OPENCV_LIBRARIES} v4rKinectInterface v4rSurfaceModeling v4rSurfaceClustering v4rObjectModeling v4rSurfaceRelations v4rsvm v4rGraphCut v4rSurfaceUtils v4rvs3 v4rPCLAddOns v4rTomGine)
+
+
+
+
+
+
+
+
+
+
 
 

@@ -145,7 +145,7 @@ foreach(library ${libraries})
   endif()
 endforeach()
 
-set(segmenter_jordlee_EXPORTED_TARGETS "")
+set(segmenter_jordlee_EXPORTED_TARGETS "segmenter_jordlee_generate_messages_cpp;segmenter_jordlee_generate_messages_lisp;segmenter_jordlee_generate_messages_py")
 # create dummy targets for exported code generation targets to make life of users easier
 foreach(t ${segmenter_jordlee_EXPORTED_TARGETS})
   if(NOT TARGET ${t})
@@ -182,7 +182,7 @@ foreach(depend ${depends})
   list(APPEND segmenter_jordlee_EXPORTED_TARGETS ${${segmenter_jordlee_dep}_EXPORTED_TARGETS})
 endforeach()
 
-set(pkg_cfg_extras "")
+set(pkg_cfg_extras "segmenter_jordlee-msg-extras.cmake")
 foreach(extra ${pkg_cfg_extras})
   if(NOT IS_ABSOLUTE ${extra})
     set(extra ${segmenter_jordlee_DIR}/${extra})
