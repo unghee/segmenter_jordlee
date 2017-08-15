@@ -1,7 +1,7 @@
-
-//pcl
-//#include <iostream>
-//#include <pcl/point_types.h>
+/**
+ * Author : UngHee Jordan Lee
+ *
+**/
 
 #include "Segmenter1.h"
 

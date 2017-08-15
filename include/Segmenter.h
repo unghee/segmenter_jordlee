@@ -48,32 +48,8 @@
 #include "v4r/ObjectModeling/ContourRefinement.h"
 #include "v4r/ObjectModeling/CreateMeshModel.hh"
 
-//PCL
 #include <pcl/io/pcd_io.h>
-#include <pcl/visualization/pcl_visualizer.h>
-#include <pcl/filters/crop_box.h>
-#include <pcl/segmentation/region_growing_rgb.h>
 
-//ROS
-#include <pcl_conversions/pcl_conversions.h>
-#include <pcl_ros/point_cloud.h>
-#include <rail_manipulation_msgs/SegmentedObjectList.h>
-#include <pcl_ros/transforms.h>
-#include <ros/package.h>
-#include <ros/ros.h>
-#include <sensor_msgs/Image.h>
-#include <sensor_msgs/image_encodings.h>
-#include <sensor_msgs/PointCloud2.h>
-#include <sensor_msgs/point_cloud_conversion.h>
-#include <std_srvs/Empty.h>
-#include <tf/transform_listener.h>
-#include <tf2/LinearMath/Matrix3x3.h>
-#include <tf2_ros/transform_listener.h>
-#include <visualization_msgs/Marker.h>
-#include <visualization_msgs/MarkerArray.h>
-
-//ROS srv
-#include "segmenter_jordlee/SegmentObject.h"
 namespace segment
 {
   
@@ -112,42 +88,17 @@ private:
   surface::SaveFileSequence *resultSaver;                 ///< Save segmented object models to sfv file
 
 
-//  boost::mutex pc_mutex_;                                 ///< Mutex for locking on the point cloud and messages
-  ros::NodeHandle nh;                                  ///< ROS Node handles
-  ros::Subscriber sub;                                    ///< ROS subscirber
-  ros::ServiceServer segment_srv_;
-  ros::Publisher pub,segmented_objects_pub_, markers_pub_, marker_pub_;
-  /*! Latest point cloud. */
-  pcl::PointCloud<pcl::PointXYZRGB>::ConstPtr pc_;
-  visualization_msgs::MarkerArray markers_;
-  rail_manipulation_msgs::SegmentedObjectList object_list_;
-  /*! List of segmentation zones. */
-//  std::vector<SegmentationZone> zones_;
-  /*! The transform tree buffer for the tf2 listener. */
-//  tf2_ros::Buffer tf_buffer_;
-  /*! Main transform listener. */
- // tf::TransformListener tf_;
+    svm::svm_problem svmProblem;                          ///< svm definition
+    svm::svm_model *svmModel;
+    std::vector<svm::svm_node *> svmProblem_vector_x ;
+    std::vector<int> svmProblem_vector_y;
+    svm::svm_parameter svmParameter;
 
+
+    int indexing;
+    int sizeOfVector;
 
 public:
-    static const float DOWNSAMPLE_LEAF_SIZE = 0.01;
-    /*! Size of the marker visualization scale factor. */
-    static const double MARKER_SCALE = 0.01;
-    /*! The minimum cluster size. */
-    static const int DEFAULT_MIN_CLUSTER_SIZE = 200;
-    /*! The maximum cluster size. */
-    static const int DEFAULT_MAX_CLUSTER_SIZE = 10000;
-    /*! The cluster tolerance level. */
-    static const double CLUSTER_TOLERANCE = 0.02;
-    /*! The color tolerance level, only for RGB segmentation */
-    static const double POINT_COLOR_THRESHOLD = 10;
-    /*! The region color tolerance, only for small region merging in RGB segmentation */
-    static const double REGION_COLOR_THRESHOLD = 10;
-    /*! Leaf size of the voxel grid for downsampling. */
-  //  static const float DOWNSAMPLE_LEAF_SIZE = 0.01;
-    /*! Size of the marker visualization scale factor. */
-  //  static const double MARKER_SCALE = 0.01;
-
 
 private:
   void init();
@@ -175,24 +126,15 @@ public:
     processPointCloudV(pcl::PointCloud<pcl::PointXYZRGB>::Ptr &pcl_cloud);
 
   /** Run the segmenter **/
-  void run(std::string _rgbd_filename,
-      std::string _kinect_config,
-      std::string _model_path,
-      int _startIdx, int _endIdx,
-      bool _live, bool _useAssemblyLevel);
-//  void run(std::string _rgbd_filename, std::string _model_path, int _startIdx, int _endIdx);
-//    void run(std::string _model_path);
-
-//    boost::shared_ptr<pcl::visualization::PCLVisualizer> rgbVis(pcl::PointCloud<pcl::PointXYZRGB>::ConstPtr cloud);
-    boost::shared_ptr<pcl::visualization::PCLVisualizer>
-    rgbVis(std::vector<pcl::PointCloud<pcl::PointXYZRGB>::ConstPtr> cloud,  std::vector<pcl::PointIndices> label);
+  void run(std::string _rgbd_filename, 
+           std::string _kinect_config,
+           std::string _model_path,
+           int _startIdx, int _endIdx, 
+           bool _live, bool _useAssemblyLevel);
 
 
-
-  /** Ros related **/
-    void pointCloudCallback(const sensor_msgs::PointCloud2ConstPtr& input);
-    bool SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request &req, segmenter_jordlee::SegmentObject::Response &res);
-    visualization_msgs::Marker createMarker(const pcl::PCLPointCloud2::ConstPtr &pc) const;
+    /** svm **/
+  void svm_model_create(std::vector<surface::Relation> &relation_vector);
 
 };
 
