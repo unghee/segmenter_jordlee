@@ -127,7 +127,7 @@ void Segmenter::init()
   svmParameter.svm_type =svm::C_SVC;
   svmParameter.kernel_type =svm::RBF;
   svmParameter.gamma =0.1;
-  svmParameter.coef0 = 0;
+ // svmParameter.coef0 = 0;
   svmParameter.nu = 0.5;
   svmParameter.cache_size = 100;
   svmParameter.C = 0.4;
@@ -183,52 +183,27 @@ void Segmenter::process()
 ////  patchRelations->getRelations(relation_vector);
   printf("  => relations between models calculated ...\n");
 
-  svm_model_create(relation_vector);
+  //svm_model_create(relation_vector);
+  annotator(relation_vector);
 
 }
 
 void Segmenter::svm_model_create
-    (std::vector<surface::Relation> &relation_vector ){
+    (std::vector<surface::Relation> &relation_vector, std::vector< std::vector<int> > anno){
   /// PP2 file generation Added by Lee
 
-  std::vector< std::vector<int> > anno(surfaces.size());
-
-//  anno[1].push_back(4);
-//  anno[1].push_back(5);
-//  anno[2].push_back(3);
-//  anno[3].push_back(2);
-//  anno[4].push_back(1);
-//  anno[4].push_back(14);
-//  anno[5].push_back(1);
-
-  /// annotation
-
-  /** mOSD learn0.pcd**/
-
-  if (endIdx == 0) {
-    anno[0].push_back(4);
-    anno[0].push_back(5);
-
-    anno[2].push_back(3);
-
-    anno[3].push_back(2);
-
-    anno[4].push_back(0);
-
-    anno[5].push_back(0);
-    std::cout << "finished anno" << std::endl;
 
     std::vector<int> anno_list;
+
     patchRelations->setAnnotion(anno, anno_list);
     // patchRelations-> computeTestRelations();
     patchRelations->computeLearnRelations();
     patchRelations->getRelations(relation_vector);
 
     printf("  => parameters ...\n");
-
-    cout << relation_vector.size() << endl;
-    cout << "svmProblem_vector_x" << endl;
-    cout << svmProblem_vector_x.size() << endl;
+//    cout << relation_vector.size() << endl;
+//    cout << "svmProblem_vector_x" << endl;
+//    cout << svmProblem_vector_x.size() << endl;
 
     for (unsigned i = 0; i < relation_vector.size(); i++)
     {
@@ -248,132 +223,22 @@ void Segmenter::svm_model_create
 
     }
 
-    cout << "svmProblem_vector_x" << endl;
-    cout << svmProblem_vector_x.size() << endl;
-    cout << "svmProblem_vector_y" << endl;
-    cout << svmProblem_vector_y.size() << endl;
+//    cout << "svmProblem_vector_x" << endl;
+//    cout << svmProblem_vector_x.size() << endl;
+//    cout << "svmProblem_vector_y" << endl;
+//    cout << svmProblem_vector_y.size() << endl;
 
 
     sizeOfVector = sizeOfVector + relation_vector.size();
     //size_vector.push_back(relation_vector.size());
-    cout << "sizeOfVector" << endl;
-    cout << sizeOfVector << endl;
-  }
+//    cout << "sizeOfVector" << endl;
+//    cout << sizeOfVector << endl;
 
 
-  /** mOSD learn1.pcd**/
-  if (endIdx == 1)
-  {
-    anno[0].push_back(4);
-    anno[0].push_back(5);
+  /// Setting features
 
-    anno[2].push_back(3);
+  cout<<"setting features for learn" << indexing <<".pcd"<<endl;
 
-    anno[3].push_back(2);
-
-    anno[4].push_back(0);
-
-    anno[5].push_back(0);
-    std::cout << "finished anno" << std::endl;
-
-    std::vector<int> anno_list;
-    patchRelations->setAnnotion(anno, anno_list);
-    // patchRelations-> computeTestRelations();
-    patchRelations->computeLearnRelations();
-    patchRelations->getRelations(relation_vector);
-
-    printf("  => parameters ...\n");
-    cout << relation_vector.size() << endl;
-    cout << "svmProblem_vector_x" << endl;
-    cout << svmProblem_vector_x.size() << endl;
-
-    for (unsigned i = 0; i < relation_vector.size(); i++)
-    {
-      if (relation_vector[i].type == 1)
-      {
-        svm::svm_node *x_space = new svm::svm_node[relation_vector[i].rel_value.size()];
-        //  svm::svm_node *x_space = new svm::svm_node[];
-        for (unsigned j = 0; j < relation_vector[i].rel_value.size(); j++)
-        {
-          x_space[j].index = j;
-          x_space[j].value = relation_vector[i].rel_value[j];
-        }
-        x_space[relation_vector[i].rel_value.size()].index = -1;
-        svmProblem_vector_x.push_back(x_space);
-        svmProblem_vector_y.push_back(relation_vector[i].groundTruth);
-      }
-
-    }
-    cout << "svmProblem_vector_x" << endl;
-    cout << svmProblem_vector_x.size() << endl;
-    sizeOfVector = sizeOfVector + relation_vector.size();
-    //size_vector.push_back(relation_vector.size());
-    cout << "sizeOfVector" << endl;
-    cout << sizeOfVector << endl;
-  }
-
-
-  /** mOSD learn2.pcd**/
-  if (endIdx == 2)
-  {
-    anno[0].push_back(4);
-    anno[0].push_back(5);
-
-    anno[2].push_back(3);
-
-    anno[3].push_back(2);
-
-    anno[4].push_back(0);
-
-    anno[5].push_back(0);
-    std::cout << "finished anno" << std::endl;
-
-    std::vector<int> anno_list;
-    patchRelations->setAnnotion(anno, anno_list);
-    // patchRelations-> computeTestRelations();
-    patchRelations->computeLearnRelations();
-    patchRelations->getRelations(relation_vector);
-
-    printf("  => parameters ...\n");
-    cout << relation_vector.size() << endl;
-    cout << "svmProblem_vector_x" << endl;
-    cout << svmProblem_vector_x.size() << endl;
-
-    for (unsigned i = 0; i < relation_vector.size(); i++)
-    {
-      if (relation_vector[i].type == 1)
-      {
-        svm::svm_node *x_space = new svm::svm_node[relation_vector[i].rel_value.size()];
-        //  svm::svm_node *x_space = new svm::svm_node[];
-        for (unsigned j = 0; j < relation_vector[i].rel_value.size(); j++)
-        {
-          x_space[j].index = j;
-          x_space[j].value = relation_vector[i].rel_value[j];
-        }
-        x_space[relation_vector[i].rel_value.size()].index = -1;
-        svmProblem_vector_x.push_back(x_space);
-        svmProblem_vector_y.push_back(relation_vector[i].groundTruth);
-      }
-
-    }
-    cout << "svmProblem_vector_x" << endl;
-    cout << svmProblem_vector_x.size() << endl;
-    cout << "svmProblem_vector_y" << endl;
-    cout << svmProblem_vector_y.size() << endl;
-
-    sizeOfVector = sizeOfVector + relation_vector.size();
-    //size_vector.push_back(relation_vector.size());
-    cout << "sizeOfVector" << endl;
-    cout << sizeOfVector << endl;
-  }
-
-
-
-
-/// training
-
-  cout<<"training" <<endl;
-  cout<<endIdx<<endl;
   if(indexing==endIdx){
     svmProblem.l = svmProblem_vector_x.size();
     svmProblem.y = new double[svmProblem.l];
@@ -392,6 +257,8 @@ void Segmenter::svm_model_create
     //  cout<<"svmProblem.x"<<endl;
     //  cout<<sizeof((svm::svm_node*)xarray)<<endl;
     //  cout<<*(&*xarray+1)-*xarray<<endl;
+
+    ///training
     svmModel = svm::svm_train(&svmProblem,&svmParameter);
     svm::svm_save_model("model.txt", svmModel);
     cout<<"model created" <<endl;
@@ -400,7 +267,108 @@ void Segmenter::svm_model_create
   }
 }
 
+void Segmenter::annotator
+    (std::vector<surface::Relation> &relation_vector ){
 
+  std::vector<std::vector<int> > anno(surfaces.size());
+
+//  anno[1].push_back(4);
+//  anno[1].push_back(5);
+//  anno[2].push_back(3);
+//  anno[3].push_back(2);
+//  anno[4].push_back(1);
+//  anno[4].push_back(14);
+//  anno[5].push_back(1);
+
+
+
+
+  /** mOSD learn0.pcd**/
+
+  if (indexing  == 0)
+  {
+    anno[0].push_back(4);
+    anno[0].push_back(5);
+
+    anno[2].push_back(3);
+    cout<<"anno"<<endl;
+   // cout<<anno<<endl;
+
+  }
+
+    /** mOSD learn1.pcd**/
+
+  if (indexing  == 1)
+  {
+    anno[1].push_back(2);
+
+    anno[3].push_back(4);
+
+  }
+
+    /** mOSD learn2.pcd**/
+   if (indexing  == 2)
+   {
+     anno[1].push_back(2);
+     anno[1].push_back(4);
+
+     anno[2].push_back(4);
+
+     anno[3].push_back(5);
+
+   }
+
+  /** mOSD learn3.pcd**/
+  if (indexing  == 3)
+  {
+   anno[1].push_back(4);
+   anno[2].push_back(3);
+  }
+
+  /** mOSD learn4.pcd**/
+  if (indexing  == 4)
+  {
+    anno[0].push_back(3);
+    anno[0].push_back(5);
+
+    anno[2].push_back(4);
+
+    anno[3].push_back(5);
+
+  }
+
+  /** mOSD learn5.pcd**/
+  if (indexing  == 5)
+  {
+    anno[1].push_back(3);
+    anno[1].push_back(4);
+
+    anno[2].push_back(5);
+
+    anno[3].push_back(4);
+
+  }
+
+  /** mOSD learn6.pcd**/
+  if (indexing  == 6)
+  {
+    anno[1].push_back(3);
+    anno[2].push_back(4);
+
+  }
+
+  /** mOSD learn7.pcd**/
+  if (indexing  == 7)
+  {
+    anno[1].push_back(6);
+    anno[2].push_back(4);
+
+  }
+
+
+  svm_model_create(relation_vector, anno);
+
+}
 
 void Segmenter::run(std::string _rgbd_filename,
     std::string _kinect_config,
@@ -461,7 +429,7 @@ void Segmenter::run(std::string _rgbd_filename,
       dbgWin.SetImage(kImage);
       dbgWin.Update();
       win_done = false;
-      cout<<indexing<<endl;
+
       if (indexing == endIdx)
         single_image = true;
 

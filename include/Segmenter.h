@@ -134,8 +134,8 @@ public:
 
 
     /** svm **/
-  void svm_model_create(std::vector<surface::Relation> &relation_vector);
-
+  void svm_model_create(std::vector<surface::Relation> &relation_vector, std::vector< std::vector<int> > anno);
+  void annotator(std::vector<surface::Relation> &relation_vector );
 };
 
 }
