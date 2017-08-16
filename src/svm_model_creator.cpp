@@ -360,12 +360,170 @@ void Segmenter::annotator
   /** mOSD learn7.pcd**/
   if (indexing  == 7)
   {
-    anno[1].push_back(6);
+    anno[1].push_back(3);
     anno[2].push_back(4);
 
   }
 
+  /** mOSD learn8.pcd**/
+  if (indexing  == 8)
+  {
+    anno[0].push_back(3);
+    anno[2].push_back(4);
 
+  }
+
+  /** mOSD learn9.pcd**/
+  if (indexing  == 9)
+  {
+    anno[1].push_back(4);
+    anno[2].push_back(3);
+
+  }
+  /** mOSD learn10.pcd**/
+  if (indexing  == 10)
+  {
+    anno[1].push_back(3);
+    anno[2].push_back(4);
+
+  }
+
+  /** mOSD learn11.pcd**/
+  if (indexing  == 11)
+  {
+    anno[1].push_back(2);
+    anno[3].push_back(4);
+  }
+
+  /** mOSD learn12.pcd**/
+  if (indexing  == 12)
+  {
+    anno[1].push_back(2);
+    anno[3].push_back(4);
+  }
+
+  /** mOSD learn13.pcd**/
+  if (indexing  == 13)
+  {
+    anno[1].push_back(4);
+    anno[1].push_back(8);
+    anno[1].push_back(9);
+
+    anno[2].push_back(7);
+
+    anno[3].push_back(5);
+    anno[5].push_back(10);
+
+
+  }
+
+  /** mOSD learn14.pcd**/
+  if (indexing  == 14)
+  {
+    anno[1].push_back(5);
+
+    anno[2].push_back(3);
+
+    anno[4].push_back(9);
+
+    anno[5].push_back(6);
+
+  }
+
+  /** mOSD learn15.pcd**/
+  if (indexing  == 15)
+  {
+    anno[1].push_back(6);
+
+    anno[2].push_back(4);
+
+    anno[3].push_back(5);
+
+  }
+
+  /** mOSD learn16.pcd**/
+  if (indexing  == 16)
+  {
+    anno[1].push_back(4);
+
+    anno[2].push_back(6);
+
+    anno[3].push_back(5);
+
+  }
+
+  /** mOSD learn17.pcd**/
+  if (indexing  == 17)
+  {
+    anno[1].push_back(4);
+    anno[1].push_back(5);
+    anno[1].push_back(6);
+    anno[1].push_back(8);
+
+    anno[2].push_back(3);
+    anno[2].push_back(7);
+
+    anno[3].push_back(7);
+
+    anno[4].push_back(5);
+    anno[4].push_back(8);
+
+    anno[5].push_back(6);
+
+  }
+
+  /** mOSD learn18.pcd**/
+  if (indexing  == 18)
+  {
+    anno[0].push_back(2);
+
+    anno[3].push_back(5);
+
+    anno[4].push_back(6);
+
+  }
+
+  /** mOSD learn19.pcd**/
+  if (indexing  == 19)
+  {
+    anno[1].push_back(3);
+
+    anno[2].push_back(4);
+    anno[2].push_back(5);
+
+    anno[4].push_back(5);
+
+  }
+
+  /** mOSD learn20.pcd**/
+  if (indexing  == 20)
+  {
+    anno[1].push_back(2);
+    anno[1].push_back(4);
+
+    anno[2].push_back(4);
+
+    anno[3].push_back(5);
+
+  }
+
+  /** mOSD learn21.pcd**/
+  if (indexing  == 21)
+  {
+
+
+  }
+
+
+
+
+
+  /** mOSD learn21.pcd**/
+  if (indexing  == 21)
+  {
+
+
+  }
   svm_model_create(relation_vector, anno);
 
 }
@@ -419,7 +577,7 @@ void Segmenter::run(std::string _rgbd_filename,
   bool model = false;
   bool single_image = true;
   bool win_done = true;
-  indexing =0 ;
+  indexing =startIdx ;
   sizeOfVector =0;
   while(do_it) {
     if(!single_image) {
