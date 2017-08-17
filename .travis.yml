@@ -9,7 +9,6 @@ env:
     - CATKIN_WS_SRC=${CATKIN_WS}/src
   matrix:
     - CI_ROS_DISTRO="indigo"
-    - CI_ROS_DISTRO="jade"
 
 branches:
   only:
@@ -32,10 +31,9 @@ script:
   - mkdir ~/opencv
   - cd ~/opencv
   - git clone https://github.com/opencv/opencv.git
-  - git clone https://github.com/opencv/opencv_contrib.git
   - mkdir build
   - cd build
-  - cmake ..
+  - cmake 
   - make -j7
   - sudo make install
   - cd
