@@ -21,6 +21,8 @@ Segmenter::Segmenter(std::string _db, std::string _rgbd, std::string _model, boo
   rgbd_filename = _rgbd;
   //model_path = _model;
   model_path = "/home/fetch/catkin_ws/src/segmenter_jordlee/model/";
+
+
   data_live = _live;
   startIdx = 0;
   endIdx = 65;
@@ -62,7 +64,8 @@ void Segmenter::init()
   bool load_models = false;   // load models from file
   bool data_depth = false;    // load depth data instead of pcd data
   std::string sfv_filename = "test_model%1d.sfv";
-  std::string svmStructuralModel = model_path + "PP-Trainingsset.txt.scaled.model";
+ // std::string svmStructuralModel = model_path + "PP-Trainingsset.txt.scaled.model";
+  std::string svmStructuralModel = model_path + "mOSDmodel_boxes.txt";
   std::string svmStructuralScaling = model_path + "param.txt";
   std::string svmAssemblyModel = model_path + "PP2-Trainingsset.txt.scaled.model";
   std::string svmAssemblyScaling = model_path + "param2.txt";
@@ -245,7 +248,8 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
   // Mandatory
   seg.setModelType (pcl::SACMODEL_PLANE);
   seg.setMethodType (pcl::SAC_RANSAC);
-  seg.setDistanceThreshold (0.009);
+ // seg.setDistanceThreshold (0.009);
+  seg.setDistanceThreshold (0.00009);
   seg.setInputCloud (transformed_pc);
   seg.segment (*inliers, *coefficients);
   //remove the plane
@@ -437,7 +441,7 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
   object_list_.cleared = false;
 
   //save it into response
-  res.object_list_ = object_list_;
+ // res.object_list_ = object_list_;
   ROS_INFO("sending back response: ");
 
   return true;

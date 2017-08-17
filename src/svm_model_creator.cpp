@@ -510,20 +510,337 @@ void Segmenter::annotator
   /** mOSD learn21.pcd**/
   if (indexing  == 21)
   {
+    anno[1].push_back(6);
 
+    anno[2].push_back(5);
+    anno[2].push_back(7);
+
+    anno[3].push_back(4);
+
+    anno[5].push_back(7);
 
   }
 
 
+  /** mOSD learn22.pcd**/
+  if (indexing  == 22)
+  {
+    anno[1].push_back(2);
+    anno[1].push_back(3);
 
+    anno[2].push_back(3);
 
+    anno[4].push_back(7);
 
-  /** mOSD learn21.pcd**/
-  if (indexing  == 21)
+    anno[5].push_back(6);
+
+  }
+
+  /** mOSD learn23.pcd**/
+  if (indexing  == 23)
+  {
+    anno[1].push_back(5);
+
+    anno[2].push_back(6);
+
+    anno[3].push_back(4);
+
+    anno[3].push_back(7);
+
+    anno[4].push_back(7);
+
+  }
+
+  /** mOSD learn24.pcd**/
+  if (indexing  == 24)
   {
 
+    anno[0].push_back(5);
+    anno[0].push_back(9);
+
+    anno[3].push_back(7);
+    anno[3].push_back(8);
+
+    anno[4].push_back(6);
+    anno[4].push_back(10);
+
+    anno[5].push_back(9);
+
+    anno[6].push_back(10);
+
+    anno[7].push_back(8);
 
   }
+
+  /** mOSD learn25.pcd**/
+  if (indexing  == 25)
+  {
+    anno[1].push_back(2);
+    anno[1].push_back(5);
+
+    anno[2].push_back(5);
+
+    anno[3].push_back(4);
+  }
+
+  /** mOSD learn26.pcd**/
+  if (indexing  == 26)
+  {
+    anno[1].push_back(2);
+    anno[1].push_back(3);
+
+    anno[2].push_back(3);
+
+    anno[4].push_back(5);
+  }
+
+  /** mOSD learn27.pcd**/
+  if (indexing  == 27)
+  {
+    anno[1].push_back(2);
+    anno[1].push_back(3);
+    anno[1].push_back(7);
+
+    anno[2].push_back(3);
+    anno[2].push_back(7);
+
+    anno[3].push_back(7);
+
+    anno[4].push_back(5);
+
+  }
+
+  /** mOSD learn28.pcd**/
+  if (indexing  == 28)
+  {
+    anno[1].push_back(3);
+
+    anno[2].push_back(6);
+
+    anno[4].push_back(5);
+  }
+
+  /** mOSD learn29.pcd**/
+  if (indexing  == 29)
+  {
+    anno[1].push_back(6);
+
+    anno[2].push_back(4);
+
+    anno[3].push_back(5);
+
+  }
+  /** mOSD learn30.pcd**/
+  if (indexing  == 30)
+  {
+    anno[2].push_back(4);
+    anno[2].push_back(5);
+
+    anno[4].push_back(5);
+  }
+
+  /** mOSD learn31.pcd**/
+  if (indexing  == 31)
+  {
+    anno[1].push_back(3);
+
+    anno[2].push_back(6);
+
+    anno[4].push_back(5);
+  }
+
+  /** mOSD learn32.pcd**/
+  if (indexing  == 32)
+  {
+    anno[2].push_back(3);
+
+  }
+
+  /** mOSD learn33.pcd**/
+  if (indexing  == 33)
+  {
+    anno[1].push_back(4);
+
+    anno[2].push_back(7);
+
+    anno[3].push_back(5);
+
+    anno[6].push_back(8);
+
+    anno[9].push_back(10);
+
+  }
+
+  /** mOSD learn34.pcd**/
+  if (indexing  == 34)
+  {
+    anno[1].push_back(6);
+
+    anno[2].push_back(4);
+
+    anno[3].push_back(5);
+
+  }
+
+  /** mOSD learn35.pcd**/
+  if (indexing  == 35)
+  {
+    anno[1].push_back(3);
+
+    anno[2].push_back(4);
+
+  //  anno[5].push_back(8); occlusion
+
+  }
+
+  /** mOSD learn36.pcd**/
+  if (indexing  == 36)
+  {
+    anno[1].push_back(6);
+
+    anno[2].push_back(3);
+    anno[2].push_back(5);
+    anno[2].push_back(9);
+    anno[2].push_back(11);
+
+    anno[3].push_back(5);
+    anno[3].push_back(9);
+    anno[3].push_back(11);
+
+    anno[4].push_back(7);
+
+    anno[5].push_back(9);
+    anno[5].push_back(11);
+
+    anno[9].push_back(11);
+  }
+
+  /** mOSD learn37.pcd**/
+  if (indexing  == 37)
+  {
+    anno[1].push_back(6);
+
+    anno[3].push_back(4);
+    anno[3].push_back(5);
+    anno[3].push_back(9);
+    anno[3].push_back(11);
+
+    anno[4].push_back(5);
+    anno[4].push_back(9);
+    anno[4].push_back(11);
+
+    anno[5].push_back(9);
+    anno[5].push_back(11);
+
+    anno[9].push_back(11);
+
+  }
+
+  /** mOSD learn38.pcd**/
+  if (indexing  == 38)
+  {
+    anno[1].push_back(6);
+
+    anno[2].push_back(8);
+
+    anno[3].push_back(4);
+    anno[3].push_back(9);
+    anno[3].push_back(10);
+    anno[3].push_back(14);
+
+    anno[4].push_back(9);
+    anno[4].push_back(10);
+    anno[4].push_back(14);
+
+    anno[5].push_back(7);
+
+    anno[9].push_back(10);
+    anno[9].push_back(14);
+
+    anno[10].push_back(14);
+
+  }
+
+  /** mOSD learn39.pcd**/
+  if (indexing  == 39)
+  {
+
+    anno[1].push_back(3);
+
+    anno[2].push_back(7);
+
+    anno[4].push_back(6);
+    anno[4].push_back(9);
+    anno[4].push_back(11);
+
+    anno[5].push_back(8);
+
+    anno[6].push_back(9);
+    anno[6].push_back(11);
+
+    anno[9].push_back(11);
+
+  }
+
+  /** mOSD learn40.pcd**/
+  if (indexing  == 40)
+  {
+    anno[1].push_back(3);
+
+    anno[2].push_back(6);
+    anno[2].push_back(7);
+
+    anno[6].push_back(7);
+
+    anno[8].push_back(10);
+  }
+
+/** mOSD learn41.pcd**/
+  if (indexing  == 41)
+  {
+    anno[1].push_back(12);
+
+    anno[2].push_back(3);
+    anno[2].push_back(5);
+    anno[2].push_back(9);
+
+    anno[3].push_back(5);
+    anno[3].push_back(9);
+
+    anno[5].push_back(9);
+  }
+
+  /** mOSD learn42.pcd**/
+  if (indexing  == 42)
+  {
+    anno[1].push_back(4);
+    anno[2].push_back(3);
+  }
+
+  /** mOSD learn43.pcd**/
+  if (indexing  == 43)
+  {
+    anno[1].push_back(3);
+
+    anno[2].push_back(4);
+
+    anno[5].push_back(6);
+
+  }
+
+  /** mOSD learn44.pcd**/
+  if (indexing  == 44)
+  {
+    anno[1].push_back(2);
+
+    anno[3].push_back(6);
+
+    anno[4].push_back(5);
+  }
+
+
+
+
   svm_model_create(relation_vector, anno);
 
 }
