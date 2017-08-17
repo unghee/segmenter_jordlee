@@ -35,7 +35,7 @@ script:
   - git clone https://github.com/opencv/opencv_contrib.git
   - mkdir build
   - cd build
-  - cmake .
+  - cmake ..
   - make -j7
   - sudo make install
   - cd
