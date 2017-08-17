@@ -33,7 +33,7 @@ script:
   - git clone https://github.com/opencv/opencv.git
   - mkdir build
   - cd build
-  - cmake 
+  - cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr/local ..
   - make -j7
   - sudo make install
   - cd
