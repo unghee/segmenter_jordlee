@@ -24,8 +24,21 @@ install:
   - sudo rosdep init
   - rosdep update
   - rosdep install --from-paths ./ -i -y --rosdistro $CI_ROS_DISTRO
+  - sudo apt-get install build-essential
+  - sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
+
 
 script:
+  - mkdir ~/opencv
+  - cd ~/opencv
+  - git clone https://github.com/opencv/opencv.git
+  - git clone https://github.com/opencv/opencv_contrib.git
+  - mkdir build
+  - cd build
+  - cmake .
+  - make -j7
+  - sudo make install
+  - cd
   - source /opt/ros/$CI_ROS_DISTRO/setup.bash
   - mkdir -p $CATKIN_WS_SRC
   - ln -s $TRAVIS_BUILD_DIR $CATKIN_WS_SRC
