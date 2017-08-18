@@ -46,7 +46,7 @@ script:
   - cd ~/pcl-pcl-1.7.2
   - mkdir build
   - cd build
-  - cmake .. -BUILD_surface=ON
+  - cmake .. -DBUILD_surface=ON -DBUILD_surface_on_nurbs=ON
   - sudo make install
   - cd
   - source /opt/ros/$CI_ROS_DISTRO/setup.bash
