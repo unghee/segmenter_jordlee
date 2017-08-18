@@ -28,15 +28,15 @@ install:
 
 
 script:
-  - cd
-  - git clone https://github.com/opencv/opencv.git
-  - cd ~/opencv
-  - mkdir build
-  - cd build
-  - cmake ..
-  - make -j7
-  - sudo make install
-  - cd
+#  - cd
+#  - git clone https://github.com/opencv/opencv.git
+#  - cd ~/opencv
+#  - mkdir build
+#  - cd build
+#  - cmake ..
+#  - make -j7
+#  - sudo make install
+#  - cd
   - source /opt/ros/$CI_ROS_DISTRO/setup.bash
   - mkdir -p $CATKIN_WS_SRC
   - ln -s $TRAVIS_BUILD_DIR $CATKIN_WS_SRC
