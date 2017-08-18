@@ -37,6 +37,15 @@ script:
 #  - make -j7
 #  - sudo make install
 #  - cd
+  - cd
+  - git clone https://github.com/PointCloudLibrary/pcl/archive/pcl-1.7.2.tar.gz
+  - tar xvfj pcl-pcl-1.7.2.tar.gz
+  - cd ~/pcl-pcl-1.7.2
+  - mkdir build
+  - cd build
+  - cmake .. -BUILD_surface=ON
+  - sudo make -j2 install
+  - cd
   - source /opt/ros/$CI_ROS_DISTRO/setup.bash
   - mkdir -p $CATKIN_WS_SRC
   - ln -s $TRAVIS_BUILD_DIR $CATKIN_WS_SRC
