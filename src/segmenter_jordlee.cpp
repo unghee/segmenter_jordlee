@@ -39,7 +39,7 @@ Segmenter::Segmenter(std::string _db, std::string _rgbd, std::string _model, boo
   markers_pub_ = nh.advertise<visualization_msgs::MarkerArray>("markers_jordlee", 1, true);
 
  // segmented_objects_pub_ = nh.advertise<std_msgs::String>("segmented_objects", 1, true);
- // segmented_objects_pub_ = nh.advertise<rail_manipulation_msgs::SegmentedObjectList>("segmented_objects", 1, true);
+  segmented_objects_pub_ = nh.advertise<rail_manipulation_msgs::SegmentedObjectList>("segmented_objects", 1, true);
  // segmented_objects_pub_ = nh.advertise<rail_manipulation_msgs::SegmentedObjectList>("segmented_objects", 1, true);
 //  segmented_objects_pub_ = nh.advertise<rail_manipulation_msgs::SegmentedObject>("segmented_objects", 1, true);
 
@@ -440,8 +440,11 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
   object_list_.header.frame_id = "test";
   object_list_.cleared = false;
 
+
+  segmented_objects_pub_.publish(object_list_);
   //save it into response
- // res.object_list_ = object_list_;
+
+  res.object_list_ = object_list_;
   ROS_INFO("sending back response: ");
 
   return true;
