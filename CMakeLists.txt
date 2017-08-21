@@ -5,8 +5,10 @@ project(segmenter_jordlee)
 include(opencv.cmake)
 include(v4rutils.cmake) # V4R utils
 
-SET(LIBRARY_OUTPUT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/lib")
-SET(EXECUTABLE_OUTPUT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/bin")
+#SET(LIBRARY_OUTPUT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/lib")
+#SET(EXECUTABLE_OUTPUT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/bin")
+# don't put the above two lines.. it causes cannot find surfaceutils error 
+
 
 SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 set(V4R_BUILD 1)
@@ -89,6 +91,7 @@ catkin_package(
 include_directories(${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS} ${PCL_INCLUDE_DIRS} ${Eigen_INCLUDE_DIRS} ${OPENCV_INCLUDE_DIRS})
 # include project libraries
 include_directories( ${PROJECT_SOURCE_DIR} v4r v4rexternal include)
+#include_directories( include) 
 
 #include_directories(.)
 add_subdirectory(v4r)
