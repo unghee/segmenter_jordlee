@@ -10,7 +10,7 @@ include(v4rutils.cmake) # V4R utils
 # don't put the above two lines.. it causes cannot find surfaceutils error 
 
 
-SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+#SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 set(V4R_BUILD 1)
 
 find_package(
@@ -119,6 +119,7 @@ add_executable(svm_model_creator src/svm_model_creator.cpp)
 
 ## link libraries to localization executable
  target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OPENCV_LIBRARIES} v4rKinectInterface v4rSurfaceModeling v4rSurfaceClustering v4rObjectModeling v4rSurfaceRelations v4rsvm v4rGraphCut v4rSurfaceUtils v4rvs3 v4rPCLAddOns v4rTomGine)
+
 
 # target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OPENCV_LIBRARIES} ${V4R_LIBRARIES}) 
 

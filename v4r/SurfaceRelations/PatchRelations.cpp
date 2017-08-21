@@ -507,16 +507,26 @@ bool PatchRelations::CalculateBorderRelation(int p0, int p1,
 
 bool PatchRelations::haveAnnoRelation(int i, int j)
 {
-  if((int) annotation.size() < i) {
+  //std::cout << "in havenorealtion func" << std::endl;
+  if ((int) annotation.size() < i)
+  {
     printf("[Patches::haveAnnoRelation] Error: Requested patch higher than number of annotations!\n");
     return false;
   }
-  if(annotation[i].size() == 0)
+  if (annotation[i].size() == 0)
+  {
+    printf("no annotation\n");
     return false;
-
-  for(unsigned idx=0; idx<annotation[i].size(); idx++)
-    if(annotation[i][idx] == j)
-      return true;
+  }
+  for (unsigned idx = 0; idx < annotation[i].size(); idx++)
+  {
+  std::cout << "forloop" << std::endl;
+  if (annotation[i][idx] == j)
+    {
+    printf(" vector?\n");
+    return true;
+    }
+  }
   return false;
 }
 
@@ -1320,6 +1330,8 @@ void PatchRelations::computeLearnRelations()
  
   if(!have_neighbors)
     computeNeighbors();
+  std::cout<<"neighbors3D.size()"<<std::endl;
+  std::cout<<neighbors3D.size()<<std::endl;
 
   if(!have_preprocessed)
     preprocess();
@@ -1328,16 +1340,20 @@ void PatchRelations::computeLearnRelations()
 
   for(unsigned i=0; i<neighbors3D.size(); i++) {
     for(unsigned j=0; j<neighbors3D[i].size(); j++) {
+      std::cout<<"neighbors3D[i].size()"<<std::endl;
+      std::cout<<neighbors3D[i].size()<<std::endl;
       bool valid_relation = true;
       int p0 = i;
       int p1 = neighbors3D[i][j];
-
+      std::cout<<"i j"<<i<<j<<std::endl;
+      std::cout<<"neighbors3D[i][j]"<<std::endl;
+      std::cout<<neighbors3D[i][j]<<std::endl;
       if(p0 > p1)                         // check for double entries
         continue;
-      
+
       if(BackgroundRelation(p0, p1))      // check forground-background constraint
         continue;
- 
+
       // check learn size
       if((int) surfaces[p0]->indices.size() < learn_size_1st || (int) surfaces[p1]->indices.size() < learn_size_1st)
         continue;
@@ -1351,11 +1367,11 @@ void PatchRelations::computeLearnRelations()
       double gaborRelation;
       if(!valid_relation || !calculateGaborRelation(p0, p1, gaborRelation))
         valid_relation = false;
-        
+
       double fourierRelation;
       if(!valid_relation || !calculateFourierRelation(p0, p1, fourierRelation))
         valid_relation = false;
-      
+
       double relSize = std::min((double)surfaces[p0]->indices.size()/(double)surfaces[p1]->indices.size(), 
                                 (double)surfaces[p1]->indices.size()/(double)surfaces[p0]->indices.size());
 
@@ -1371,10 +1387,15 @@ void PatchRelations::computeLearnRelations()
 //         printf("[PatchRelations::computeLearnRelations] Warning: Relation not valid.\n");
       
       // Learn only relations with at least one foreground patch!
+
       if(valid_relation)
       {
         Relation r;
+       // std::cout<<p0<<std::endl;
+       // std::cout<<p1<<std::endl;
         r.groundTruth = haveAnnoRelation(p0, p1);
+      //  std::cout<<"groundTruth"<<std::endl;
+        std::cout<<r.groundTruth<<std::endl;
         r.prediction = -1;
         r.type = 1;                                     // 1st level svm type
         r.id_0 = p0;
@@ -1413,7 +1434,8 @@ void PatchRelations::computeLearnRelations()
 
   have_learn_relations = true;
  
-  if(!calculateAssemblyRelations) 
+  if(!calculateAssemblyRelations)
+    printf("assemblyrelation");
     return;
 
   if(!have_annotation2) {
@@ -1895,7 +1917,10 @@ void PatchRelations::computeSegmentRelations()
         if(valid_relation) // if relation not valid, ignore!
         {
           Relation r;
+          std::cout<<"assembly level getting in"<<std::endl;
+
           r.groundTruth = -1;
+          std::cout<<r.groundTruth<<std::endl;
           r.prediction = -1;
           r.type = 2;                                     // assembly level svm type
           r.id_0 = p0;
@@ -1921,6 +1946,12 @@ void PatchRelations::computeSegmentRelations()
 
 // #pragma omp critical
           relations.push_back(r);
+          std::cout<<relations.back().groundTruth<<std::endl;
+          //std::cout<<relations.back()<<std::endl;
+          //for (unsigned i=0; i<relations.size() ; i++)
+           // std::cout<<relations[i].groundTruth<<std::endl;
+
+
 // #pragma omp end critical
           
 #ifdef DEBUG        
