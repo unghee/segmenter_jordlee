@@ -5,8 +5,8 @@ project(segmenter_jordlee)
 include(opencv.cmake)
 include(v4rutils.cmake) # V4R utils
 
-#SET(LIBRARY_OUTPUT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/lib")
-#SET(EXECUTABLE_OUTPUT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/bin")
+SET(LIBRARY_OUTPUT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/lib")
+SET(EXECUTABLE_OUTPUT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/bin")
 # don't put the above two lines.. it causes cannot find surfaceutils error 
 
 
@@ -88,10 +88,14 @@ catkin_package(
     )
 
 
+
+
 include_directories(${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS} ${PCL_INCLUDE_DIRS} ${Eigen_INCLUDE_DIRS} ${OPENCV_INCLUDE_DIRS})
 # include project libraries
 include_directories( ${PROJECT_SOURCE_DIR} v4r v4rexternal include)
 #include_directories( include) 
+
+link_directories(${PCL_LIBRARY_DIRS})
 
 #include_directories(.)
 add_subdirectory(v4r)
@@ -118,12 +122,23 @@ add_executable(svm_model_creator src/svm_model_creator.cpp)
 
 
 ## link libraries to localization executable
- target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OPENCV_LIBRARIES} v4rKinectInterface v4rSurfaceModeling v4rSurfaceClustering v4rObjectModeling v4rSurfaceRelations v4rsvm v4rGraphCut v4rSurfaceUtils v4rvs3 v4rPCLAddOns v4rTomGine)
+# target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OPENCV_LIBRARIES} v4rKinectInterface v4rSurfaceModeling v4rSurfaceClustering v4rObjectModeling v4rSurfaceRelations v4rsvm v4rGraphCut v4rSurfaceUtils v4rvs3 v4rPCLAddOns v4rTomGine)
+
+
+ target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OPENCV_LIBRARIES} v4rKinectInterface v4rSurfaceModeling v4rSurfaceClustering v4rObjectModeling v4rSurfaceRelations v4rsvm v4rGraphCut v4rvs3 v4rPCLAddOns v4rTomGine v4rSurfaceUtils)
+
+#target_link_libraries ( ${PROJECT_NAME} ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OPENCV_LIBRARIES} v4rKinectInterface v4rSurfaceModeling v4rSurfaceClustering v4rObjectModeling v4rSurfaceRelations v4rsvm v4rGraphCut v4rSurfaceUtils)
+
+
 
 
 # target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OPENCV_LIBRARIES} ${V4R_LIBRARIES}) 
 
-target_link_libraries(svm_model_creator ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OPENCV_LIBRARIES} v4rKinectInterface v4rSurfaceModeling v4rSurfaceClustering v4rObjectModeling v4rSurfaceRelations v4rsvm v4rGraphCut v4rSurfaceUtils v4rvs3 v4rPCLAddOns v4rTomGine)
+target_link_libraries(svm_model_creator ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OPENCV_LIBRARIES} v4rKinectInterface v4rSurfaceModeling v4rSurfaceClustering v4rObjectModeling v4rSurfaceRelations v4rsvm v4rGraphCut v4rvs3 v4rPCLAddOns v4rTomGine v4rSurfaceUtils)
+
+#target_link_libraries ( ${PROJECT_NAME} ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OPENCV_LIBRARIES} v4rKinectInterface v4rSurfaceModeling v4rSurfaceClustering v4rObjectModeling v4rSurfaceRelations v4rsvm v4rGraphCut v4rSurfaceUtils)
+
+
 
 # target_link_libraries(svm_model_creator ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OPENCV_LIBRARIES} ${V4R_LIBRARIES}) 
 
