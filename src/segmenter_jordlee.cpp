@@ -43,6 +43,8 @@ Segmenter::Segmenter(std::string _db, std::string _rgbd, std::string _model, boo
  // segmented_objects_pub_ = nh.advertise<rail_manipulation_msgs::SegmentedObjectList>("segmented_objects", 1, true);
 //  segmented_objects_pub_ = nh.advertise<rail_manipulation_msgs::SegmentedObject>("segmented_objects", 1, true);
 
+
+
   ROS_INFO("Ready to segment.");
  //ros::spin();
 
@@ -64,8 +66,8 @@ void Segmenter::init()
   bool load_models = false;   // load models from file
   bool data_depth = false;    // load depth data instead of pcd data
   std::string sfv_filename = "test_model%1d.sfv";
- // std::string svmStructuralModel = model_path + "PP-Trainingsset.txt.scaled.model";
-  std::string svmStructuralModel = model_path + "mOSDmodel_boxes.txt";
+  std::string svmStructuralModel = model_path + "PP-Trainingsset.txt.scaled.model";
+ // std::string svmStructuralModel = model_path + "mOSDmodel_boxes.txt";
   std::string svmStructuralScaling = model_path + "param.txt";
   std::string svmAssemblyModel = model_path + "PP2-Trainingsset.txt.scaled.model";
   std::string svmAssemblyScaling = model_path + "param2.txt";
@@ -222,21 +224,28 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
   std::cout<<"copying pointcloud"<<std::endl;
   pcl::copyPointCloud(*pc_, *cloud_input);
 
-  std::string parentFrame = "/head_camera_depth_optical_frame";
-  std::string targetFrame = "/base_link";
+
+
+ // std::string targetFrame = "/head_camera_link";
   //geometry_msgs::TransformStamped tf = tf_buffer_.lookupTransform(parentFrame,targetFrame, ros::Time(0));
 
   ///frame transformation
-  tf::TransformListener listener;
-  tf::StampedTransform transform;
-  listener.waitForTransform(targetFrame, parentFrame, ros::Time(), ros::Duration(4.0)); // wait for transform
+ // tf::TransformListener listener;
+
+
+  std::string parentFrame = "/head_camera_rgb_optical_frame";
+  // std::string parentFrame = "/head_camera_link";
+  std::string targetFrame = "/base_link";
+  listener.waitForTransform(targetFrame, parentFrame, ros::Time(0), ros::Duration(4.0)); // wait for transform
   listener.lookupTransform(targetFrame, parentFrame , ros::Time(0), transform);
 
   pcl::PointCloud<pcl::PointXYZRGB>::Ptr transformed_pc(new pcl::PointCloud<pcl::PointXYZRGB>);
 
-  //pcl_ros::transformPointCloud(targetFrame, *cloud_input, *transformed_pc,listener);
+  pcl_ros::transformPointCloud(targetFrame, *cloud_input, *transformed_pc,listener);
+ // pcl_ros::transformPointCloud(targetFrame, ros::Time(0),*cloud_input,targetFrame, *transformed_pc,listener);
  // pcl_ros::transformPointCloud(targetFrame, transform, *cloud_input,*transformed_pc);
-  pcl_ros::transformPointCloud(*cloud_input,*transformed_pc,transform);
+ // pcl_ros::transformPointCloud(*cloud_input,*transformed_pc,transform);
+
 
   ///remove plane
   pcl::ModelCoefficients::Ptr coefficients (new pcl::ModelCoefficients);
@@ -249,7 +258,7 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
   seg.setModelType (pcl::SACMODEL_PLANE);
   seg.setMethodType (pcl::SAC_RANSAC);
  // seg.setDistanceThreshold (0.009);
-  seg.setDistanceThreshold (0.00009);
+  seg.setDistanceThreshold (0.01);
   seg.setInputCloud (transformed_pc);
   seg.segment (*inliers, *coefficients);
   //remove the plane
@@ -437,7 +446,7 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
   object_list_.header.seq++;
   object_list_.header.stamp = ros::Time::now();
  // object_list_.header.frame_id = zone.getSegmentationFrameID();
-  object_list_.header.frame_id = "test";
+ // object_list_.header.frame_id = "test";
   object_list_.cleared = false;
 
 
