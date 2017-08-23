@@ -23,15 +23,15 @@ SET(SOURCE_H
   Utils.hh
 )
 
-#IF(V4R_TOMGINE)
+IF(V4R_TOMGINE)
 
 add_library(${PROJECT_NAME} SHARED ${SOURCE_H} ${SOURCE_CPP})
 target_link_libraries(${PROJECT_NAME} ${OPENCV_LIBRARIES} ${PCL_LIBRARIES} v4rTomGine)
 v4r_add_library(${PROJECT_NAME} "${SOURCE_H}")
 
-#ELSE(V4R_TOMGINE)
+ELSE(V4R_TOMGINE)
   MESSAGE(STATUS "********************************************\n   v4r/SurfaceUtils: missing V4R_TOMGINE\n   ********************************************\n")
-#ENDIF(V4R_TOMGINE)
+ENDIF(V4R_TOMGINE)
 
 ENDIF(V4R_SURFACE_UTILS)
 
