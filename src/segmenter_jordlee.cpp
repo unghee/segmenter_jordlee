@@ -236,16 +236,30 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
   std::string parentFrame = "/head_camera_rgb_optical_frame";
   // std::string parentFrame = "/head_camera_link";
   std::string targetFrame = "/base_link";
-  listener.waitForTransform(targetFrame, parentFrame, ros::Time(0), ros::Duration(4.0)); // wait for transform
-  listener.lookupTransform(targetFrame, parentFrame , ros::Time(0), transform);
+//  listener.waitForTransform(targetFrame, parentFrame, ros::Time(0), ros::Duration(4.0)); // wait for transform
+//  listener.lookupTransform(targetFrame, parentFrame , ros::Time(0), transform);
+//
+//  pcl::PointCloud<pcl::PointXYZRGB>::Ptr transformed_pc(new pcl::PointCloud<pcl::PointXYZRGB>);
+//
+//  pcl_ros::transformPointCloud(targetFrame, *cloud_input, *transformed_pc,listener);
+// // pcl_ros::transformPointCloud(targetFrame, ros::Time(0),*cloud_input,targetFrame, *transformed_pc,listener);
+// // pcl_ros::transformPointCloud(targetFrame, transform, *cloud_input,*transformed_pc);
+// // pcl_ros::transformPointCloud(*cloud_input,*transformed_pc,transform);
 
+///saraha's approach
+  sensor_msgs::PointCloud2 cloud_input_msg;
+  pcl::toROSMsg(*cloud_input, cloud_input_msg);
+  sensor_msgs::PointCloud2 transformed_cloud_msg;
   pcl::PointCloud<pcl::PointXYZRGB>::Ptr transformed_pc(new pcl::PointCloud<pcl::PointXYZRGB>);
 
-  pcl_ros::transformPointCloud(targetFrame, *cloud_input, *transformed_pc,listener);
- // pcl_ros::transformPointCloud(targetFrame, ros::Time(0),*cloud_input,targetFrame, *transformed_pc,listener);
- // pcl_ros::transformPointCloud(targetFrame, transform, *cloud_input,*transformed_pc);
- // pcl_ros::transformPointCloud(*cloud_input,*transformed_pc,transform);
+  tf::TransformListener tf_listener;
+  tf::StampedTransform transform;
+  tf_listener.waitForTransform(targetFrame, cloud_input->header.frame_id, ros::Time(0), ros::Duration(3.0));
+  ROS_INFO("Got transform for point cloud.");
+  tf_listener.lookupTransform(targetFrame, cloud_input->header.frame_id, ros::Time(0), transform);
+  pcl_ros::transformPointCloud(targetFrame, transform, cloud_input_msg, transformed_cloud_msg);
 
+  pcl::fromROSMsg(transformed_cloud_msg, *transformed_pc);
 
   ///remove plane
   pcl::ModelCoefficients::Ptr coefficients (new pcl::ModelCoefficients);
