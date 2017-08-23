@@ -58,6 +58,8 @@ Segmenter::~Segmenter()
   delete svm2nd;
   delete graphCut;
   delete resultSaver;
+
+  pcl::search::KdTree<pcl::PointXYZRGB>::KdTree(bool);
 }
 
 void Segmenter::init()

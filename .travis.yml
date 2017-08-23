@@ -36,6 +36,10 @@ install:
   - cd build
   - cmake .. -DBUILD_surface=ON -DBUILD_surface_on_nurbs=ON
   - sudo make install
+  - sudo apt-get remove ros-indigo-pcl-ros ros-indigo-pcl-conversions
+  - cd $CATKIN_WS_SRC
+  - git clone -b indigo-devel https://github.com/ros-perception/pcl_conversions.git
+  - git clone -b indigo-devel https://github.com/ros-perception/perception_pcl.git
   - cd
  
 
