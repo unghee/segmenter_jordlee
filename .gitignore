@@ -4,6 +4,10 @@ CMakeFiles
 Makefile
 cmake_install.cmake
 cmake-build-debug
+catkin_getnerated
+catkin/catkin_generated/version
+gtest
+devel
 
 # Project structure
 lib
