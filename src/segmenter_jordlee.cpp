@@ -59,7 +59,7 @@ Segmenter::~Segmenter()
   delete graphCut;
   delete resultSaver;
 
- 
+
 }
 
 void Segmenter::init()
