@@ -40,9 +40,11 @@ install:
   - cd
   - source /opt/ros/$CI_ROS_DISTRO/setup.bash
   - mkdir -p $CATKIN_WS_SRC
-  - cd $CATKIN_WS_SRC
-  - git clone -b indigo-devel https://github.com/ros-perception/pcl_conversions.git
-  - git clone -b indigo-devel https://github.com/ros-perception/perception_pcl.git
+ # - cd $CATKIN_WS_SRC
+#  - git clone -b indigo-devel https://github.com/ros-perception/pcl_conversions.git
+#  - git clone -b indigo-devel https://github.com/ros-perception/perception_pcl.git
+  - sudo apt-get install ros-indigo-pcl-ros
+  - sudo apt-get install ros-indigo-pcl-conversions
   - sudo apt-get install ros-indigo-tf2-sensor-msgs
   - cd
  
@@ -64,6 +66,7 @@ script:
   - catkin_init_workspace
   - pip install catkin-pkg
   - pip install empy
+#  - sudo apt-get install python-rospkg
   - which python
   - python -V
   - echo $PYTHONPATH
