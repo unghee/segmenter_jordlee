@@ -46,7 +46,7 @@ install:
   - git clone -b indigo-devel https://github.com/ros-perception/perception_pcl.git
 #  - sudo apt-get install ros-indigo-pcl-ros
 #  - sudo apt-get install ros-indigo-pcl-conversions
-#  - sudo apt-get install ros-indigo-tf2-sensor-msgs
+  - sudo apt-get install ros-indigo-tf2-sensor-msgs
   - sudo apt-get install python-rospkg
   - cd
  
