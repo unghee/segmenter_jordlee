@@ -11,7 +11,8 @@
   <buildtool_depend>catkin</buildtool_depend>
 
  <!--<build_depend>libopencv</build_depend>-->
-  <build_depend>libpcl-1.7-all-dev</build_depend>  
+  <!--build_depend>libpcl-1.7-all-dev</build_depend-->  
+  <build_depend>libpcl-1.7-all</build_depend>
   <!--build_depend>libpcl-surface-1.7</build_depend-->
   <build_depend>eigen_conversions</build_depend>
   <build_depend>geometry_msgs</build_depend>
