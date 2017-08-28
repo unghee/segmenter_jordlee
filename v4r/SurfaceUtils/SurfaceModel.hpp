@@ -34,8 +34,9 @@
 #include <opencv2/core/core.hpp>
 
 //#include <pcl/surface/on_nurbs/sequential_fitter.h>
-#include <v4r/on_nurbs/sequential_fitter.h>
+//#include <v4r/on_nurbs/sequential_fitter.h>
 
+#include "v4r/on_nurbs/sequential_fitter.h"
 #include "Relation.h"
 
 //#ifdef V4R_TOMGINE	// commented by [tm] -> it does not work like that!
