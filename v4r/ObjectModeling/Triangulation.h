@@ -39,8 +39,12 @@
 #define _OBJECT_MODELING_TRIANGULATION_H_
 
 #include <vector>
-#include <pcl/surface/on_nurbs/nurbs_data.h>
-#include <pcl/surface/3rdparty/opennurbs/opennurbs.h>
+//#include <pcl/surface/on_nurbs/nurbs_data.h>
+//#include <pcl/surface/3rdparty/opennurbs/opennurbs.h>
+
+#include "v4r/on_nurbs/nurbs_data.h"
+#include "v4r/opennurbs/opennurbs.h"
+
 
 #include "v4r/TomGine/tgTomGineThread.h"
 

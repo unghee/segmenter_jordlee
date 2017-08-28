@@ -40,8 +40,11 @@
 
 #include <pcl/point_cloud.h>
 #include <pcl/point_types.h>
-#include <pcl/surface/on_nurbs/fitting_curve_2d_apdm.h>
-#include <pcl/surface/on_nurbs/fitting_curve_2d_pdm.h>
+//#include <pcl/surface/on_nurbs/fitting_curve_2d_apdm.h>
+//#include <pcl/surface/on_nurbs/fitting_curve_2d_pdm.h>
+
+#include "v4r/on_nurbs/fitting_curve_2d_apdm.h"
+#include "v4r/on_nurbs/fitting_curve_2d_pdm.h"
 
 #include "v4r/SurfaceUtils/SurfaceModel.hpp"
 #include "v4r/TomGinePCL/tgTomGineThreadPCL.h"

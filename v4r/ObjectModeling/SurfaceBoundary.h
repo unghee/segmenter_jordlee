@@ -39,7 +39,9 @@
 #define _SURFACE_BOUNDARY_H_
 
 #include "v4r/SurfaceUtils/SurfaceModel.hpp"
-#include <pcl/surface/on_nurbs/fitting_curve_2d_apdm.h>
+//#include <pcl/surface/on_nurbs/fitting_curve_2d_apdm.h>
+
+#include "v4r/on_nurbs/fitting_curve_2d_apdm.h"
 #include "v4r/TomGine/tgTomGineThread.h"
 
 #include <opencv2/core/core.hpp>

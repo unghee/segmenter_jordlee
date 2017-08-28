@@ -38,9 +38,13 @@
 #include "SurfaceBoundary.h"
 #include <pcl/sample_consensus/model_types.h>
 
-#include <pcl/surface/on_nurbs/closing_boundary.h>
-#include <pcl/surface/on_nurbs/fitting_curve_2d_atdm.h>
-#include <pcl/surface/on_nurbs/fitting_curve_2d_asdm.h>
+//#include <pcl/surface/on_nurbs/closing_boundary.h>
+//#include <pcl/surface/on_nurbs/fitting_curve_2d_atdm.h>
+//#include <pcl/surface/on_nurbs/fitting_curve_2d_asdm.h>
+
+#include "v4r/on_nurbs/closing_boundary.h"
+#include "v4r/on_nurbs/fitting_curve_2d_atdm.h"
+#include "v4r/on_nurbs/fitting_curve_2d_asdm.h"
 
 // TODO
 #include "Triangulation.h"

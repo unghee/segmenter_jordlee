@@ -42,8 +42,11 @@
 #include <stdio.h>
 #include "v4r/TomGine/tgShapeCreator.h"
 #include "v4r/TomGine/tgRenderModel.h"
-#include <pcl/surface/on_nurbs/fitting_curve_2d_apdm.h>
-#include <pcl/surface/on_nurbs/fitting_surface_pdm.h>
+//#include <pcl/surface/on_nurbs/fitting_curve_2d_apdm.h>
+//#include <pcl/surface/on_nurbs/fitting_surface_pdm.h>
+
+#include "v4r/on_nurbs/fitting_curve_2d_apdm.h"
+#include "v4r/on_nurbs/fitting_surface_pdm.h"
 
 using namespace objectmodeling;
 

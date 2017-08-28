@@ -39,8 +39,11 @@
 
 #include "v4r/PCLAddOns/PCLUtils.h"
 #include "v4r/ObjectModeling/Triangulation.h"
-#include <pcl/surface/on_nurbs/fitting_surface_im.h>
-#include <pcl/surface/on_nurbs/fitting_curve_2d_pdm.h>
+//#include <pcl/surface/on_nurbs/fitting_surface_im.h>
+//#include <pcl/surface/on_nurbs/fitting_curve_2d_pdm.h>
+
+#include "v4r/on_nurbs/fitting_surface_im.h"
+#include "v4r/on_nurbs/fitting_curve_2d_pdm.h"
 
 using namespace objectmodeling;
 

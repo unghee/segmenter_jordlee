@@ -1,0 +1,65 @@
+#set(ON_NURBS_LIBRARY on_nurbs)
+#Set(ON_NURBS_LIBRARIES ${ON_NURBS_LIBRARY})
+#set(ON_NURBS_INCLUDE_DIRS "${V4R_SOURCE_DIR}/3rdparty")
+#set(ON_NURBS_VERSION "1.0") # TODO
+#set(3P_LIBRARY_OUTPUT_PATH      "${V4R_BINARY_DIR}/3rdparty/lib${LIB_SUFFIX}")
+
+project(${ON_NURBS_LIBRARY})
+include("on_nurbs.cmake")
+#v4r_include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${PCL_INCLUDE_DIRS} ${OPENNURBS_INCLUDE_DIRS})
+include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${PCL_INCLUDE_DIRS} ${OPENNURBS_INCLUDE_DIRS})
+link_directories(${PCL_LIBRARY_DIRS})
+#add_library(${ON_NURBS_LIBRARY} STATIC ${ON_NURBS_SOURCES})
+
+set(SOURCE_H
+	closing_boundary.h
+	fitting_curve_2d_apdm.h
+	fitting_curve_2d_asdm.h
+	fitting_curve_2d_atdm.h
+	fitting_curve_2d_pdm.h
+	fitting_curve_2d_sdm.h
+	fitting_curve_2d_tdm.h
+	fitting_curve_2d.h
+	fitting_curve_pdm.h
+	fitting_cylinder_pdm.h
+	fitting_sphere_pdm.h
+	fitting_surface_im.h
+	fitting_surface_pdm.h
+	fitting_surface_tdm.h
+	global_optimization_pdm.h
+	global_optimization_tdm.h
+	nurbs_data.h
+	nurbs_solve.h
+	nurbs_tools.h
+	sequential_fitter.h
+	sparse_mat.h
+	triangulation.h)
+
+#add_library(${ON_NURBS_LIBRARY} SHARED ${ON_NURBS_INCLUDES} ${ON_NURBS_SOURCES})
+add_library(${ON_NURBS_LIBRARY} SHARED ${SOURCE_H} ${ON_NURBS_SOURCES})
+add_dependencies(${ON_NURBS_LIBRARY} ${OPENNURBS_LIBRARY})
+
+MESSAGE(STATUS "********onnurbs********")
+
+#include_directories(.)
+
+target_link_libraries(${ON_NURBS_LIBRARY} ${PCL_LIBRARIES})
+#v4r_add_library(${ON_NURBS_LIBRARY} "${ON_NURBS_INCLUDES}")
+v4r_add_library(${ON_NURBS_LIBRARY} "${SOURCE_H}")
+
+
+
+#set_target_properties(${ON_NURBS_LIBRARY}
+#  PROPERTIES
+#    POSITION_INDEPENDENT_CODE TRUE
+#    OUTPUT_NAME "${ON_NURBS_LIBRARY}"
+#    ARCHIVE_OUTPUT_DIRECTORY ${3P_LIBRARY_OUTPUT_PATH}
+#)
+
+#install(FILES ${ON_NURBS_INCLUDES} DESTINATION "${V4R_3P_INCLUDE_INSTALL_PATH}/on_nurbs")
+
+#if(NOT BUILD_SHARED_LIBS)
+#  v4r_install_target(${ON_NURBS_LIBRARY} EXPORT V4RModules ARCHIVE DESTINATION ${V4R_3P_LIB_INSTALL_PATH} COMPONENT dev)
+#endif()
+
+
