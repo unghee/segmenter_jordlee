@@ -7,6 +7,7 @@ Makefile
 cmake-build-debug
 catkin_getnerated
 catkin/catkin_generated/version
+cmake/opencv.cmake~
 gtest
 devel
 CTestTestfile.cmake
