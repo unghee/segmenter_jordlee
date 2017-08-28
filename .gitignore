@@ -9,6 +9,9 @@ catkin/catkin_generated/version
 gtest
 devel
 CTestTestfile.cmake
+segmenter_jordlee.cbp
+
+v4r.pc
 
 #*.cmake
 
