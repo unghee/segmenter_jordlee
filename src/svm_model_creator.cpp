@@ -77,6 +77,8 @@ void Segmenter::init()
 
   // init nurbsfitting & model-selection
   pcl::on_nurbs::SequentialFitter::Parameter nurbsParams;
+
+
   nurbsParams.order = 3;
   nurbsParams.refinement = 0;
   nurbsParams.iterationsQuad = 0;

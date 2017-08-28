@@ -8,7 +8,7 @@ catkin_getnerated
 catkin/catkin_generated/version
 gtest
 devel
-*.cmake
+#*.cmake
 
 # Project structure
 lib

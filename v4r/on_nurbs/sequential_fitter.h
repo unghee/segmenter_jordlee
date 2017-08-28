@@ -47,6 +47,9 @@
 #undef False
 #undef None
 #undef Status
+#if defined(Success)
+#undef Success
+#endif
 
 //#include <fitting_surface_pdm.h>
 //#include <nurbs_data.h>
