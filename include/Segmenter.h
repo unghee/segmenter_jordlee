@@ -1,4 +1,8 @@
 /**
+ * This software provides a ROS & libsvm wrapper for the segmentation released by Richtsfeld et al.
+ * The software is under Copyrights described below.
+*/
+/**
  *  Copyright (C) 2012  
  *    Andreas Richtsfeld, Johann Prankl, Thomas Mörwald
  *    Automation and Control Institute
@@ -20,13 +24,15 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see http://www.gnu.org/licenses/
  */
-
+/**
+ * Chih-Chung Chang and Chih-Jen Lin, LIBSVM : a library for support vector machines.
+ * ACM Transactions on Intelligent Systems and Technology, 2:27:1--27:27, 2011. Software available at http://www.csie.ntu.edu.tw/~cjlin/libsvm
+*/
 /**
  * @file Segmenter.h
- * @author Andreas Richtsfeld
- * @date July 2012
+ * @author Jordan Lee
+ * @date July 2017
  * @version 0.1
- * @brief Segment images
  */
 
 

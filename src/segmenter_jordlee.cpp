@@ -142,6 +142,7 @@ Segmenter::processPointCloudV(pcl::PointCloud<pcl::PointXYZRGB>::Ptr &pcl_cloud)
  // pclA::FilterZ(pcl_cloud, z_min, z_max);
 
   // calcuate normals
+  printf("calcuate normals\n");
   normals.reset(new pcl::PointCloud<pcl::Normal>);
   pclA::ZAdaptiveNormals::Parameter param;
   param.adaptive = true;
@@ -151,20 +152,26 @@ Segmenter::processPointCloudV(pcl::PointCloud<pcl::PointXYZRGB>::Ptr &pcl_cloud)
   nor.getNormals(normals);
 
   // adaptive clustering
+  printf("adaptive clustering\n");
   clusterNormals->setInputCloud(pcl_cloud);
   clusterNormals->setInputNormals(normals);
   clusterNormals->setPixelCheck(true, 5);
   clusterNormals->compute();
   clusterNormals->getSurfaceModels(surfaces);
 
+  printf("surfmodeling\n");
   surfModeling->setInputCloud(pcl_cloud);
+  printf("setinput\n");
   surfModeling->setInputPatches(surfaces);
+  printf("computing surf modeling..\n");
   surfModeling->compute();
   surfModeling->getSurfaceModels(surfaces, false);
-  printf("surfmodeling\n");
+
+
+
   std::vector<surface::Relation> relation_vector;
   patchRelations->setInputCloud(pcl_cloud);
-  printf("setinputcloud\n");
+  printf("setinputcloud for patch relation\n");
   patchRelations->setSurfaceModels(surfaces);
   printf("setSurfaceModels\n");
   patchRelations->setOptimalPatchModels(true);
