@@ -5,11 +5,9 @@
 
 #include "Segmenter1.h"
 
-//#include <pcl/segmentation/region_growing.h>
 
 /* --------------- Segmenter --------------- */
 
-//Segmenter::Segmenter segmenter;
 namespace segment
 {
 
@@ -21,7 +19,8 @@ Segmenter::Segmenter(std::string _db, std::string _rgbd, std::string _model, boo
   rgbd_filename = _rgbd;
   //model_path = _model;
   model_path = "/home/fetch/catkin_ws/src/segmenter_jordlee/model/";
-
+  //ros subscribing
+  string point_cloud_topic("/head_camera/depth_registered/points");
 
   data_live = _live;
   startIdx = 0;
@@ -29,19 +28,11 @@ Segmenter::Segmenter(std::string _db, std::string _rgbd, std::string _model, boo
   useStructuralLevel = true;
   useAssemblyLevel = false;
 
-  //ros subscribing-
-  string point_cloud_topic("/head_camera/depth_registered/points");
-
-
   sub = nh.subscribe(point_cloud_topic, 1, &Segmenter::pointCloudCallback,this);
   segment_srv_ = nh.advertiseService("segment_object", &Segmenter::SegmentObjectCallback, this);
   pub = nh.advertise< pcl::PointCloud<pcl::PointXYZRGB> > ("pointstestinginput", 1,true);
-  markers_pub_ = nh.advertise<visualization_msgs::MarkerArray>("markers_jordlee", 1, true);
-
- // segmented_objects_pub_ = nh.advertise<std_msgs::String>("segmented_objects", 1, true);
+  markers_pub_ = nh.advertise<visualization_msgs::MarkerArray>("segmented_markers", 1, true);
   segmented_objects_pub_ = nh.advertise<rail_manipulation_msgs::SegmentedObjectList>("segmented_objects", 1, true);
- // segmented_objects_pub_ = nh.advertise<rail_manipulation_msgs::SegmentedObjectList>("segmented_objects", 1, true);
-//  segmented_objects_pub_ = nh.advertise<rail_manipulation_msgs::SegmentedObject>("segmented_objects", 1, true);
 
 
 
@@ -191,14 +182,7 @@ Segmenter::processPointCloudV(pcl::PointCloud<pcl::PointXYZRGB>::Ptr &pcl_cloud)
                                                         relation_vector[i].rel_probability);
   }
 
-  //svm file create
- /*
-  svm::SVMFileCreator svmFileCreator;
-  svmFileCreator.setRelations(relation_vector);
-  svmFileCreator.setAnalyzeOutput(false);
-  svmFileCreator.setTestSet(true);
-  svmFileCreator.process();
- */
+
 //githubtest
   graphCutGroups.clear();
   graphCut->init(surfaces.size(), relation_vector);
@@ -217,8 +201,7 @@ Segmenter::processPointCloudV(pcl::PointCloud<pcl::PointXYZRGB>::Ptr &pcl_cloud)
 }
 
 
-//  void Segmenter::run(std::string _rgbd_filename,std::string _model_path, int _startIdx, int _endIdx)
-//  void Segmenter::run(std::string _model_path)
+
 
 bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request &req, segmenter_jordlee::SegmentObject::Response &res)
 {
@@ -235,27 +218,12 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
 
 
 
- // std::string targetFrame = "/head_camera_link";
-  //geometry_msgs::TransformStamped tf = tf_buffer_.lookupTransform(parentFrame,targetFrame, ros::Time(0));
-
   ///frame transformation
- // tf::TransformListener listener;
-
 
   std::string parentFrame = "/head_camera_rgb_optical_frame";
-  // std::string parentFrame = "/head_camera_link";
-  std::string targetFrame = "/base_link";
-//  listener.waitForTransform(targetFrame, parentFrame, ros::Time(0), ros::Duration(4.0)); // wait for transform
-//  listener.lookupTransform(targetFrame, parentFrame , ros::Time(0), transform);
-//
-//  pcl::PointCloud<pcl::PointXYZRGB>::Ptr transformed_pc(new pcl::PointCloud<pcl::PointXYZRGB>);
-//
-//  pcl_ros::transformPointCloud(targetFrame, *cloud_input, *transformed_pc,listener);
-// // pcl_ros::transformPointCloud(targetFrame, ros::Time(0),*cloud_input,targetFrame, *transformed_pc,listener);
-// // pcl_ros::transformPointCloud(targetFrame, transform, *cloud_input,*transformed_pc);
-// // pcl_ros::transformPointCloud(*cloud_input,*transformed_pc,transform);
 
-///saraha's approach
+  std::string targetFrame = "/base_link";
+
   sensor_msgs::PointCloud2 cloud_input_msg;
   pcl::toROSMsg(*cloud_input, cloud_input_msg);
   sensor_msgs::PointCloud2 transformed_cloud_msg;
@@ -314,7 +282,6 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
   cropper.filter(*filteredIndices);
 
 
-
  //for visualizing rgb image
 /*
   // ######################## Setup TomGine ########################
@@ -358,13 +325,11 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
   //pcl::io::savePCDFileASCII("/home/fetch/catkin_ws/src/segmenter_jordlee/testsegment.pcd",*cloud_input);
 
 
-
   std::cout<<"after copying pointcloud"<<std::endl;
   std::vector<pcl::PointIndices> label_indices;
-//  label_indices = processPointCloudV(cloud_input);  ///need to change
- // label_indices = processPointCloudV(cloud_plane);  ///need to change
-  label_indices = processPointCloudV(cloud_cropped);  ///need to change
- // label_indices = processPointCloudV(clusters);  ///need to change
+
+  label_indices = processPointCloudV(cloud_cropped);
+
 
   std::cout<<"finished labeling"<<std::endl;
   std::vector<pcl::PointCloud<pcl::PointXYZRGB>::ConstPtr> cloud_output;
@@ -374,9 +339,6 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
   {
 
     pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_temp(new pcl::PointCloud<pcl::PointXYZRGB>);
-  //  pcl::copyPointCloud(*cloud_input, label_indices[i], *(cloud_temp));
-  //  pcl::copyPointCloud(*transformed_pc, label_indices[i], *(cloud_temp));
-  //  pcl::copyPointCloud(*cloud_plane, label_indices[i], *(cloud_temp));
     pcl::copyPointCloud(*cloud_cropped, label_indices[i], *(cloud_temp));
     // setting size threshold
     if (cloud_temp->points.size() > 100)
@@ -393,57 +355,9 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
   std::cout << "total object number" << cloud_output.size() << endl;
 
 
-  ///setting color threshold
-//  pcl::IndicesPtr valid(new vector<int>);
-//  for (size_t i = 0; i < filteredIndices->size(); i++)
-//  {
-//    if (pcl_isfinite(cloud_cropped->points[filteredIndices->at(i)].x) & pcl_isfinite(cloud_cropped->points[filteredIndices->at(i)].y) &
-//        pcl_isfinite(cloud_cropped->points[filteredIndices->at(i)].z))
-//    {
-//      valid->push_back(filteredIndices->at(i));
-//    }
-//  }
-//  vector<pcl::PointIndices> clusters;
-//  pcl::RegionGrowingRGB<pcl::PointXYZRGB> reg;
-//  pcl::search::KdTree<pcl::PointXYZRGB>::Ptr kd_tree(new pcl::search::KdTree<pcl::PointXYZRGB>);
-//  // add two pointclouds to one for searching all pairs of pointclouds
-//  // or
-//  // USE HSV!! value
-//  // but if objects have same colors, this will cause a problem
-//  // kd_tree search through cluster indices?
-//
-//  kd_tree->setInputCloud(cloud_cropped);
-//  reg.setPointColorThreshold(POINT_COLOR_THRESHOLD);
-//  reg.setRegionColorThreshold(REGION_COLOR_THRESHOLD);
-////  reg.setDistanceThreshold(CLUSTER_TOLERANCE);
-//  // reg.setMinClusterSize(min_cluster_size_);
-////  reg.setMaxClusterSize(max_cluster_size_);
-//  reg.setSearchMethod(kd_tree);
-//  reg.setInputCloud(cloud_cropped);
-//  reg.setIndices(valid);
-//  reg.extract(clusters);
-//
-//
 
+  pub.publish (cloud_cropped);
 
-
-
-
-
-
- // std::cout<<cloud_output[1]->points.size()<<std::endl;
-
-//rviz
-
- // cloud_input->header.frame_id = "head_camera_depth_optical_frame";
-//  cloud_output[1]->header.stamp = ros::Time::now().toNSec();
-
- // pub.publish (cloud_input);
- // pub.publish (cloud_plane);
-  pub.publish (cloud_cropped);  ///need to change
-//  ros::spinOnce ();
-
- // for(int i =0;i<label_indices.size();i++)
   for(int i =0;i<cloud_output.size();i++)
   {
     pcl::PCLPointCloud2::Ptr converted(new pcl::PCLPointCloud2);
@@ -459,7 +373,7 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
     markers_.markers.push_back(segmented_object.marker);
 
     object_list_.objects.push_back(segmented_object);
- //   segmented_objects_pub_.publish(segmented_object);
+
   }
 
   //publish markers
@@ -468,8 +382,6 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
   // save into object_list
   object_list_.header.seq++;
   object_list_.header.stamp = ros::Time::now();
- // object_list_.header.frame_id = zone.getSegmentationFrameID();
- // object_list_.header.frame_id = "test";
   object_list_.cleared = false;
 
 
@@ -481,17 +393,6 @@ bool Segmenter::SegmentObjectCallback(segmenter_jordlee::SegmentObject::Request 
 
   return true;
 
-
-//pcl viewer
-//  boost::shared_ptr<pcl::visualization::PCLVisualizer> viewer (new pcl::visualization::PCLVisualizer ("3D Viewer"));
-//  segment::Segmenter::rgbVis(cloud_output,label_indices);
-
-
-  printf("[Segmenter::run] Done.\n");
-
-
-  ROS_INFO("sending back response");
-  return true;
 
 }
 
@@ -584,43 +485,15 @@ visualization_msgs::Marker Segmenter::createMarker(const pcl::PCLPointCloud2::Co
   marker.color.g = ((float) g / (float) pc_msg.points.size()) / 255.0;
   marker.color.b = ((float) b / (float) pc_msg.points.size()) / 255.0;
 
-//  marker.color.r =rand() % 255;
-//  marker.color.g = rand() % 255;
-//  marker.color.b = rand() % 255;
+ // set random color
+ //  marker.color.r =rand() % 255;
+ //  marker.color.g = rand() % 255;
+ //  marker.color.b = rand() % 255;
 
   marker.color.a = 1.0;
 
   return marker;
 }
-/*
-const SegmentationZone &Segmenter::getCurrentZone() const
-{
-  // check each zone
-  for (size_t i = 0; i < zones_.size(); i++)
-  {
-    // get the current TF information
-    geometry_msgs::TransformStamped tf = tf_buffer_.lookupTransform(zones_[i].getParentFrameID(),
-                                                                    zones_[i].getChildFrameID(), ros::Time(0));
-
-    // convert to a Matrix3x3 to get RPY
-    tf2::Matrix3x3 mat(tf2::Quaternion(tf.transform.rotation.x, tf.transform.rotation.y, tf.transform.rotation.z,
-                                       tf.transform.rotation.w));
-    double roll, pitch, yaw;
-    mat.getRPY(roll, pitch, yaw);
-
-    // check if all the bounds meet
-    if (roll >= zones_[i].getRollMin() && pitch >= zones_[i].getPitchMin() && yaw >= zones_[i].getYawMin() &&
-        roll <= zones_[i].getRollMax() && pitch <= zones_[i].getPitchMax() && yaw <= zones_[i].getYawMax())
-    {
-      return zones_[i];
-    }
-  }
-
-  ROS_WARN("Current state not in a valid segmentation zone. Defaulting to first zone.");
-  return zones_[0];
-}
-*/
-
 
 }
 
@@ -640,8 +513,8 @@ void printUsage(char *av)
 int main(int argc, char **argv)
 {
 
-  std::string rgbd_filename = "points2/test%1d.pcd";
-  std::string model_path = "/home/fetch/catkin_ws/src/segmenter_jordlee/model/";
+ // std::string rgbd_filename = "points2/test%1d.pcd";
+ // std::string model_path = "/home/fetch/catkin_ws/src/segmenter_jordlee/model/";
 
   ros::init(argc, argv, "segmenter");
 

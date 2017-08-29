@@ -43,19 +43,6 @@ find_package(Eigen REQUIRED)
 #find pcl library
 find_package(PCL 1.7 REQUIRED )
 
-## compiler optimization flags
-#set(CMAKE_CXX_FLAGS "-DNDEBUG -O3 -fopenmp -Wno-deprecated")
-
-## add messages
-#add_message_files(
-#  FILES
-#  CylinderMsg.msg
-#  CylinderArrayMsg.msg
-#  HandleListMsg.msg
-#)
-#
-#generate_messages(DEPENDENCIES geometry_msgs)
-#
 add_service_files(
  FILES
  SegmentObject.srv
@@ -120,28 +107,7 @@ add_executable(${PROJECT_NAME} src/segmenter_jordlee.cpp )
 #add_executable(${PROJECT_NAME} src/segmenter_servicetest.cpp)
 add_executable(svm_model_creator src/svm_model_creator.cpp)
 
-
-## link libraries to localization executable
-# target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OPENCV_LIBRARIES} v4rKinectInterface v4rSurfaceModeling v4rSurfaceClustering v4rObjectModeling v4rSurfaceRelations v4rsvm v4rGraphCut v4rSurfaceUtils v4rvs3 v4rPCLAddOns v4rTomGine)
-
-
-# target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OPENCV_LIBRARIES} v4rKinectInterface v4rSurfaceModeling v4rSurfaceClustering v4rObjectModeling v4rSurfaceRelations v4rsvm v4rGraphCut v4rvs3 v4rPCLAddOns v4rTomGine v4rSurfaceUtils)
-
 target_link_libraries ( ${PROJECT_NAME} ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OPENCV_LIBRARIES} v4rKinectInterface v4rSurfaceModeling v4rSurfaceClustering v4rObjectModeling v4rSurfaceRelations v4rsvm v4rGraphCut v4rTomGine v4rSurfaceUtils v4rOnNurbs v4rOpennurbs)
-
-
-
-
-# target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OPENCV_LIBRARIES} ${V4R_LIBRARIES}) 
-
-#target_link_libraries(svm_model_creator ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OPENCV_LIBRARIES} v4rKinectInterface v4rSurfaceModeling v4rSurfaceClustering v4rObjectModeling v4rSurfaceRelations v4rsvm v4rGraphCut v4rvs3 v4rPCLAddOns v4rTomGine v4rSurfaceUtils)
-
-#target_link_libraries ( ${PROJECT_NAME} ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OPENCV_LIBRARIES} v4rKinectInterface v4rSurfaceModeling v4rSurfaceClustering v4rObjectModeling v4rSurfaceRelations v4rsvm v4rGraphCut v4rSurfaceUtils)
-
-
-
-# target_link_libraries(svm_model_creator ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OPENCV_LIBRARIES} ${V4R_LIBRARIES}) 
-
 
 target_link_libraries (svm_model_creator ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OPENCV_LIBRARIES} v4rKinectInterface v4rSurfaceModeling v4rSurfaceClustering v4rObjectModeling v4rSurfaceRelations v4rsvm v4rGraphCut v4rSurfaceUtils v4rOnNurbs v4rOpennurbs)
 

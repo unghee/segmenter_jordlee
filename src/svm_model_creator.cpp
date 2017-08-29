@@ -1,8 +1,3 @@
-//
-// Created by fetch on 8/15/17.
-//
-
-
 
 /**
  * Author : UngHee Jordan Lee
@@ -56,10 +51,6 @@ void Segmenter::init()
   bool load_models = false;   // load models from file
   bool data_depth = false;    // load depth data instead of pcd data
   std::string sfv_filename = "test_model%1d.sfv";
-//  std::string svmStructuralModel = model_path + "PP-Trainingsset.txt.scaled.model";
-//  std::string svmStructuralScaling = model_path + "param.txt";
-//  std::string svmAssemblyModel = model_path + "PP2-Trainingsset.txt.scaled.model";
-//  std::string svmAssemblyScaling = model_path + "param2.txt";
 
   // init kinect data reader
   kinect = new KinectData();
@@ -108,14 +99,6 @@ void Segmenter::init()
   patchRelations->setStructuralLevel(useStructuralLevel);
   patchRelations->setAssemblyLevel(useAssemblyLevel);
 
-  // init svm-predictor
-//  svm1st = new svm::SVMPredictorSingle(svmStructuralModel.c_str());
-//  svm2nd = new svm::SVMPredictorSingle(svmAssemblyModel.c_str());
-//  svm1st->setScaling(true, svmStructuralScaling.c_str());
-//  svm2nd->setScaling(true, svmAssemblyScaling.c_str());
-
-  // init graph cutter
-//  graphCut = new gc::GraphCut();
 
   // save results to sfv file
   resultSaver = new surface::SaveFileSequence();
@@ -185,7 +168,7 @@ void Segmenter::process()
 ////  patchRelations->getRelations(relation_vector);
   printf("  => relations between models calculated ...\n");
 
-  //svm_model_create(relation_vector);
+
   annotator(relation_vector);
 
 }
@@ -203,9 +186,6 @@ void Segmenter::svm_model_create
     patchRelations->getRelations(relation_vector);
 
     printf("  => parameters ...\n");
-//    cout << relation_vector.size() << endl;
-//    cout << "svmProblem_vector_x" << endl;
-//    cout << svmProblem_vector_x.size() << endl;
 
     for (unsigned i = 0; i < relation_vector.size(); i++)
     {
@@ -225,16 +205,9 @@ void Segmenter::svm_model_create
 
     }
 
-//    cout << "svmProblem_vector_x" << endl;
-//    cout << svmProblem_vector_x.size() << endl;
-//    cout << "svmProblem_vector_y" << endl;
-//    cout << svmProblem_vector_y.size() << endl;
-
 
     sizeOfVector = sizeOfVector + relation_vector.size();
-    //size_vector.push_back(relation_vector.size());
-//    cout << "sizeOfVector" << endl;
-//    cout << sizeOfVector << endl;
+
 
 
   /// Setting features
@@ -256,9 +229,6 @@ void Segmenter::svm_model_create
     }
 
     svmProblem.x = xarray;
-    //  cout<<"svmProblem.x"<<endl;
-    //  cout<<sizeof((svm::svm_node*)xarray)<<endl;
-    //  cout<<*(&*xarray+1)-*xarray<<endl;
 
     ///training
     svmModel = svm::svm_train(&svmProblem,&svmParameter);
@@ -273,16 +243,6 @@ void Segmenter::annotator
     (std::vector<surface::Relation> &relation_vector ){
 
   std::vector<std::vector<int> > anno(surfaces.size());
-
-//  anno[1].push_back(4);
-//  anno[1].push_back(5);
-//  anno[2].push_back(3);
-//  anno[3].push_back(2);
-//  anno[4].push_back(1);
-//  anno[4].push_back(14);
-//  anno[5].push_back(1);
-
-
 
 
   /** mOSD learn0.pcd**/
@@ -979,48 +939,6 @@ void Segmenter::run(std::string _rgbd_filename,
       do_it = false;
     }
 
-//    if((char) key == '5' || !win_done) {
-//      printf("[Segmenter] Show results after graph cut.\n");
-//      dbgWin.Clear();
-//      dbgWin.ClearModels();
-//      cv::Vec4f center3D[graphCutGroups.size()];
-//      int nrGCPoints[graphCutGroups.size()];
-//      pclA::RGBValue col[graphCutGroups.size()];
-//      for(size_t i=0; i<graphCutGroups.size(); i++) {
-//        col[i].float_value = pclA::GetRandomColor();
-//        nrGCPoints[i]=0;
-//      }
-//
-//      std::vector<cv::Vec4f> col_points;
-//      for(size_t i=0; i<surfaces.size(); i++) {
-//        for(size_t j=0; j<surfaces[i]->indices.size(); j++) {
-//          cv::Vec4f pt;
-//          pt[0] = pcl_cloud->points[surfaces[i]->indices[j]].x;
-//          pt[1] = pcl_cloud->points[surfaces[i]->indices[j]].y;
-//          pt[2] = pcl_cloud->points[surfaces[i]->indices[j]].z;
-//          unsigned number = WhichGraphCutGroup(i, graphCutGroups);
-//          pt[3] = col[number].float_value;
-//          nrGCPoints[number]++;
-//          center3D[number][0] = center3D[number][0] + pt[0];
-//          center3D[number][1] = center3D[number][1] + pt[1];
-//          center3D[number][2] = center3D[number][2] + pt[2];
-//          col_points.push_back(pt);
-//        }
-//      }
-//
-//      for(size_t i=0; i<graphCutGroups.size(); i++) {
-//        char label[5];
-//        snprintf(label, 5, "%lu", i);
-//        dbgWin.AddLabel3D(label, 14,
-//                          center3D[i][0]/nrGCPoints[i],
-//                          center3D[i][1]/nrGCPoints[i],
-//                          center3D[i][2]/nrGCPoints[i]);
-//      }
-//      dbgWin.AddPointCloud(col_points);
-//      dbgWin.Update();
-//      win_done = true;
-//    }
-
     if((char) key == '5' || !win_done) {
       printf("[ModelAbstractor] Show results of model abstractor: %lu patches\n", surfaces.size());
       std::vector<cv::Vec4f> col_points;
@@ -1140,13 +1058,11 @@ int main(int argc, char *argv[])
       live = true;
   }
 
-  // ros::init(argc, argv, "segmenter");
-  //ros::NodeHandle nh;
 
   segment::Segmenter seg;
-  //seg.setMinMaxDepth(0.0, 1.5);
+
   seg.run(rgbd_filename, kinect_config, model_path, startIdx, endIdx, live, useAssemblyLevel);
-  // ros::spinOnce();
+
 }
 
 
