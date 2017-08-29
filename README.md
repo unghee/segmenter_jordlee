@@ -27,18 +27,18 @@ This package was tested on Ubuntu 14.04
     source devel/setup.bash 
     export ROS_MASTER_URI=http://<robot_name_or_ip>:11311
     ```
-run rosnode
+run rosnode  
 3. ```bash
     rosrun segmenter_jordlee segmenter_jordlee
-    
+   ```   
 open a new terminal. call rosservice. (repeat step 1, 2 before rosservice call)   
 4. ```bash
    rosservice call /segment_object "{}" > /dev/null
-   ```
+   ```  
 5. Visualization in Rviz
     ```bash
    rosrun rviz rviz
-   ```
+   ```  
    change frame to base_link. Pointcloud before segmenting will be under topic sensor_msgs/PointCloud2/pointtestinginput.  
    Segmented objects will be under topic visualization_msgs::MarkerArray/markers_jordlee
    
@@ -74,9 +74,9 @@ Currently, the segmenter uses 'PP-Trainingsset.txt.scaled.model' as a default SV
 * **Publishers**
   * `/segmented_objects`([rail_manipulation_msgs/SegmentedObjectList](https://github.com/GT-RAIL/rail_manipulation_msgs/blob/master/msg/SegmentedObjectList.msg))  
   segmented object list
-  * `/pointstestinginput`([pcl/PointCloud<pcl/PointXYZRGB>](http://wiki.ros.org/pcl_ros)) 
+  * `/pointstestinginput`([pcl/PointCloud<pcl/PointXYZRGB>](http://wiki.ros.org/pcl_ros))  
   pointcloud before segmenting. Used for visualization in rviz.
-  * `/segmented_markers`([visualization_msgs/MarkerArray](http://docs.ros.org/api/visualization_msgs/html/msg/MarkerArray.html))
+  * `/segmented_markers`([visualization_msgs/MarkerArray](http://docs.ros.org/api/visualization_msgs/html/msg/MarkerArray.html))  
   visualization markers in rviz
 * **Service Clients**
    `/segment_object([rail_manipulation_msgs/SegmentedObjectList](https://github.com/GT-RAIL/rail_manipulation_msgs/blob/master/msg/SegmentedObjectList.msg))  
