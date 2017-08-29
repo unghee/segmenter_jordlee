@@ -27,7 +27,7 @@ install:
   - rosdep update
   - rosdep install --from-paths ./ -i -y --rosdistro $CI_ROS_DISTRO
   - sudo apt-get install build-essential
-  - sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
+#  - sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
 ## pcl
 #  - cd
 #  - wget https://github.com/PointCloudLibrary/pcl/archive/pcl-1.7.2.tar.gz
