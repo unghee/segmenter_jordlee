@@ -27,17 +27,14 @@ This package was tested on Ubuntu 14.04
     source devel/setup.bash 
     export ROS_MASTER_URI=http://<robot_name_or_ip>:11311
     ```
-    
-run rosnode  
-3. ```bash
+3. run rosnode  
+    ```bash
     rosrun segmenter_jordlee segmenter_jordlee
    ```  
-   
-open a new terminal. call rosservice. (repeat step 1, 2 before rosservice call)   
-4. ```bash
+4. open a new terminal. call rosservice. (repeat step 1, 2 before rosservice call) 
+    ```bash
    rosservice call /segment_object "{}" > /dev/null
    ```  
-   
 5. Visualization in Rviz
     ```bash
    rosrun rviz rviz
