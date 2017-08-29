@@ -27,18 +27,22 @@ This package was tested on Ubuntu 14.04
     source devel/setup.bash 
     export ROS_MASTER_URI=http://<robot_name_or_ip>:11311
     ```
+    
 run rosnode  
 3. ```bash
     rosrun segmenter_jordlee segmenter_jordlee
-   ```   
+   ```  
+   
 open a new terminal. call rosservice. (repeat step 1, 2 before rosservice call)   
 4. ```bash
    rosservice call /segment_object "{}" > /dev/null
    ```  
+   
 5. Visualization in Rviz
     ```bash
    rosrun rviz rviz
    ```  
+   
    change frame to base_link. Pointcloud before segmenting will be under topic sensor_msgs/PointCloud2/pointtestinginput.  
    Segmented objects will be under topic visualization_msgs::MarkerArray/markers_jordlee
    
@@ -50,6 +54,7 @@ Currently, the segmenter uses 'PP-Trainingsset.txt.scaled.model' as a default SV
        cd (your catkin workspace)/devel/lib/segmenter_jordlee
        ./svm_model creator -f ~/path_to_your_objectdatasets/datasets%1d.pcd -idx 0(number of your current train set)
    ```   
+   
 3. press F10 once TomGine window pops up. 
 4. Go to src/svm_model_creator.cpp
 5. go to 'Segmenter::annotator' function.
@@ -62,6 +67,7 @@ Currently, the segmenter uses 'PP-Trainingsset.txt.scaled.model' as a default SV
     ```bash
    ./svm_model creator -f ~/path_to_your_objectdatasets/datasets%1d.pcd -idx 0 10(total count of your training data set)
    ``` 
+   
    this will generate 'model.txt' in '/devel/lib/segmenter_jordlee'
 7. move this model.txt to model folder in your src/segmenter_jordlee/model
 8. change of variable name is segmenter_jordlee.cpp for using this model. 
